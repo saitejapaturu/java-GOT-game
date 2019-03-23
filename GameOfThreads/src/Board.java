@@ -10,6 +10,14 @@ public class Board
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
         // initBoard(); create method to initialize board
     }
+
+    public int getWidth() {
+		return GRID_WIDTH;
+	}
+	
+	public int getHeight() {
+		return GRID_HEIGHT;
+	}
     
     public Square[][] getBoard()
     {
