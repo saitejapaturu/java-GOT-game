@@ -6,7 +6,7 @@ public class Tank extends Piece{
 	public static final int RANGE = 2;
 	public static final int DAMAGE = 1;
 
-	public Tank(int health, int maxMove, int range, int damage, String id, int x, int y) {
+	public Tank(String id, int x, int y) {
 		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
 	}
 
