@@ -1,15 +1,18 @@
+package Model;
 
 public class Square
 {
     private int x;
     private int y;
     private boolean occupied;
+    private boolean isPlacebale;
     private Piece piece;
 
-    public Square(int x, int y)
+    public Square(int x, int y, boolean isPlacebale)
     {
         this.x = x;
         this.y = y;
+        this.isPlacebale = isPlacebale;
         this.occupied = false;
         this.piece = null;
     }
@@ -52,6 +55,11 @@ public class Square
     public Piece getPiece()
     {
         return this.piece;
+    }
+
+    public boolean getIsPlacebale()
+    {
+        return this.isPlacebale;
     }
 
 }

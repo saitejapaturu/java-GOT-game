@@ -1,3 +1,4 @@
+package Model;
 
 public class Tank extends Piece{
 	public static final int MAXMOVE = 2;

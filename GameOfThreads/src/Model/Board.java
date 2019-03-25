@@ -1,8 +1,9 @@
+package Model;
 
 public class Board
 {
-    final static int GRID_WIDTH = 11;   //change width and height
-    final static int GRID_HEIGHT = 11;
+    final static int GRID_WIDTH = 11;   //Final board width
+    final static int GRID_HEIGHT = 11;  //Final board height
     Square[][] board;
 
     public Board(int GRID_WIDTH, int GRID_HEIGHT)
@@ -44,15 +45,29 @@ public class Board
     {
         board[y][x].setPiece(piece);
     }
+
+    public boolean validateMove(int newX, int newY)
+    {
+        if(this.getSquare(newX, newY).getIsPlacebale() == false)
+        {
+            return false;
+        }
+    }
     
-    /*
+
     private void initBoard()
     {
-        for (int i=0; i < GRID_WIDTH; i++)
+        int maxWidth = this.getWidth();
+        int maxHeight = this.getHeight();
+
+
+
+        for (int i=2; i <= GRID_WIDTH; i++)
         {
             for (int j=0; j < GRID_HEIGHT; j++)
             {
                 board[j][i] = new Cell(true);
+                board[j][i] = new Square()
             }
         }
         
@@ -83,5 +98,5 @@ public class Board
         }
     }
 }
- */   
+
 }

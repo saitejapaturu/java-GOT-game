@@ -1,3 +1,4 @@
+package Model;
 
 public class Soldier extends Piece{
 	public static final int MAXMOVE = 3;

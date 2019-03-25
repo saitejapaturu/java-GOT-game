@@ -1,3 +1,4 @@
+package Model;
 
 public class Scout extends Piece{
 	public static final int MAXMOVE = 4;
