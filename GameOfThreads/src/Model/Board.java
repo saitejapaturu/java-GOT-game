@@ -9,7 +9,7 @@ public class Board
     public Board(int GRID_WIDTH, int GRID_HEIGHT)
     {
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
-        // initBoard(); create method to initialize board
+        initBoard();
     }
 
     public int getWidth() {
@@ -52,6 +52,7 @@ public class Board
         {
             return false;
         }
+        return false; //test return statement
     }
     
 
@@ -60,43 +61,47 @@ public class Board
         int maxWidth = this.getWidth();
         int maxHeight = this.getHeight();
 
+        int mid;
 
+        if((maxHeight%2) == 0)
+            mid = maxHeight/2;
+        else
+            mid = (maxHeight+1)/2;
 
-        for (int i=2; i <= GRID_WIDTH; i++)
+            //Initialising corner squares;
+        board[mid][1] = new CornerSquare(1,mid);
+        board[mid][11] = new CornerSquare(11,mid);
+        board[1][mid] = new CornerSquare(mid,1);
+        board[11][mid] = new CornerSquare(mid,11);
+
+        // Initialise mid row first;
+        for (int i=2; i < GRID_WIDTH; i++)
         {
-            for (int j=0; j < GRID_HEIGHT; j++)
-            {
-                board[j][i] = new Cell(true);
-                board[j][i] = new Square()
-            }
+            board[mid][i] = new Square(i, mid, true);
+
+            //for simple testing
+            System.out.println("The square created is " + mid + ", " + i);
         }
-        
-        for (int i=1; i < 5; i++)
+
+        for(int a=(maxHeight-1); a>mid; a--)
         {
-            for (int j=1; j<5; j++)
+            int x = maxHeight - a;
+
+            // for the rows 7 to 10
+            for (int i = (mid-x); i < (mid+x); i++)
             {
-                board[j][i] = new Cell(false);
+                board[a][i] = new Square(i, a, true);
             }
-            
-            for (int j=6; j<10; j++)
+
+            // for the rows 2 to 5
+
+            int b = (x+1);
+            for (int i = (mid-x); i < (mid+x); i++)
             {
-                board[j][i] = new Cell(false);
+                board[b][i] = new Square(i, b, true);
             }
+
         }
-        
-        for (int i=6; i < 10; i++)
-        {
-            for (int j=1; j<5; j++)
-            {
-                board[j][i] = new Cell(false);
-            }
-            
-            for (int j=6; j<10; j++)
-            {
-                board[j][i] = new Cell(false);
-            }
-        }
+
     }
-}
-
 }
