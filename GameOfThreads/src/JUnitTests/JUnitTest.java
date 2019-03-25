@@ -1,11 +1,14 @@
-package JUnitTests;
-import model.*;
-import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
+
+//Corrected imports
+import Model.*;
+import View.*;
+import Controller.*;
+
 
 public class JUnitTest {
 	
@@ -16,7 +19,7 @@ public class JUnitTest {
 	@BeforeEach
 	public void setUp() throws Exception
 	{
-		board = new Board(11,11);
+		board = new Board();
 		grid = board.getBoard();
 		
 	}

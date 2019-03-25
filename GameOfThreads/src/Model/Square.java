@@ -2,16 +2,16 @@ package Model;
 
 public class Square
 {
-    private int x;
-    private int y;
+    private final int X;
+    private final int Y;
     private boolean occupied;
     private boolean isPlacebale;
     private Piece piece;
 
-    public Square(int x, int y, boolean isPlacebale)
+    public Square(int X, int Y, boolean isPlacebale)
     {
-        this.x = x;
-        this.y = y;
+        this.X = X;
+        this.Y = Y;
         this.isPlacebale = isPlacebale;
         this.occupied = false;
         this.piece = null;
@@ -29,22 +29,12 @@ public class Square
     
     public int getX()
     {
-        return this.x;
+        return this.X;
     }
     
     public int getY()
     {
-        return this.y;
-    }
-    
-    public void setX(int x)
-    {
-        this.x = x;
-    }
-    
-    public void setY(int y)
-    {
-        this.y = y;
+        return this.Y;
     }
     
     public void setPiece(Piece piece)

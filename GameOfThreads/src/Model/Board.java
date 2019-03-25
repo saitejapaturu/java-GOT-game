@@ -6,7 +6,7 @@ public class Board
     final static int GRID_HEIGHT = 11;  //Final board height
     Square[][] board;
 
-    public Board(int GRID_WIDTH, int GRID_HEIGHT)
+    public Board()
     {
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
         initBoard();
@@ -48,10 +48,13 @@ public class Board
 
     public boolean validateMove(int newX, int newY)
     {
-        if(this.getSquare(newX, newY).getIsPlacebale() == false)
+        if(this.getSquare(newX, newY).getIsPlacebale() == true)
         {
-            return false;
+            return true;
         }
+
+        //Add conditions for players moving on players
+        //Add conditions for player of the characters of the same team to be placed on each other.
         return false; //test return statement
     }
     

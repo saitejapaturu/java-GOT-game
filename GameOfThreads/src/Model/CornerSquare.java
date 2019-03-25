@@ -7,7 +7,7 @@ public class CornerSquare extends Square
 
     public CornerSquare(int x, int y)
     {
-        super(x,y);
+        super(x,y, true);
         this.isCaptured = false;
         this.capturedBy = 0;
     }
