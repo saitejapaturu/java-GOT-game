@@ -6,7 +6,7 @@ public class Soldier extends Piece{
 	public static final int RANGE = 3;
 	public static final int DAMAGE = 2;
 
-	public Soldier(int health, int maxMove, int range, int damage, String id, int x, int y) {
+	public Soldier( String id, int x, int y) {
 		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
 		// TODO Auto-generated constructor stub
 	}
