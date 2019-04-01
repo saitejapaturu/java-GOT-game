@@ -7,6 +7,7 @@ public class Square
     private boolean occupied;
     private boolean isPlacebale;
     private Piece piece;
+    private boolean isCorner;
 
     public Square(int X, int Y, boolean isPlacebale)
     {
@@ -15,6 +16,7 @@ public class Square
         this.isPlacebale = isPlacebale;
         this.occupied = false;
         this.piece = null;
+        this.isCorner = false;
     }
     
     public void setOccupied(boolean status)
@@ -50,6 +52,16 @@ public class Square
     public boolean getIsPlacebale()
     {
         return this.isPlacebale;
+    }
+
+    public boolean getIsCorner()
+    {
+        return this.isCorner;
+    }
+
+    public void setIsCorner(boolean isCorner)
+    {
+        this.isCorner = isCorner;
     }
 
 }
