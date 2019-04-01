@@ -2,7 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43291fc1-f92c-44d2-9838-fffd83e9f9a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfThreads/src/Model/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfThreads/src/Model/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/client/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/client/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/controller/NewGameListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/controller/SquareActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/BoardTestTodd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/Pieces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/PlayerTestTodd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/model/Table.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_Bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_King.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_Knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_Pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_Queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Black_Rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/Frame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/StatusBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_Bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_King.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_Knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_Pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_Queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/bin/view/White_Rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/client/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/controller/NewGameListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/controller/SquareActionListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/BoardTestTodd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/Engine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/Pieces.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/PlayerTestTodd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/model/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_Bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_King.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_Knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_Pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_Queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Black_Rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/Frame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/StatusBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_Bishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_King.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_Knight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_Pawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_Queen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEF_Chess_final/SEF_Chess/src/view/White_Rook.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +79,7 @@
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Model/CornerSquare.java">
-=======
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Controller/GameEngine.java">
 >>>>>>> master
           <provider selected="true" editor-type-id="text-editor">
@@ -83,7 +133,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
->>>>>>> master
         <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Model/Square.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
@@ -209,11 +258,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554095558148" />
-=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554095534162" />
->>>>>>> master
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -278,12 +323,12 @@
       <workItem from="1553817966043" duration="479000" />
       <workItem from="1553897001726" duration="493000" />
       <workItem from="1554005835844" duration="140000" />
-      <workItem from="1554093066237" duration="1574000" />
+      <workItem from="1554093066237" duration="1073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14739000" />
+    <option name="totallyTimeSpent" value="14238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -362,12 +407,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Controller/GameEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-=======
     <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Model/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -443,13 +482,6 @@
             <element signature="e#1088#1089#0" expanded="true" />
             <element signature="e#1142#1143#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameOfThreads/src/Controller/GameEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
