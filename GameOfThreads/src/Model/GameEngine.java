@@ -2,12 +2,13 @@ package Model;
 
 public class GameEngine {
 
-    Player player1;
-    Player player2;
+    private Player player1;
+    private Player player2;
+    private Board board;
 
-    public GameEngine()
+    public GameEngine(Board board)
     {
-        
+        this.board = board;
     }
 
     public void setPlayer(String name, int playerNumber)
