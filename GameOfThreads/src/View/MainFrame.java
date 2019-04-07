@@ -135,6 +135,7 @@ public class MainFrame extends JFrame {
 
 	            for (int i = (mid-x); i < (mid+x + 1); i++)
 	            {
+	            	System.out.println("Squares created are : s1: " + (a-1) + ", " + (i-1) + " and s2: " + (b-1) + ", " + (i-1));
 	        	    squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
 	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (b-1), (i-1), gameEngine, this));
 	                

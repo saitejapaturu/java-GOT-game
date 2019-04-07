@@ -1,5 +1,8 @@
 
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
@@ -15,8 +18,9 @@ public class JUnitTest {
 	Square[][] grid;
 	Square sq;
 	int x,y;
-	Piece piece;
+	Piece piece,mg,sc,sld,sup,tank,as;
 	CornerSquare cS;
+	ArrayList<Piece>pieceL;
 	
 	@BeforeEach
 	public void setUp() throws Exception
@@ -24,10 +28,16 @@ public class JUnitTest {
 		board = new Board(11,11);
 		grid = board.getBoard();
 		
-		sq = new Square(x,y);
+		sq = new Square(2,1, true);
 		cS = new CornerSquare(x, y);
 		
-		
+		mg = new Mage("1", x,y);
+		sc = new Mage("1", x,y);
+		sld = new Mage("1", x,y);
+		sup = new Mage("1", x,y);
+		tank = new Mage("1", x,y);
+		as = new Mage("1", x,y);
+			
 	}
 	
 	// Square Class Tests
@@ -41,8 +51,7 @@ public class JUnitTest {
 	
 	@Test 
 	void checkPos() {
-		sq.setX(2);
-		sq.setY(1);
+		
 		assertTrue(sq.getY() == 1 && sq.getX() == 2);
 	}
 	
@@ -53,18 +62,16 @@ public class JUnitTest {
 		assertNotNull(sq.getPiece() == piece);
 	}
 	
-
-	@Test // To check and see if the square is empty 
-	void checkOccupied()
-	{
-		for (int i = 0; i < board.getHeight(); i++)
-		{
-			for (int j = 0; j < board.getWidth(); j++)
-			{
-				Square tempSq = board.getBoard()[j][i];
-				assertTrue(tempSq.getOccupied() == false);
-			}
-		}
+	@Test
+	void placebleTest() {
+		assertTrue(sq.getIsPlacebale());
+		
+	}
+	
+	@Test
+	void cornerTest() {
+		sq.setIsCorner(true);
+		assertTrue(sq.getIsCorner());
 	}
 	
 	//Board Class Tests
@@ -90,10 +97,18 @@ public class JUnitTest {
 		x = 2;
 		y = 3;
 		
-		board.setSquarePiece(x, y, piece);
-		assertTrue(board.getSquarePiece(x, y) != null);
+		board.setSquarePiece(x, y, null);
+		assertTrue(board.getSquarePiece(x, y) == null);
 	}
 	
+	@Test
+	void validateMoveTest() {
+		x = 2;
+		y = 3;
+		
+		board.validateMove(x, y);
+		assertTrue(board.getSquare(x, y).getIsPlacebale() == true);
+	}
 	//CornerSquare Test
 	
 	@Test
@@ -101,5 +116,96 @@ public class JUnitTest {
 		cS.setCaptured(true, 1);
 		assertTrue(cS.getCaptureStatus() == true && cS.getCapturedTeam() == 1);
 
+	}
+	
+	//Piece Test
+	
+	
+	@Test
+	void checkPieces() {
+		pieceL.add(mg);
+		pieceL.add(sc);
+		pieceL.add(sld);
+		pieceL.add(sup);
+		pieceL.add(tank);
+		pieceL.add(as);
+		
+		for(int i =0; i < pieceL.size(); i++) {
+			
+			assertTrue(pieceL.get(i) instanceof Piece);
+			
+		}
+	}
+	
+	@Test
+	void countP() {
+		pieceL.add(mg);
+		pieceL.add(sc);
+		pieceL.add(sld);
+		pieceL.add(sup);
+		pieceL.add(tank);
+		pieceL.add(as);
+		int count = 0;
+		
+		for(int i =0; i < pieceL.size(); i++) {
+			
+			if (pieceL.get(i) instanceof Piece)
+			{
+				count++;
+			}
+			
+		}
+		assertEquals(6, count);
+	}
+	
+	//to Test an individual extended class of piece
+	
+	@Test
+	void positionTest() {
+		x = 2;
+		y = 3;
+		
+		mg.setX(x);
+		mg.setY(y);
+		
+		assertNotNull(mg.getX() == x && mg.getY() == y);
+			
+	}
+	
+	@Test
+	void moveTest() {
+		x = 2;
+		y = 3;
+		
+		int newX = 4;
+		int newY = 5;
+		
+		mg.move(newX, newY);
+		assertTrue(mg.getX() == newX && mg.getY() == newY);
+		
+			
+	}
+	
+	@Test
+	void healthTest() {
+		x = 2;
+		y = 3;
+
+		mg.setHealth(30);
+		assertTrue(mg.getHealth() == 30);
+			
+	}
+	
+	
+	@Test
+	void damageTest() {
+		x = 2;
+		y = 3;
+
+		mg.setHealth(30);
+		mg.takeDamage(2);
+		assertTrue(mg.getHealth() == 28);
+		assertNotNull(mg.getDamage() == 2);
+			
 	}
 }
