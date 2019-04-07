@@ -10,7 +10,7 @@ public class GOTClient {
 
 	public static void main(String[] args) {
 
-		Board board = new Board();
+		Board board = new Board(11,11);
 		//board.newBoard();
 		GameEngine gameEngine = new GameEngine(board);
 
