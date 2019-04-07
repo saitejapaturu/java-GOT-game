@@ -14,6 +14,11 @@ public class GameEngine {
     	
         this.board = new Board();
     }
+    
+    public Board getBoard()
+    {
+    	return this.board;
+    }
 
     public void setPlayer(String name, int playerNumber)
     {

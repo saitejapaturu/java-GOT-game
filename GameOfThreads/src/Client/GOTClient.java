@@ -10,7 +10,7 @@ public class GOTClient {
 
 	public static void main(String[] args) {
 
-		Board board = new Board();
+		
 		//board.newBoard();
 		GameEngine gameEngine = new GameEngine();
 
@@ -20,7 +20,7 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", board, gameEngine);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine);
 
 				//mainFrame.Update("Welcome to the Game Of Threads", 0);
 			}
