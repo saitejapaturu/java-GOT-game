@@ -136,7 +136,7 @@ public class MainFrame extends JFrame {
 	            for (int i = (mid-x); i < (mid+x + 1); i++)
 	            {
 	        	    squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
-	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (i-1), (a-1), gameEngine, this));
+	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (b-1), (i-1), gameEngine, this));
 	                
 	                squares[b-1][i-1].setBackground(Color.YELLOW);
 	                squares[a-1][i-1].setBackground(Color.BLUE);
