@@ -305,7 +305,7 @@ public class MainFrame extends JFrame {
 	        //Initlising normal squares of the diamond block.
 	        //a initialises the rows 1 to 5
 	        // and b initialises 6 to 9
-	        for (int a=1,b=9,low=4,high=6;a>b;a++,b--,low--,high++)
+	        for (int a=1,b=9,low=4,high=6;a<=b;a++,b--,low--,high++)
 	        {
 
 	            for(int i=low; i<=high;i++)
@@ -346,8 +346,6 @@ public class MainFrame extends JFrame {
 	                    Board.add(squares[b][i]);
 	                    Board.add(squares[a][i]);
 
-
-	                    System.out.println("GUI Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
 	                }
 
 	            }
