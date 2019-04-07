@@ -6,7 +6,7 @@ public class Board
     final static int GRID_HEIGHT = 11;  //Final board height
     Square[][] board;
 
-    public Board(int GRID_WIDTH, int GRID_HEIGHT)
+    public Board()
     {
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
         initBoard();
@@ -61,6 +61,7 @@ public class Board
 
     private void initBoard()
     {
+    	System.out.println("Initialising board");
         int max = (this.getWidth() - 1);    // the maximum co-ordinate
 
         int mid;                            //the middle co-ordinate
@@ -84,7 +85,7 @@ public class Board
         //Initlising normal squares of the diamond block.
         //a initialises the rows 1 to 5
         // and b initialises 6 to 9
-        for (int a=1,b=9,low=4,high=6;a>b;a++,b--,low--,high++)
+        for (int a=1,b=9,low=4,high=6;a<=b;a++,b--,low--,high++)
         {
 
             for(int i=low; i<=high;i++)

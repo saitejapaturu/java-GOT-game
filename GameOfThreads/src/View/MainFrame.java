@@ -30,7 +30,8 @@ public class MainFrame extends JFrame {
 		super(title);
 		this.gameEngine = gameEngine;
 		this.gameBoard = board;
-		initialise();
+		//initialise();
+		newInit();
 		setIcons();
 		//createDiamond();
 		add(gui);
@@ -230,4 +231,128 @@ public class MainFrame extends JFrame {
 		   
 		
 	   }
+	 
+	 public void newInit()
+	 {
+		 int maxWidth = gameBoard.getWidth();
+		 int maxHeight = gameBoard.getHeight();
+		  int max = (gameBoard.getWidth() - 1);    // the maximum co-ordinate
+
+	        int mid;                            //the middle co-ordinate
+	        int min = 0;                        //the starting co-ordinate
+
+	        if((max%2) == 0)
+	            mid = max/2;
+	        else
+	            mid = (max+1)/2;
+	        squares = new JButton[maxWidth][maxHeight];
+		       
+			gui.setBorder(new EmptyBorder(4,4,4,4));
+			JToolBar toolbar = new JToolBar();
+			JButton newGame = new JButton("New Game");
+			toolbar.setFloatable(false);
+			gui.add(toolbar, BorderLayout.PAGE_START);
+			
+			
+			 Board = new JPanel(new GridLayout(maxWidth, maxHeight));
+			    Board.setBorder(new LineBorder(Color.BLACK));
+			    gui.add(Board);
+			    
+			    //fills in the board panel with chess squares
+			    Insets buttonMargin = new Insets(0,0,0,0);
+			    ImageIcon icon = new ImageIcon(
+	                    new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+			    
+			    
+		        for (int y = 0; y < squares.length; y++) {
+		            for (int j = 0; j < squares[y].length; j++) {
+		                JButton b = new JButton();
+		                b.setMargin(buttonMargin);
+		                
+		                b.setIcon(icon);
+		                b.setOpaque(false);
+			    		b.setContentAreaFilled(false);
+			    		b.setBorderPainted(false);
+		                squares[j][y] = b;
+	                    Board.add(squares[j][y]);
+		                //adds action listener for square interaction
+		            }
+	        
+	        //creating corner squares
+	        squares[max][mid] = new JButton();
+	        squares[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this));
+            squares[max][mid].setBackground(Color.GREEN);
+            Board.add(squares[max][mid]);
+          
+            squares[min][mid] = new JButton();
+	        squares[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this));
+            squares[min][mid].setBackground(Color.GREEN);
+            Board.add(squares[min][mid]);
+
+            squares[mid][min] = new JButton();
+	        squares[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this));
+            squares[mid][min].setBackground(Color.GREEN);
+            Board.add(squares[mid][min]);
+            
+            squares[mid][max] = new JButton();
+	        squares[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this));
+            squares[mid][max].setBackground(Color.GREEN);
+            Board.add(squares[mid][max]);
+
+
+
+
+	        //Initlising normal squares of the diamond block.
+	        //a initialises the rows 1 to 5
+	        // and b initialises 6 to 9
+	        for (int a=1,b=9,low=4,high=6;a<=b;a++,b--,low--,high++)
+	        {
+	        		//adding to many buttons
+	            for(int i=low; i<=high;i++)
+	            {
+	                if (a==b)
+	                {
+	                    JButton button = new JButton();
+	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this));
+		                button.setBackground(Color.GRAY);
+		                button.setOpaque(true);
+		                button.setContentAreaFilled(true);
+		                button.setBorderPainted(true);
+	                    
+	                    squares[a][i] = button;
+	                    Board.add(squares[a][i]);
+	                }
+	                else
+	                {
+	                    
+	                    JButton button = new JButton();
+	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this));
+		                button.setBackground(Color.GRAY);
+		                button.setOpaque(true);
+		                button.setContentAreaFilled(true);
+		                button.setBorderPainted(true);
+	                    
+	                    squares[a][i] = button;
+	                    
+	                    JButton button2 = new JButton();
+	                    button2.addActionListener(new SquareActionListener(gameBoard, b, i, gameEngine, this));
+		                button2.setBackground(Color.GRAY);
+		                button2.setOpaque(true);
+		                button2.setContentAreaFilled(true);
+		                button2.setBorderPainted(true);
+	                    
+	                    squares[b][i] = button2;
+	                    
+	                    Board.add(squares[b][i]);
+	                    Board.add(squares[a][i]);
+
+	                }
+
+	            }
+
+	        }
+	        
+
+	    }
+	 }
 }

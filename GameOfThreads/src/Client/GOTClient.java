@@ -10,9 +10,9 @@ public class GOTClient {
 
 	public static void main(String[] args) {
 
-		Board board = new Board(11,11);
+		
 		//board.newBoard();
-		GameEngine gameEngine = new GameEngine(board);
+		GameEngine gameEngine = new GameEngine();
 
 
 		SwingUtilities.invokeLater(new Runnable()
@@ -20,7 +20,7 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", board, gameEngine);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine);
 
 				//mainFrame.Update("Welcome to the Game Of Threads", 0);
 			}
