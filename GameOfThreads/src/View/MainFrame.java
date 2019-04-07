@@ -1,5 +1,6 @@
 package View;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -12,6 +13,8 @@ import Model.CornerSquare;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainFrame extends JFrame {
 	
@@ -20,6 +23,7 @@ public class MainFrame extends JFrame {
 	private GameEngine gameEngine;
 	private JButton[][] squares;
 	private Model.Board gameBoard;
+	 public ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
 
 	public MainFrame(String title, Model.Board board, GameEngine gameEngine)
 	{
@@ -27,6 +31,7 @@ public class MainFrame extends JFrame {
 		this.gameEngine = gameEngine;
 		this.gameBoard = board;
 		initialise();
+		setIcons();
 		//createDiamond();
 		add(gui);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,7 +45,8 @@ public class MainFrame extends JFrame {
 
 	public void initialise()
 	{
-		 int maxWidth = gameBoard.getWidth();
+		
+			int maxWidth = gameBoard.getWidth();
 	        int maxHeight = gameBoard.getHeight();
 
 	        int mid;
@@ -64,24 +70,21 @@ public class MainFrame extends JFrame {
 		    
 		    //fills in the board panel with chess squares
 		    Insets buttonMargin = new Insets(0,0,0,0);
+		    ImageIcon icon = new ImageIcon(
+                    new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+		    
+		    
 		    
 		    
 	        for (int i = 0; i < squares.length; i++) {
 	            for (int j = 0; j < squares[i].length; j++) {
 	                JButton b = new JButton();
 	                b.setMargin(buttonMargin);
-	                //uses a transparent icon to allow for a background to be used as colour
-	                //set to same size as chess pieces
-	                ImageIcon icon = new ImageIcon(
-	                        new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+	                
 	                b.setIcon(icon);
-	                if ((j % 2 == 1 && i % 2 == 1)
-	                        //) {
-	                        || (j % 2 == 0 && i % 2 == 0)) {
-	                   // b.setBackground(Color.WHITE);
-	                } else {
-	                  //  b.setBackground(Color.GRAY);
-	                }
+	                b.setOpaque(false);
+		    		b.setContentAreaFilled(false);
+		    		b.setBorderPainted(false);
 	                squares[j][i] = b;
 	                //adds action listener for square interaction
 	            //    squares[j][i].addActionListener(new SquareActionListener(gameBoard, j, i, gameEngine, this));
@@ -113,8 +116,7 @@ public class MainFrame extends JFrame {
 	            b.setMargin(buttonMargin);
 	            //uses a transparent icon to allow for a background to be used as colour
                 //set to same size as pieces
-	            ImageIcon icon = new ImageIcon(
-                        new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+	            
                // b.setIcon(icon);
                 //adding squares to board and assigning action listener
                 squares[mid-1][i-1] = b;
@@ -133,30 +135,32 @@ public class MainFrame extends JFrame {
 
 	            for (int i = (mid-x); i < (mid+x + 1); i++)
 	            {
-	                JButton clickable = new JButton();
-		            clickable.setMargin(buttonMargin);
-		            //uses a transparent icon to allow for a background to be used as colour
-	                //set to same size as pieces
-		            ImageIcon icon = new ImageIcon(
-	                        new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
-	                clickable.setIcon(icon);
-	                clickable.setBackground(Color.WHITE);
-	                //adding squares to board and assigning action listener
-	               // squares[a-1][i-1] = clickable;
+	        	    squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
 	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (b-1), (i-1), gameEngine, this));
-	                squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
-	                squares[b-1][i-1].setBackground(Color.BLACK);
-	                squares[a-1][i-1].setBackground(Color.BLACK);
+	                
+	                squares[b-1][i-1].setBackground(Color.YELLOW);
+	                squares[a-1][i-1].setBackground(Color.BLUE);
+	                
+	                squares[b-1][i-1].setOpaque(true);
+	                squares[a-1][i-1].setOpaque(true);
+	                
+	                squares[b-1][i-1].setContentAreaFilled(true);
+	                squares[a-1][i-1].setContentAreaFilled(true);
+	                
+	                squares[b-1][i-1].setBorderPainted(true);
+	                squares[a-1][i-1].setBorderPainted(true);
+	                
+	                	    		
 	            }
-	            for(int i =0;i<maxWidth;i++)
-		        {
-		        	for(int j =0;j<maxHeight;j++)
-		        	{
-		        		Board.add(squares[j][i]);
-		        	}
-		        }
+	            
 	        }
-
+	        for(int i =0;i<maxWidth;i++)
+	        {
+	        	for(int j =0;j<maxHeight;j++)
+	        	{
+	        		Board.add(squares[j][i]);
+	        	}
+	        }
 	}
 
 	//takes input of players and passes them to gameEngine for player object creation
@@ -177,5 +181,52 @@ public class MainFrame extends JFrame {
 		mainFrame.setLocation(x, y);
 	}
 	
+	public void setIcons()
+	{
+		createImages();
+	   	for (int i = 0; i < squares.length; i++) {
+            for (int j = 0; j < squares[i].length; j++) {
+            	squares[i][j].setIcon(null);
+            }
+            }
+        squares[0][5].setIcon(Assasin);
+        squares[1][4].setIcon(Assasin);
+        squares[1][6].setIcon(Mage);
+        squares[2][3].setIcon(Mage);
+        squares[2][7].setIcon(Scout);
+        squares[3][2].setIcon(Scout);
+        
+        squares[10][5].setIcon(Soldier);
+        squares[9][4].setIcon(Soldier);
+        squares[9][6].setIcon(Support);
+        squares[8][3].setIcon(Support);
+        squares[8][7].setIcon(Tank);
+        squares[7][2].setIcon(Tank);
+	}
 	
+	private final void createImages() {
+	       Assasin = createImageIcon("images/Black_Rook.png","Assasin");
+	       Mage = createImageIcon("images/Black_Bishop.png","Mage");
+	       Scout = createImageIcon("images/Black_Knight.png","Scout");
+	       
+	       Soldier = createImageIcon("images/White_Rook.png","Soldier");
+	       Support = createImageIcon("images/White_Bishop.png","Support");
+	       Tank = createImageIcon("images/White_Knight.png","Tank");
+	    }
+	
+	 protected ImageIcon createImageIcon(String path,String description)
+	   {
+		 	
+		   java.net.URL imgURL = getClass().getResource(path);
+		   if (imgURL != null) 
+		   {
+			   return new ImageIcon(imgURL, description);
+		   } else 
+		   {
+			   System.err.println("Couldn't find file: " + path);
+			   return null;
+		   }
+		   
+		
+	   }
 }
