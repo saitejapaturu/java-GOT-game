@@ -27,13 +27,17 @@ public class SquareActionListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("Square: " + x + ", " + y + "was clicked");
-		/*
+		int pieceX = turnController.getSelectedSquare().getX();
+		int pieceY = turnController.getSelectedSquare().getX();
+		int player = turnController.getTurn();
+
 		if(gameBoard.getSquarePiece(x, y) != null)
 		{
 			//checks piece belongs to player whose turn it is
-			if(gameBoard.getSquarePiece(x, y).getPlayer() == gameEngine.getPlayerTurn())
+			if(gameEngine.validMove(gameBoard, pieceX, pieceY, x, y, player))
 			{
-				//set selected square
+				gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
+				mainFrame.movePiece(pieceX, pieceY, x, y);
 			}
 			//if it is not their piece/turn
 			else
@@ -45,7 +49,9 @@ public class SquareActionListener implements ActionListener {
 		{
 			//functionality for if it is enemy piece and second click
 		}
-		*/
+		
+		mainFrame.revalidate();
+		
 
 	}
 
