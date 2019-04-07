@@ -72,13 +72,13 @@ public class Board
             mid = (max+1)/2;
 
         //Initialising corner squares;
-        board[max][mid] = new CornerSquare(mid, max);
+        board[max][mid] = new CornerSquare(max, mid);
 
-        board[min][mid] = new CornerSquare(mid, min);
+        board[min][mid] = new CornerSquare(min, mid);
 
-        board[mid][min] = new CornerSquare(min, mid);
+        board[mid][min] = new CornerSquare(mid, min);
 
-        board[mid][max] = new CornerSquare(max, min);
+        board[mid][max] = new CornerSquare(mid, max);
 
 
         //Initlising normal squares of the diamond block.
@@ -91,12 +91,12 @@ public class Board
             {
                 if (a==b)
                 {
-                    board[a][i] =new Square(i, a, true);
+                    board[a][i] =new Square( a, i,true);
                 }
                 else
                 {
-                    board[a][i] =new Square(i, a, true);
-                    board[b][i] =new Square(i, b, true);
+                    board[a][i] =new Square(a, i, true);
+                    board[b][i] =new Square(b, i, true);
 
                     System.out.println("line 101: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
                 }
