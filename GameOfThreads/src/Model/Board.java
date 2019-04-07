@@ -72,15 +72,15 @@ public class Board
             mid = (maxHeight+1)/2;
 
             //Initialising corner squares;
-        board[mid][1] = new CornerSquare(1,mid);
-        board[mid][11] = new CornerSquare(11,mid);
-        board[1][mid] = new CornerSquare(mid,1);
-        board[11][mid] = new CornerSquare(mid,11);
+        board[mid-1][1-1] = new CornerSquare(1-1,mid-1);
+        board[mid-1][11-1] = new CornerSquare(11-1,mid-1);
+        board[1-1][mid-1] = new CornerSquare(mid-1,1-1);
+        board[11-1][mid-1] = new CornerSquare(mid-1,11-1);
 
         // Initialise mid row first;
         for (int i=2; i < GRID_WIDTH; i++)
         {
-            board[mid][i] = new Square(i, mid, true);
+            board[mid-1][i-1] = new Square(i-1, mid-1, true);
 
             //for simple testing
             System.out.println("The square created is " + mid + ", " + i);
@@ -89,19 +89,17 @@ public class Board
         for(int a=(maxHeight-1); a>mid; a--)
         {
             int x = maxHeight - a;
-
-            // for the rows 7 to 10
-            for (int i = (mid-x); i < (mid+x); i++)
-            {
-                board[a][i] = new Square(i, a, true);
-            }
-
             // for the rows 2 to 5
-
             int b = (x+1);
+
+
             for (int i = (mid-x); i < (mid+x); i++)
             {
-                board[b][i] = new Square(i, b, true);
+                // for the rows 7 to 10
+                board[a-1][i-1] = new Square(i-1, a-1, true);
+                
+                // for the rows 2 to 5
+                board[b-1][i-1] = new Square(i-1, b-1, true);
             }
 
         }
