@@ -13,6 +13,7 @@ public class SquareActionListener implements ActionListener {
 	int y;
 	GameEngine gameEngine;
 	MainFrame mainFrame;
+	TurnController turnController;
 
 	public SquareActionListener(Board gameBoard, int x, int y, GameEngine gameEngine, MainFrame mainFrame) {
 		this.gameBoard = gameBoard;
@@ -25,6 +26,7 @@ public class SquareActionListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("Square " + x + ", " + y + "was clicked");
+		/*
 		if(gameBoard.getSquarePiece(x, y) != null)
 		{
 			//checks piece belongs to player whose turn it is
@@ -38,11 +40,11 @@ public class SquareActionListener implements ActionListener {
 				System.out.println("Not your turn");
 			}
 		}
-		else if(gameBoard.getSquarePiece)
+		else if(turnController.getClick() == 1)
 		{
 			//functionality for if it is enemy piece and second click
 		}
-		
+		*/
 
 	}
 
