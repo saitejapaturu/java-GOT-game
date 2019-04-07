@@ -307,7 +307,7 @@ public class MainFrame extends JFrame {
 	        // and b initialises 6 to 9
 	        for (int a=1,b=9,low=4,high=6;a<=b;a++,b--,low--,high++)
 	        {
-
+	        		//adding to many buttons
 	            for(int i=low; i<=high;i++)
 	            {
 	                if (a==b)
