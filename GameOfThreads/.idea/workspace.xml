@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameOfThreads.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfThreads.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/GOTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/GOTClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Board.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,18 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,13 +31,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JUnitTests/JUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="270">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+              <folding>
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#370#371#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#715#716#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,6 +130,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
         <option value="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" />
+        <option value="$PROJECT_DIR$/src/Model/Board.java" />
       </list>
     </option>
   </component>
@@ -136,7 +145,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Course" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,7 +192,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,7 +202,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554626094506" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554658248716" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -214,7 +223,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JUnitTest">
+  <component name="RunManager" selected="Application.GOTClient">
+    <configuration name="GOTClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.GOTClient" />
+      <module name="GameOfThreads" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GameOfThreads" />
       <option name="PACKAGE_NAME" value="" />
@@ -236,6 +258,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GOTClient" />
         <item itemvalue="JUnit.JUnitTest" />
         <item itemvalue="JUnit.JUnitTest.squarePieceTest" />
       </list>
@@ -259,12 +282,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1374000" />
+    <option name="totallyTimeSpent" value="1716000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -272,10 +296,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Learn" order="7" />
-      <window_info anchor="bottom" id="Dependency Viewer" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34545454" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,6 +310,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32959184" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -370,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JUnitTests/JUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
