@@ -4,6 +4,8 @@ public class GameEngine {
 
     private Player player1;
     private Player player2;
+    //player turn set to 1 for player 1 and 2 for player 2
+    private int playerTurn = 1;
     private Board board;
 
     public GameEngine(Board board)
@@ -23,5 +25,15 @@ public class GameEngine {
         {
             player2 = new Player(name, 2);
         }
+    }
+    
+    public int getPlayerTurn() 
+    {
+    	return this.playerTurn;
+    }
+    
+    public void setPlayeturn(int player)
+    {
+    	this.playerTurn = player;
     }
 }
