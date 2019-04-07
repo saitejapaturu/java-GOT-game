@@ -319,20 +319,20 @@ public class MainFrame extends JFrame {
 	        		//adding to many buttons
 	            for(int i=low; i<=high;i++)
 	            {
-	                if (a==b)
+	                if (a==(b-2))
 	                {
 	                    JButton button = new JButton();
-	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this));
+	                    button.addActionListener(new SquareActionListener(gameBoard, a+1, i, gameEngine, this));
 		                button.setBackground(Color.GRAY);
 		                button.setOpaque(true);
 		                button.setContentAreaFilled(true);
 		                button.setBorderPainted(true);
 	                    
-	                    squares[a][i] = button;
+	                    squares[a+1][i] = button;
 	                }
-	                else
-	                {
 	                    
+	                if(high!=10 &&low!=0)
+	                {
 	                    JButton button = new JButton();
 	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this));
 		                button.setBackground(Color.GRAY);
@@ -350,7 +350,6 @@ public class MainFrame extends JFrame {
 		                button2.setBorderPainted(true);
 	                    
 	                    squares[b][i] = button2;
-	                    
 
 	                }
 
