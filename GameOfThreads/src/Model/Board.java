@@ -85,31 +85,23 @@ public class Board
         //Initlising normal squares of the diamond block.
         //a initialises the rows 1 to 5
         // and b initialises 6 to 9
-        for (int a=1,b=9,low=4,high=6;a<=b;a++,b--,low--,high++)
+        for (int a=1,b=9,low=4,high=6;a<b;a++,b--,low--,high++)
         {
 
             for(int i=low; i<=high;i++)
             {
                 //For middle row
-                if (a==b)
+                if (a==(b-2))
                 {
-                    // For making sure corner squares aren't created again.
-                    if(low!= 0 && high!=10)
-                    {
-                        board[a][i] = new Square(a, i, true);
-                    }
-                }
-                else
-                {
-                    board[a][i] =new Square(a, i, true);
-                    board[b][i] =new Square(b, i, true);
-
-                    System.out.println("line 101: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
+                    board[a+1][i] = new Square((a+1), i, true);
+                    System.out.println("line 97: Squares created are : s1: " + (a+1) + ", " + i);
                 }
 
+                board[a][i] =new Square(a, i, true);
+                board[b][i] =new Square(b, i, true);
+
+                System.out.println("line 103: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
             }
-
         }
-
     }
 }
