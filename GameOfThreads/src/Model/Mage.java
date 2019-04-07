@@ -1,4 +1,5 @@
-package model;
+package Model;
+
 
 public class Mage extends Piece {
 
@@ -6,8 +7,9 @@ public class Mage extends Piece {
 	public static final int HEALTH = 5;
 	public static final int RANGE = 2;
 	public static final int DAMAGE = 1;
-	
-	public Mage(String id, int x, int y) {
+
+	public Mage(String id, int x, int y)
+	{
 		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
 	}
 
