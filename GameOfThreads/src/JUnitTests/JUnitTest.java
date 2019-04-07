@@ -25,7 +25,7 @@ public class JUnitTest {
 	@BeforeEach
 	public void setUp() throws Exception
 	{
-		board = new Board(11,11);
+		board = new Board();
 		grid = board.getBoard();
 		
 		sq = new Square(2,1, true);
