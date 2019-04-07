@@ -89,18 +89,16 @@ public class Board
         for(int a=(maxHeight-1); a>mid; a--)
         {
             int x = maxHeight - a;
-
-            // for the rows 7 to 10
-            for (int i = (mid-x); i < (mid+x); i++)
-            {
-                board[a-1][i-1] = new Square(i-1, a-1, true);
-            }
-
             // for the rows 2 to 5
-
             int b = (x+1);
+
+
             for (int i = (mid-x); i < (mid+x); i++)
             {
+                // for the rows 7 to 10
+                board[a-1][i-1] = new Square(i-1, a-1, true);
+                
+                // for the rows 2 to 5
                 board[b-1][i-1] = new Square(i-1, b-1, true);
             }
 
