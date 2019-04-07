@@ -27,6 +27,7 @@ public class MainFrame extends JFrame {
 		this.gameEngine = gameEngine;
 		this.gameBoard = board;
 		initialise();
+		//createDiamond();
 		add(gui);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -34,7 +35,7 @@ public class MainFrame extends JFrame {
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
-
+		
 	}
 
 	public void initialise()
@@ -63,6 +64,8 @@ public class MainFrame extends JFrame {
 		    
 		    //fills in the board panel with chess squares
 		    Insets buttonMargin = new Insets(0,0,0,0);
+		    
+		    
 	        for (int i = 0; i < squares.length; i++) {
 	            for (int j = 0; j < squares[i].length; j++) {
 	                JButton b = new JButton();
@@ -75,30 +78,34 @@ public class MainFrame extends JFrame {
 	                if ((j % 2 == 1 && i % 2 == 1)
 	                        //) {
 	                        || (j % 2 == 0 && i % 2 == 0)) {
-	                    b.setBackground(Color.WHITE);
+	                   // b.setBackground(Color.WHITE);
 	                } else {
-	                    b.setBackground(Color.GRAY);
+	                  //  b.setBackground(Color.GRAY);
 	                }
 	                squares[j][i] = b;
 	                //adds action listener for square interaction
-	                squares[j][i].addActionListener(new SquareActionListener(gameBoard, j, i, gameEngine, this));
+	            //    squares[j][i].addActionListener(new SquareActionListener(gameBoard, j, i, gameEngine, this));
 	            }
 	            
 	        }
-	        for(int i =0;i<6;i++)
-	        {
-	        	for(int j =0;j<6;j++)
-	        	{
-	        		Board.add(squares[j][i]);
-	        	}
-	        }
-	        /*
-	            //Initialising corner squares;
-	        gameBoard[mid-1][1-1] = new CornerSquare(1-1,mid-1);
-	        gameBoard[mid-1][11-1] = new CornerSquare(11-1,mid-1);
-	        gameBoard[1-1][mid-1] = new CornerSquare(mid-1,1-1);
-	        gameBoard[11-1][mid-1] = new CornerSquare(mid-1,11-1);
-*/
+	        
+	        //creating corner squares
+	        squares[mid-1][0] = new JButton();
+	        squares[mid-1][0].addActionListener(new SquareActionListener(gameBoard, mid - 1, 0, gameEngine, this));
+            squares[mid-1][0].setBackground(Color.GREEN);
+            
+            squares[mid-1][10] = new JButton();
+	        squares[mid-1][10].addActionListener(new SquareActionListener(gameBoard, mid - 1, 10, gameEngine, this));
+            squares[mid-1][10].setBackground(Color.GREEN);
+            
+            squares[0][mid-1] = new JButton();
+	        squares[0][mid-1].addActionListener(new SquareActionListener(gameBoard, 0, mid - 1, gameEngine, this));
+            squares[0][mid-1].setBackground(Color.GREEN);
+            
+            squares[10][mid-1] = new JButton();
+	        squares[10][mid-1].addActionListener(new SquareActionListener(gameBoard, 10, mid - 1, gameEngine, this));
+            squares[10][mid-1].setBackground(Color.GREEN);
+     
 	        // Initialise mid row first;
 	        for (int i=2; i < maxWidth; i++)
 	        {
@@ -108,12 +115,11 @@ public class MainFrame extends JFrame {
                 //set to same size as pieces
 	            ImageIcon icon = new ImageIcon(
                         new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
-                b.setIcon(icon);
-                b.setBackground(Color.WHITE);
+               // b.setIcon(icon);
                 //adding squares to board and assigning action listener
-                squares[mid][i] = b;
-                squares[mid][i].addActionListener(new SquareActionListener(gameBoard, mid, i, gameEngine, this));
-                
+                squares[mid-1][i-1] = b;
+                squares[mid-1][i-1].addActionListener(new SquareActionListener(gameBoard, mid-1, i-1, gameEngine, this));
+                squares[mid-1][i-1].setBackground(Color.WHITE);
 	            //for simple testing
 	            System.out.println("The square added to gui is" + mid + ", " + i);
 	        }
@@ -125,7 +131,7 @@ public class MainFrame extends JFrame {
 	            int b = (x+1);
 
 
-	            for (int i = (mid-x); i < (mid+x); i++)
+	            for (int i = (mid-x); i < (mid+x + 1); i++)
 	            {
 	                JButton clickable = new JButton();
 		            clickable.setMargin(buttonMargin);
@@ -136,11 +142,19 @@ public class MainFrame extends JFrame {
 	                clickable.setIcon(icon);
 	                clickable.setBackground(Color.WHITE);
 	                //adding squares to board and assigning action listener
-	                squares[a-1][i-1] = clickable;
-	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
-	                
+	               // squares[a-1][i-1] = clickable;
+	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (b-1), (i-1), gameEngine, this));
+	                squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
+	                squares[b-1][i-1].setBackground(Color.BLACK);
+	                squares[a-1][i-1].setBackground(Color.BLACK);
 	            }
-
+	            for(int i =0;i<maxWidth;i++)
+		        {
+		        	for(int j =0;j<maxHeight;j++)
+		        	{
+		        		Board.add(squares[j][i]);
+		        	}
+		        }
 	        }
 
 	}
@@ -162,4 +176,6 @@ public class MainFrame extends JFrame {
 		int y = (int) ((dimension.getHeight() - mainFrame.getHeight()) / 2);
 		mainFrame.setLocation(x, y);
 	}
+	
+	
 }
