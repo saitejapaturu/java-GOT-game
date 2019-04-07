@@ -61,45 +61,46 @@ public class Board
 
     private void initBoard()
     {
-        int maxWidth = this.getWidth();
-        int maxHeight = this.getHeight();
+        int max = (this.getWidth() - 1);    // the maximum co-ordinate
 
-        int mid;
+        int mid;                            //the middle co-ordinate
+        int min = 0;                        //the starting co-ordinate
 
-        if((maxHeight%2) == 0)
-            mid = maxHeight/2;
+        if((max%2) == 0)
+            mid = max/2;
         else
-            mid = (maxHeight+1)/2;
+            mid = (max+1)/2;
 
-            //Initialising corner squares;
-        board[mid-1][1-1] = new CornerSquare(1-1,mid-1);
-        board[mid-1][11-1] = new CornerSquare(11-1,mid-1);
-        board[1-1][mid-1] = new CornerSquare(mid-1,1-1);
-        board[11-1][mid-1] = new CornerSquare(mid-1,11-1);
+        //Initialising corner squares;
+        board[max][mid] = new CornerSquare(mid, max);
 
-        // Initialise mid row first;
-        for (int i=2; i < GRID_WIDTH; i++)
+        board[min][mid] = new CornerSquare(mid, min);
+
+        board[mid][min] = new CornerSquare(min, mid);
+
+        board[mid][max] = new CornerSquare(max, min);
+
+
+        //Initlising normal squares of the diamond block.
+        //a initialises the rows 1 to 5
+        // and b initialises 6 to 9
+        for (int a=1,b=9,low=4,high=6;a>b;a++,b--,low--,high++)
         {
-            board[mid-1][i-1] = new Square(i-1, mid-1, true);
 
-            //for simple testing
-            System.out.println("The square created is " + mid + ", " + i);
-        }
-
-        for(int a=(maxHeight-1); a>mid; a--)
-        {
-            int x = maxHeight - a;
-            // for the rows 2 to 5
-            int b = (x+1);
-
-
-            for (int i = (mid-x); i < (mid+x); i++)
+            for(int i=low; i<=high;i++)
             {
-                // for the rows 7 to 10
-                board[a-1][i-1] = new Square(i-1, a-1, true);
-                
-                // for the rows 2 to 5
-                board[b-1][i-1] = new Square(i-1, b-1, true);
+                if (a==b)
+                {
+                    board[a][i] =new Square(i, a, true);
+                }
+                else
+                {
+                    board[a][i] =new Square(i, a, true);
+                    board[b][i] =new Square(i, b, true);
+
+                    System.out.println("line 101: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
+                }
+
             }
 
         }
