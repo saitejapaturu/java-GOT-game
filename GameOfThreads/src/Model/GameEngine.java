@@ -8,9 +8,11 @@ public class GameEngine {
     private int playerTurn = 1;
     private Board board;
 
-    public GameEngine(Board board)
+    public GameEngine()
     {
-        this.board = board;
+    	//create new board here
+    	
+        this.board = new Board();
     }
 
     public void setPlayer(String name, int playerNumber)
