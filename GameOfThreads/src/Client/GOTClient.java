@@ -10,9 +10,9 @@ public class GOTClient {
 
 	public static void main(String[] args) {
 
-		Board board = new Board(11,11);
+		Board board = new Board();
 		//board.newBoard();
-		GameEngine gameEngine = new GameEngine(board);
+		GameEngine gameEngine = new GameEngine();
 
 
 		SwingUtilities.invokeLater(new Runnable()
