@@ -6,7 +6,7 @@ public class Board
     final static int GRID_HEIGHT = 11;  //Final board height
     Square[][] board;
 
-    public Board()
+    public Board(int GRID_WIDTH, int GRID_HEIGHT)
     {
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
         initBoard();
