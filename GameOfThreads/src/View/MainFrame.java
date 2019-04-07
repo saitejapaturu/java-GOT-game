@@ -274,7 +274,6 @@ public class MainFrame extends JFrame {
 			    		b.setContentAreaFilled(false);
 			    		b.setBorderPainted(false);
 		                squares[j][y] = b;
-	                    Board.add(squares[j][y]);
 		                //adds action listener for square interaction
 		            }
 	        
@@ -282,24 +281,34 @@ public class MainFrame extends JFrame {
 	        squares[max][mid] = new JButton();
 	        squares[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this));
             squares[max][mid].setBackground(Color.GREEN);
-            Board.add(squares[max][mid]);
+            
+            squares[max][mid].setOpaque(true);
+            squares[max][mid].setContentAreaFilled(true);
+    		squares[max][mid].setBorderPainted(true);
           
             squares[min][mid] = new JButton();
 	        squares[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this));
             squares[min][mid].setBackground(Color.GREEN);
-            Board.add(squares[min][mid]);
+            
+            squares[min][mid].setOpaque(true);
+            squares[min][mid].setContentAreaFilled(true);
+    		squares[min][mid].setBorderPainted(true);
 
             squares[mid][min] = new JButton();
 	        squares[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this));
             squares[mid][min].setBackground(Color.GREEN);
-            Board.add(squares[mid][min]);
+            
+            squares[mid][min].setOpaque(true);
+            squares[mid][min].setContentAreaFilled(true);
+    		squares[mid][min].setBorderPainted(true);
             
             squares[mid][max] = new JButton();
 	        squares[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this));
             squares[mid][max].setBackground(Color.GREEN);
-            Board.add(squares[mid][max]);
-
-
+            
+            squares[mid][max].setOpaque(true);
+            squares[mid][max].setContentAreaFilled(true);
+    		squares[mid][max].setBorderPainted(true);
 
 
 	        //Initlising normal squares of the diamond block.
@@ -320,7 +329,6 @@ public class MainFrame extends JFrame {
 		                button.setBorderPainted(true);
 	                    
 	                    squares[a][i] = button;
-	                    Board.add(squares[a][i]);
 	                }
 	                else
 	                {
@@ -343,16 +351,22 @@ public class MainFrame extends JFrame {
 	                    
 	                    squares[b][i] = button2;
 	                    
-	                    Board.add(squares[b][i]);
-	                    Board.add(squares[a][i]);
 
 	                }
 
 	            }
 
 	        }
-	        
+	       
+            
 
 	    }
+		        for(int i = 0;i<maxHeight;i++)
+		        {
+		        	for (int j= 0; j<maxWidth;j++)
+		        	{
+		        		Board.add(squares[i][j]);
+		        	}
+		        }
 	 }
 }
