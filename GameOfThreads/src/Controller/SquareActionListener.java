@@ -80,6 +80,7 @@ public class SquareActionListener implements ActionListener {
 		
 		}
 		mainFrame.revalidate();
+		turnController.switchTurn();
 		
 
 	}
