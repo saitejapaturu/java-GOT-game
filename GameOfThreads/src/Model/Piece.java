@@ -65,7 +65,7 @@ public abstract class Piece
             return false;
     }
 
-    private boolean validateMove(Board board, int currentX, int currentY, int newX, int newY)
+    public boolean validateMove(Board board, int currentX, int currentY, int newX, int newY)
     {
         //If the new position already has a character.
         if(board.getSquarePiece(newX, newY) != null)

@@ -33,29 +33,39 @@ public class SquareActionListener implements ActionListener {
 		if(turnController.getClick() == 0)
 		{
 			//if it is firstclick
+			if(gameBoard.getSquarePiece(x,y) != null) {
 		turnController.setSelX(x);
 		turnController.setSelY(y);
 		turnController.setClick(1);
+			}
+			else
+			{
+				turnController.setClick(0);
+				return;
+			}
 		}
-		else if (turnController.getClick()==1){
+		else if (turnController.getClick()==1)
+		{
 		int pieceX = turnController.getSelX();
 		int pieceY = turnController.getSelY();
 		int player = turnController.getTurn();
-		Piece test = gameBoard.getSquarePiece(x, y);
+		Piece test = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY());
 		if(gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()) != null)
 		{
 			//checks piece belongs to player whose turn it is
-			if(gameEngine.validMove(gameBoard, pieceX, pieceY, x, y, player))
+			if(test.validateMove(gameBoard, pieceX, pieceY, x, y))
 			{
 				//moving piece
 				gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
 				mainFrame.movePiece(pieceX, pieceY, x, y);
 				turnController.setClick(0);
+				System.out.println("Valid move");
 			}
-			//if it is not their piece/turn
+			//if validatemove fails
 			else
 			{
-				System.out.println("Not your turn");
+				System.out.println("Not a Valdi Move");
+				turnController.setClick(1);
 			}
 		}
 		else if(turnController.getClick() == 1)
@@ -63,10 +73,14 @@ public class SquareActionListener implements ActionListener {
 			//functionality for if it is enemy piece and second click
 			gameEngine.pieceAttack(gameBoard.getSquarePiece(pieceX, pieceY),x , y);
 		}
+		else
+		{
+			turnController.setClick(0);
+		}
 		
 		}
 		mainFrame.revalidate();
-
+		
 
 	}
 
