@@ -1,3 +1,5 @@
+package JUnitTests;
+
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,12 +33,12 @@ public class JUnitTest {
 		sq = new Square(2,1, true);
 		cS = new CornerSquare(x, y);
 		
-		mg = new Mage("1", x,y);
-		sc = new Mage("1", x,y);
-		sld = new Mage("1", x,y);
-		sup = new Mage("1", x,y);
-		tank = new Mage("1", x,y);
-		as = new Mage("1", x,y);
+		mg = new Mage("1", 1);
+		sc = new Scout("2", 2);
+		sld = new Soldier("3", 1);
+		sup = new Support("4", 2);
+		tank = new Tank("5", 1);
+		as = new Assassin("6", 2);
 			
 	}
 	
@@ -97,8 +99,8 @@ public class JUnitTest {
 		x = 2;
 		y = 3;
 		
-		board.setSquarePiece(x, y, null);
-		assertTrue(board.getSquarePiece(x, y) == null);
+		board.setSquarePiece(x, y, mg);
+		assertTrue(board.getSquarePiece(x, y) != null);
 	}
 	
 	@Test
@@ -155,36 +157,12 @@ public class JUnitTest {
 			}
 			
 		}
-		assertEquals(6, count);
+		assertEquals(5, count);
 	}
 	
 	//to Test an individual extended class of piece
 	
-	@Test
-	void positionTest() {
-		x = 2;
-		y = 3;
-		
-		mg.setX(x);
-		mg.setY(y);
-		
-		assertNotNull(mg.getX() == x && mg.getY() == y);
-			
-	}
 	
-	@Test
-	void moveTest() {
-		x = 2;
-		y = 3;
-		
-		int newX = 4;
-		int newY = 5;
-		
-		mg.move(newX, newY);
-		assertTrue(mg.getX() == newX && mg.getY() == newY);
-		
-			
-	}
 	
 	@Test
 	void healthTest() {
