@@ -54,4 +54,15 @@ public class TurnController {
 	this.click = click;	
 	}
 	
+	public void switchTurn()
+	{
+		if (this.turn == 0)
+		{
+			this.turn = 1;
+		}
+		else
+		{
+			this.turn = 0;
+		}
+	}
 }
