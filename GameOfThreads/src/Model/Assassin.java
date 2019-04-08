@@ -13,7 +13,8 @@ public class Assassin extends Piece {
 	}
 
 	
-	public void attack(int targetX, int targetY) {
+	public void attack(int targetX, int targetY)
+	{
 		
 	}
 	
