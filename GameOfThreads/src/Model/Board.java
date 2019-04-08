@@ -4,9 +4,9 @@ public class Board
 {
     final static int GRID_WIDTH = 11;   //Final board width
     final static int GRID_HEIGHT = 11;  //Final board height
-    Square[][] board;
+    private Square[][] board;
 
-    public Board(int GRID_WIDTH, int GRID_HEIGHT)
+    public Board()
     {
         this.board = new Square[GRID_HEIGHT][GRID_WIDTH];
         initBoard();
@@ -28,17 +28,17 @@ public class Board
     
     public Square getSquare(int x, int y)
     {
-        return board[y][x];
+        return board[x][y];
     }
 
     public Piece getSquarePiece(int x, int y)
     {
-        return board[y][x].getPiece();
+        return board[x][y].getPiece();
     }
 
     public void setSquare(int x, int y, Square square)
     {
-        board[y][x] = square;
+        board[x][y] = square;
     }
 
     public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
@@ -61,48 +61,63 @@ public class Board
 
     private void initBoard()
     {
-        int maxWidth = this.getWidth();
-        int maxHeight = this.getHeight();
+    	System.out.println("Initialising board");
+        int max = (this.getWidth() - 1);    // the maximum co-ordinate
 
-        int mid;
+        int mid;                            //the middle co-ordinate
+        int min = 0;                        //the starting co-ordinate
 
-        if((maxHeight%2) == 0)
-            mid = maxHeight/2;
+        if((max%2) == 0)
+            mid = max/2;
         else
-            mid = (maxHeight+1)/2;
+            mid = (max+1)/2;
 
-            //Initialising corner squares;
-        board[mid-1][1-1] = new CornerSquare(1-1,mid-1);
-        board[mid-1][11-1] = new CornerSquare(11-1,mid-1);
-        board[1-1][mid-1] = new CornerSquare(mid-1,1-1);
-        board[11-1][mid-1] = new CornerSquare(mid-1,11-1);
+        //Initialising corner squares;
+        board[max][mid] = new CornerSquare(max, mid);
 
-        // Initialise mid row first;
-        for (int i=2; i < GRID_WIDTH; i++)
+        board[min][mid] = new CornerSquare(min, mid);
+
+        board[mid][min] = new CornerSquare(mid, min);
+
+        board[mid][max] = new CornerSquare(mid, max);
+
+
+        //Initlising normal squares of the diamond block.
+        //a initialises the rows 1 to 5
+        // and b initialises 6 to 9
+        for (int a=1,b=9,low=4,high=6;a<b;a++,b--,low--,high++)
         {
-            board[mid-1][i-1] = new Square(i-1, mid-1, true);
 
-            //for simple testing
-            System.out.println("The square created is " + mid + ", " + i);
-        }
-
-        for(int a=(maxHeight-1); a>mid; a--)
-        {
-            int x = maxHeight - a;
-            // for the rows 2 to 5
-            int b = (x+1);
-
-
-            for (int i = (mid-x); i < (mid+x); i++)
+            for(int i=low; i<=high;i++)
             {
-                // for the rows 7 to 10
-                board[a-1][i-1] = new Square(i-1, a-1, true);
-                
-                // for the rows 2 to 5
-                board[b-1][i-1] = new Square(i-1, b-1, true);
+                //For middle row
+                if (a==(b-2))
+                {
+                    board[a+1][i] = new Square((a+1), i, true);
+                    System.out.println("line 97: Squares created are : s1: " + (a+1) + ", " + i);
+                }
+
+                board[a][i] =new Square(a, i, true);
+                board[b][i] =new Square(b, i, true);
+
+                System.out.println("line 103: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
             }
-
         }
-
+        
+        board[0][5].setPiece(new Assassin("Assassin", 1));
+        board[1][4].setPiece(new Assassin("Assasin", 2));
+        board[1][6].setPiece(new Mage("Mage", 1));
+        board[2][3].setPiece(new Mage("Mage", 2));
+        board[2][7].setPiece(new Scout("Scout", 1));
+        board[3][2].setPiece(new Scout("Scout", 2));
+        
+        board[10][5].setPiece(new Soldier("Soldier",1));
+        board[9][4].setPiece(new Soldier("Soldier",2));
+        board[9][6].setPiece(new Support("Support",1));
+        board[8][3].setPiece(new Support("Support",2));
+        board[8][7].setPiece(new Tank("Tank",1));
+        board[7][2].setPiece(new Tank("Tank",2));
+        
+        
     }
 }

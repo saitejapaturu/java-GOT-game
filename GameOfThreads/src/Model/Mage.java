@@ -8,17 +8,11 @@ public class Mage extends Piece {
 	public static final int RANGE = 2;
 	public static final int DAMAGE = 1;
 
-	public Mage(String id, int x, int y)
+	public Mage(String id, int player)
 	{
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
+		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, player);
 	}
 
-	@Override
-	public void move(int newX, int newY) {
-		this.setX(newX);
-		this.setY(newY);
-		
-	}
 	
 	public void attack(int targetX, int targetY) {
 		
