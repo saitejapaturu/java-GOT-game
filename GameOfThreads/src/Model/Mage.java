@@ -8,6 +8,7 @@ public class Mage extends Piece {
 	public static final int RANGE = 2;
 	public static final int DAMAGE = 1;
 
+
 	public Mage(String id, int player)
 	{
 		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, player);

@@ -12,11 +12,13 @@ public class Board
         initBoard();
     }
 
-    public int getWidth() {
+    public int getWidth()
+    {
 		return GRID_WIDTH;
 	}
 	
-	public int getHeight() {
+	public int getHeight()
+    {
 		return GRID_HEIGHT;
 	}
     
@@ -46,17 +48,8 @@ public class Board
         board[y][x].setPiece(piece);
     }
 
-    public boolean validateMove(int newX, int newY)
-    {
-        if(this.getSquare(newX, newY).getIsPlacebale() == true)
-        {
-            return true;
-        }
 
-        //Add conditions for players moving on players
-        //Add conditions for player of the characters of the same team to be placed on each other.
-        return false; //test return statement
-    }
+
     
 
     private void initBoard()
@@ -94,13 +87,13 @@ public class Board
                 if (a==(b-2))
                 {
                     board[a+1][i] = new Square((a+1), i, true);
-                    System.out.println("line 97: Squares created are : s1: " + (a+1) + ", " + i);
+                    //System.out.println("line 97: Squares created are : s1: " + (a+1) + ", " + i);
                 }
 
                 board[a][i] =new Square(a, i, true);
                 board[b][i] =new Square(b, i, true);
 
-                System.out.println("line 103: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
+               // System.out.println("line 103: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
             }
         }
         
@@ -119,5 +112,44 @@ public class Board
         board[7][2].setPiece(new Tank("Tank",2));
         
         
+    }
+
+    public boolean attack(int currentX, int currentY, int newX, int newY)
+    {
+        //Pre conditions
+        //Check square
+        if(this.getSquarePiece(newX, newY) == null)
+        {
+            System.err.println("Attacking an empty square");
+            return false;
+        }
+
+        //if attacking character from same team
+        if(this.getSquarePiece(currentX, currentY).getPlayer() == this.getSquarePiece(newX, newY).getPlayer())
+        {
+            System.err.println("Attacking character from your team");
+            return false;
+        }
+
+        this.getSquarePiece(newX, newY).takeDamage(this.getSquarePiece(currentX, currentY).getDamage());
+        System.out.println(this.getSquarePiece(currentX, currentY).getID() + " attacked " + getSquarePiece(newX, newY).getID());
+
+
+        //Post conditions
+        //Update healths to client
+        //Update deaths if killed
+        System.out.println(this.getSquarePiece(newX, newY).getID() + " took " + this.getSquarePiece(currentX, currentY).getDamage() + " damage from " + getSquarePiece(currentX, currentY).getID());
+
+        if(this.getSquarePiece(newX, newY).getHealth() <= 0)
+        {
+            System.out.println(this.getSquarePiece(newX, newY).getID() + " took massive damage and died.");
+            this.setSquarePiece(newX, newY, null);
+        }
+        else
+        {
+            System.out.println(this.getSquarePiece(newX, newY).getID() + " has " + this.getSquarePiece(newX, newY).getHealth() + " health remaining.");
+        }
+
+        return true;
     }
 }
