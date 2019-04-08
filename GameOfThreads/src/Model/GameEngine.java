@@ -55,5 +55,10 @@ public class GameEngine {
     	gameBoard.setSquarePiece(moveX, moveY, movingPiece);
     	gameBoard.setSquarePiece(pieceX, pieceY, null);
     }
+
+	public void pieceAttack(Piece piece, int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
    
 }

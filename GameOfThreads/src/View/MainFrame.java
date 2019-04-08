@@ -6,6 +6,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Controller.SquareActionListener;
+import Controller.TurnController;
 import Model.GameEngine;
 import Model.Square;
 import Model.Board;
@@ -24,12 +25,14 @@ public class MainFrame extends JFrame {
 	private JButton[][] squares;
 	private Model.Board gameBoard;
 	 public ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
+	 private TurnController turnController;
 
-	public MainFrame(String title, Model.Board board, GameEngine gameEngine)
+	public MainFrame(String title, Model.Board board, GameEngine gameEngine, TurnController turnController)
 	{
 		super(title);
 		this.gameEngine = gameEngine;
 		this.gameBoard = board;
+		this.turnController = turnController;
 		Initialise();
 		setIcons();
 		add(gui);
@@ -157,7 +160,7 @@ public class MainFrame extends JFrame {
 	        
 	        //creating corner squares
 	        squares[max][mid] = new JButton();
-	        squares[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this));
+	        squares[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnController));
             squares[max][mid].setBackground(Color.GREEN);
             
             squares[max][mid].setOpaque(true);
@@ -165,7 +168,7 @@ public class MainFrame extends JFrame {
     		squares[max][mid].setBorderPainted(true);
           
             squares[min][mid] = new JButton();
-	        squares[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this));
+	        squares[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnController));
             squares[min][mid].setBackground(Color.GREEN);
             
             squares[min][mid].setOpaque(true);
@@ -173,7 +176,7 @@ public class MainFrame extends JFrame {
     		squares[min][mid].setBorderPainted(true);
 
             squares[mid][min] = new JButton();
-	        squares[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this));
+	        squares[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnController));
             squares[mid][min].setBackground(Color.GREEN);
             
             squares[mid][min].setOpaque(true);
@@ -181,7 +184,7 @@ public class MainFrame extends JFrame {
     		squares[mid][min].setBorderPainted(true);
             
             squares[mid][max] = new JButton();
-	        squares[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this));
+	        squares[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnController));
             squares[mid][max].setBackground(Color.GREEN);
             
             squares[mid][max].setOpaque(true);
@@ -200,7 +203,7 @@ public class MainFrame extends JFrame {
 	                if (a==(b-2))
 	                {
 	                    JButton button = new JButton();
-	                    button.addActionListener(new SquareActionListener(gameBoard, a+1, i, gameEngine, this));
+	                    button.addActionListener(new SquareActionListener(gameBoard, a+1, i, gameEngine, this, turnController));
 		                button.setBackground(Color.GRAY);
 		                button.setOpaque(true);
 		                button.setContentAreaFilled(true);
@@ -212,7 +215,7 @@ public class MainFrame extends JFrame {
 	                if(high!=10 &&low!=0)
 	                {
 	                    JButton button = new JButton();
-	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this));
+	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this, turnController));
 		                button.setBackground(Color.GRAY);
 		                button.setOpaque(true);
 		                button.setContentAreaFilled(true);
@@ -221,7 +224,8 @@ public class MainFrame extends JFrame {
 	                    squares[a][i] = button;
 	                    
 	                    JButton button2 = new JButton();
-	                    button2.addActionListener(new SquareActionListener(gameBoard, b, i, gameEngine, this));
+
+	                    button2.addActionListener(new SquareActionListener(gameBoard, b, i, gameEngine, this, turnController));
 		                button2.setBackground(Color.GRAY);
 		                button2.setOpaque(true);
 		                button2.setContentAreaFilled(true);
