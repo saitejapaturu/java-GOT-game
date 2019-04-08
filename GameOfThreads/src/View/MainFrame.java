@@ -163,17 +163,13 @@ public class MainFrame extends JFrame {
 	        squares[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnController));
             squares[max][mid].setBackground(Color.GREEN);
             
-            squares[max][mid].setOpaque(true);
-            squares[max][mid].setContentAreaFilled(true);
-    		squares[max][mid].setBorderPainted(true);
+            setButtonProperties(squares[max][mid]);
           
             squares[min][mid] = new JButton();
 	        squares[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnController));
             squares[min][mid].setBackground(Color.GREEN);
             
-            squares[min][mid].setOpaque(true);
-            squares[min][mid].setContentAreaFilled(true);
-    		squares[min][mid].setBorderPainted(true);
+            setButtonProperties(squares[min][mid]);
 
             squares[mid][min] = new JButton();
 	        squares[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnController));
@@ -182,14 +178,13 @@ public class MainFrame extends JFrame {
             squares[mid][min].setOpaque(true);
             squares[mid][min].setContentAreaFilled(true);
     		squares[mid][min].setBorderPainted(true);
+    		setButtonProperties(squares[mid][min]);
             
             squares[mid][max] = new JButton();
 	        squares[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnController));
             squares[mid][max].setBackground(Color.GREEN);
-            
-            squares[mid][max].setOpaque(true);
-            squares[mid][max].setContentAreaFilled(true);
-    		squares[mid][max].setBorderPainted(true);
+           
+    		setButtonProperties(squares[mid][max]);
 
 
 	        //Initlising normal squares of the diamond block.
@@ -205,9 +200,7 @@ public class MainFrame extends JFrame {
 	                    JButton button = new JButton();
 	                    button.addActionListener(new SquareActionListener(gameBoard, a+1, i, gameEngine, this, turnController));
 		                button.setBackground(Color.GRAY);
-		                button.setOpaque(true);
-		                button.setContentAreaFilled(true);
-		                button.setBorderPainted(true);
+		                setButtonProperties(button);
 	                    
 	                    squares[a+1][i] = button;
 	                }
@@ -217,9 +210,7 @@ public class MainFrame extends JFrame {
 	                    JButton button = new JButton();
 	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this, turnController));
 		                button.setBackground(Color.GRAY);
-		                button.setOpaque(true);
-		                button.setContentAreaFilled(true);
-		                button.setBorderPainted(true);
+		                setButtonProperties(button);
 	                    
 	                    squares[a][i] = button;
 	                    
@@ -227,9 +218,7 @@ public class MainFrame extends JFrame {
 
 	                    button2.addActionListener(new SquareActionListener(gameBoard, b, i, gameEngine, this, turnController));
 		                button2.setBackground(Color.GRAY);
-		                button2.setOpaque(true);
-		                button2.setContentAreaFilled(true);
-		                button2.setBorderPainted(true);
+		                setButtonProperties(button2);
 	                    
 	                    squares[b][i] = button2;
 
@@ -256,5 +245,12 @@ public class MainFrame extends JFrame {
 	   {
 		   squares[moveX][moveY].setIcon(squares[pieceX][pieceY].getIcon());
 		   squares[pieceX][pieceY].setIcon(null);
+	   }
+	   
+	   public void setButtonProperties(JButton button)
+	   {
+		   button.setOpaque(true);
+           button.setContentAreaFilled(true);
+           button.setBorderPainted(true);
 	   }
 }
