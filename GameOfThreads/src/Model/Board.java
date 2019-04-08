@@ -4,7 +4,7 @@ public class Board
 {
     final static int GRID_WIDTH = 11;   //Final board width
     final static int GRID_HEIGHT = 11;  //Final board height
-    Square[][] board;
+    private Square[][] board;
 
     public Board()
     {
@@ -28,17 +28,17 @@ public class Board
     
     public Square getSquare(int x, int y)
     {
-        return board[y][x];
+        return board[x][y];
     }
 
     public Piece getSquarePiece(int x, int y)
     {
-        return board[y][x].getPiece();
+        return board[x][y].getPiece();
     }
 
     public void setSquare(int x, int y, Square square)
     {
-        board[y][x] = square;
+        board[x][y] = square;
     }
 
     public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
@@ -103,5 +103,21 @@ public class Board
                 System.out.println("line 103: Squares created are : s1: " + a + ", " + i + " and s2: " + b + ", " + i);
             }
         }
+        
+        board[0][5].setPiece(new Assassin("Assassin", 1));
+        board[1][4].setPiece(new Assassin("Assasin", 2));
+        board[1][6].setPiece(new Mage("Mage", 1));
+        board[2][3].setPiece(new Mage("Mage", 2));
+        board[2][7].setPiece(new Scout("Scout", 1));
+        board[3][2].setPiece(new Scout("Scout", 2));
+        
+        board[10][5].setPiece(new Soldier("Soldier",1));
+        board[9][4].setPiece(new Soldier("Soldier",2));
+        board[9][6].setPiece(new Support("Support",1));
+        board[8][3].setPiece(new Support("Support",2));
+        board[8][7].setPiece(new Tank("Tank",1));
+        board[7][2].setPiece(new Tank("Tank",2));
+        
+        
     }
 }

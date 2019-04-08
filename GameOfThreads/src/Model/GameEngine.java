@@ -43,4 +43,22 @@ public class GameEngine {
     {
     	this.playerTurn = player;
     }
+    
+    public boolean validMove(Board gameBoard, int pieceX, int pieceY, int moveX, int moveY, int player)
+    {
+    	return true;
+    }
+    		
+    public void movePiece(Board gameBoard, int pieceX, int pieceY, int moveX, int moveY)
+    {
+    	Piece movingPiece = gameBoard.getSquarePiece(pieceX, pieceY);
+    	gameBoard.setSquarePiece(moveX, moveY, movingPiece);
+    	gameBoard.setSquarePiece(pieceX, pieceY, null);
+    }
+
+	public void pieceAttack(Piece piece, int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+   
 }
