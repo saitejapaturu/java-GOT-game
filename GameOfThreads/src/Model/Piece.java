@@ -67,6 +67,7 @@ public abstract class Piece
 
     public boolean validateMove(Board board, int currentX, int currentY, int newX, int newY)
     {
+        //Pre conditions
         //If the new position already has a character.
         if(board.getSquarePiece(newX, newY) != null)
         {
@@ -85,6 +86,12 @@ public abstract class Piece
             return false;
         }
 
+        //Checks if the move is out of range.
+        if(countMoveLen(currentX, currentY, newX, newY) > range)
+        {
+            System.err.println("Move length is greater than the range of the character.");
+            return false;
+        }
         //If new position is not placeable.
         if(board.getSquare(newX, newY).getIsPlacebale() == false)
         {
@@ -95,5 +102,49 @@ public abstract class Piece
         //Add conditions for players moving on players
         //Add conditions for player of the characters of the same team to be placed on each other.
         return true; //test return statement
+    }
+
+    //Counts the movement length to check if it fits the character's range.
+    private int countMoveLen(int currentX, int currentY, int newX, int newY)
+    {
+        int maxX, minX, xDiff;
+        int maxY, minY, yDiff;
+
+
+        if(currentX=>newX)
+        {
+            maxX = currentX;
+            minX = newX;
+        }
+        else
+        {
+            maxX = newX;
+            minX = currentX;
+        }
+
+        xDiff = maxX - minX;
+
+        if(currentY=>newY)
+        {
+            maxY = currentY;
+            minY = newY;
+        }
+        else
+        {
+            maxY = newY;
+            minY = currentY;
+        }
+
+        yDiff = maxY - miny;
+
+        int maxDiff;
+
+        if(xDiff >= yDiff)
+            maxDiff = xDiff;
+        else
+            maxDiff = yDiff;
+
+        return maxDiff;
+
     }
 }
