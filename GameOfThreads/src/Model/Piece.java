@@ -111,7 +111,7 @@ public abstract class Piece
         int maxY, minY, yDiff;
 
 
-        if(currentX=>newX)
+        if(currentX>=newX)
         {
             maxX = currentX;
             minX = newX;
@@ -124,7 +124,7 @@ public abstract class Piece
 
         xDiff = maxX - minX;
 
-        if(currentY=>newY)
+        if(currentY>=newY)
         {
             maxY = currentY;
             minY = newY;
@@ -135,7 +135,7 @@ public abstract class Piece
             minY = currentY;
         }
 
-        yDiff = maxY - miny;
+        yDiff = maxY - minY;
 
         int maxDiff;
 

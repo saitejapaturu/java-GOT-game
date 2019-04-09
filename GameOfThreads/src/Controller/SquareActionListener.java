@@ -29,7 +29,7 @@ public class SquareActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("Square: " + x + ", " + y + "was clicked");
+	//	System.out.println("Square: " + x + ", " + y + "was clicked");
 		if(turnController.getClick() == 0)
 		{
 			//if it is firstclick
@@ -48,39 +48,55 @@ public class SquareActionListener implements ActionListener {
 		{
 		int pieceX = turnController.getSelX();
 		int pieceY = turnController.getSelY();
-		int player = turnController.getTurn();
 		Piece test = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY());
+		int player;
 		if(gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()) != null)
 		{
+			player = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()).getPlayer();
 			//checks piece belongs to player whose turn it is
-			if(test.validateMove(gameBoard, pieceX, pieceY, x, y))
+			if(player == turnController.getTurn())
 			{
-				//moving piece
-				gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
-				mainFrame.movePiece(pieceX, pieceY, x, y);
-				turnController.setClick(0);
-				System.out.println("Valid move");
+				if(test.validateMove(gameBoard, pieceX, pieceY, x, y))
+				{
+					//moving piece
+					gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
+					mainFrame.movePiece(pieceX, pieceY, x, y);
+					turnController.setClick(0);
+					System.out.println("Valid move");
+					turnController.switchTurn();
+					turnController.setClick(0);
+					return;
+				}
+				else
+				{
+					System.out.println("Not a Valid Move");
+					turnController.setClick(0);
+					return;
+				}
 			}
 			//if validatemove fails
+			
 			else
 			{
-				System.out.println("Not a Valdi Move");
-				turnController.setClick(1);
+				System.out.println("Not Your Turn");
+				turnController.setClick(0);
+				return;
 			}
+			
 		}
 		else if(turnController.getClick() == 1)
 		{
 			//functionality for if it is enemy piece and second click
-			gameEngine.pieceAttack(gameBoard.getSquarePiece(pieceX, pieceY),x , y);
+			//gameEngine.pieceAttack(gameBoard.getSquarePiece(pieceX, pieceY),x , y);
 		}
 		else
 		{
 			turnController.setClick(0);
+			return;
 		}
 		
 		}
 		mainFrame.revalidate();
-		turnController.switchTurn();
 		
 
 	}
