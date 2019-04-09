@@ -12,7 +12,7 @@ public class TurnController {
 	
 	public TurnController()
 	{
-		this.turn = 0;
+		this.turn = 1;
 		this.selX = 0;
 		this.selY = 0;
 		this.click = 0;
@@ -56,13 +56,13 @@ public class TurnController {
 	
 	public void switchTurn()
 	{
-		if (this.turn == 0)
+		if (this.turn == 1)
+		{
+			this.turn = 2;
+		}
+		else if (this.turn == 2)
 		{
 			this.turn = 1;
-		}
-		else
-		{
-			this.turn = 0;
 		}
 	}
 }

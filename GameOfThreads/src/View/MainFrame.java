@@ -88,13 +88,13 @@ public class MainFrame extends JFrame {
 	}
 	
 	private final void createImages() {
-	       Assasin = createImageIcon("images/Black_Rook.png","Assasin");
-	       Mage = createImageIcon("images/Black_Bishop.png","Mage");
-	       Scout = createImageIcon("images/Black_Knight.png","Scout");
+	       Assasin = createImageIcon("images/Monster1.png","Assasin");
+	       Mage = createImageIcon("images/Monster2.png","Mage");
+	       Scout = createImageIcon("images/Monster3.png","Scout");
 	       
-	       Soldier = createImageIcon("images/White_Rook.png","Soldier");
-	       Support = createImageIcon("images/White_Bishop.png","Support");
-	       Tank = createImageIcon("images/White_Knight.png","Tank");
+	       Soldier = createImageIcon("images/Monster4.png","Soldier");
+	       Support = createImageIcon("images/PoisonedHero2.png","Support");
+	       Tank = createImageIcon("images/PoisonedHero3.png","Tank");
 	    }
 	
 	 protected ImageIcon createImageIcon(String path,String description)
@@ -199,7 +199,7 @@ public class MainFrame extends JFrame {
 	                {
 	                    JButton button = new JButton();
 	                    button.addActionListener(new SquareActionListener(gameBoard, a+1, i, gameEngine, this, turnController));
-		                button.setBackground(Color.GRAY);
+		                button.setBackground(Color.BLUE);
 		                setButtonProperties(button);
 	                    
 	                    squares[a+1][i] = button;
@@ -209,7 +209,7 @@ public class MainFrame extends JFrame {
 	                {
 	                    JButton button = new JButton();
 	                    button.addActionListener(new SquareActionListener(gameBoard, a, i, gameEngine, this, turnController));
-		                button.setBackground(Color.GRAY);
+		                button.setBackground(Color.YELLOW);
 		                setButtonProperties(button);
 	                    
 	                    squares[a][i] = button;
@@ -217,7 +217,7 @@ public class MainFrame extends JFrame {
 	                    JButton button2 = new JButton();
 
 	                    button2.addActionListener(new SquareActionListener(gameBoard, b, i, gameEngine, this, turnController));
-		                button2.setBackground(Color.GRAY);
+		                button2.setBackground(Color.RED);
 		                setButtonProperties(button2);
 	                    
 	                    squares[b][i] = button2;
