@@ -277,7 +277,7 @@ public class MainFrame extends JFrame {
            button.setBorderPainted(true);
 	   }
 	   
-	   public void update()
+	   public void updateComponents()
 	   {
 		   statusBar.update();
 	   }

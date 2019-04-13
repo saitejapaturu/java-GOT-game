@@ -65,6 +65,8 @@ public class SquareActionListener implements ActionListener {
 					System.out.println("Valid move");
 					turnController.switchTurn();
 					turnController.setClick(0);
+					mainFrame.updateComponents();
+					mainFrame.revalidate();
 					return;
 				}
 				else
@@ -97,7 +99,7 @@ public class SquareActionListener implements ActionListener {
 		
 		}
 		mainFrame.revalidate();
-		mainFrame.update();
+		mainFrame.updateComponents();
 
 	}
 
