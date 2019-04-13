@@ -1,21 +1,19 @@
 package Model;
 
-public class Scout extends Piece{
-	public static final int MAXMOVE = 4;
-	public static final int HEALTH = 3;
-	public static final int RANGE = 3;
-	public static final int DAMAGE = 1;
+public class Scout extends Piece
+{
+	private static final int MAXMOVE = 4;
+	private static final int RANGE = 4;
+	private static final int DAMAGE = 1;
+	private static final String ID = "Scout";
 
-	public Scout(String id, int player) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, player);
+	public Scout(int player)
+	{
+		super(3, MAXMOVE, RANGE, DAMAGE, ID, player);
 	}
-
-	
-	
 	
 	public void Special()
 	{
 		//scout is able to move to any square on the map instantly
 	}
-
 }

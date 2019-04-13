@@ -1,20 +1,19 @@
 package Model;
 
-public class Soldier extends Piece{
-	public static final int MAXMOVE = 3;
-	public static final int HEALTH = 4;
-	public static final int RANGE = 3;
-	public static final int DAMAGE = 2;
+public class Soldier extends Piece
+{
+	private static final int MAXMOVE = 3;
+	private static final int RANGE = 2;
+	private static final int DAMAGE = 2;
+	private static final String ID = "Soldier";
 
-	public Soldier( String id, int player) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, player);
-		// TODO Auto-generated constructor stub
+	public Soldier(int player)
+	{
+		super(4, MAXMOVE, RANGE, DAMAGE, ID, player);
 	}
-
 
 	public void Special()
 	{
 		//soldier is able to deal double damage for 1 turn
 	}
-
 }

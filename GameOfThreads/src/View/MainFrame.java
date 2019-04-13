@@ -65,7 +65,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setIcons()
-	{
+	{/*
 		createImages();
 	   	for (int i = 0; i < squares.length; i++) {
             for (int j = 0; j < squares[i].length; j++) {
@@ -85,6 +85,8 @@ public class MainFrame extends JFrame {
         squares[8][3].setIcon(Support);
         squares[8][7].setIcon(Tank);
         squares[7][2].setIcon(Tank);
+        */
+		
 	}
 	
 	private final void createImages() {
@@ -231,6 +233,22 @@ public class MainFrame extends JFrame {
             
 
 	    }
+		      //move down to test
+				for (int i = 0; i < squares.length-1; i++) {
+		            for (int j = 0; j < squares[i].length-1; j++) {
+		            	if(gameBoard.getSquare(i, j) != null)
+		            	{
+		            		if(gameBoard.getSquare(i, j).getPiece()!=null)
+		            		{
+		            		squares[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPlayer());
+		            		}
+		            	}
+		            	else
+		            	{
+		            		squares[i][j].setText(i+ " " + j);
+		            	}
+		            }
+		            }
 		        for(int i = 0;i<maxHeight;i++)
 		        {
 		        	for (int j= 0; j<maxWidth;j++)
@@ -238,6 +256,8 @@ public class MainFrame extends JFrame {
 		        		Board.add(squares[i][j]);
 		        	}
 		        }
+		        
+		        
 	 }
 	 
 	//reflects a move made on the board
