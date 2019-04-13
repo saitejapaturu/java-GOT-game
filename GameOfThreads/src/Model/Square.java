@@ -42,6 +42,7 @@ public class Square
     public void setPiece(Piece piece)
     {
         this.piece = piece;
+        this.occupied = true;
     }
     
     public Piece getPiece()
