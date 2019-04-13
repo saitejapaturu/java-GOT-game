@@ -1,21 +1,19 @@
 package Model;
 
-public class Tank extends Piece{
-	public static final int MAXMOVE = 2;
-	public static final int HEALTH = 5;
-	public static final int RANGE = 2;
-	public static final int DAMAGE = 1;
+public class Tank extends Piece
+{
+	private static final int MAXMOVE = 2;
+	private static final int RANGE = 2;
+	private static final int DAMAGE = 2;
+	private static final String ID = "Tank";
 
-	public Tank(String id, int player) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, player);
+	public Tank(int player)
+	{
+		super(7, MAXMOVE, RANGE, DAMAGE, ID, player);
 	}
 
-
-	public void Special()
+	public void special()
 	{
 		//tank piece goes fortifies itself for 3 turns, unable to move or take damage
 	}
-
-	
-	
 }

@@ -3,52 +3,77 @@ package Model;
 public abstract class Piece
 {
     private int health;
-    private int maxMove;
-    private int range;
-    private int damage;
-    private String id;
-    private int player;
-    
-    public Piece(int health, int maxMove, int range, int damage, String id, int player)
+    private boolean special;
+
+    private final int MAX_MOVE;
+    private final int RANGE;
+    private final int DAMAGE;
+
+    private final String ID;
+    private final int PLAYER;
+
+    // Initially, i.e turn 1, specials are turned off.
+    public Piece(int health, int MAX_MOVE, int RANGE, int DAMAGE, String ID, int PLAYER)
     {
     	this.health = health;
-        this.maxMove = maxMove;
-        this.range = range;
-        this.damage = damage;
-        this.id = id;
+        this.MAX_MOVE = MAX_MOVE;
+        this.RANGE = RANGE;
+        this.DAMAGE = DAMAGE;
+        this.ID = ID;
        
-        this.player = player;
+        this.PLAYER = PLAYER;
+
+        this.special = false;
     }
 
-
-	public int getHealth()
+    public int getHealth()
     {
-		return health;
-	}
-
-	public int getPlayer()
-    {
-        return player;
+        return health;
     }
 
-	public void setHealth(int health)
+    public void setHealth(int health)
     {
-		this.health = health;
-	}
-	
-	public void takeDamage(int dmg)
-	{
-		this.health -=dmg;
-	}
-	
-	public int getDamage()
-	{
-		return this.damage;
-	}
+        this.health = health;
+    }
 
-	public String getID()
+    public int getMAX_MOVE()
     {
-        return this.id;
+        return MAX_MOVE;
+    }
+
+    public int getRANGE()
+    {
+        return RANGE;
+    }
+
+    public int getDAMAGE()
+    {
+        return DAMAGE;
+    }
+
+    public String getID()
+    {
+        return ID;
+    }
+
+    public int getPLAYER()
+    {
+        return PLAYER;
+    }
+
+    public boolean getSpecial()
+    {
+        return special;
+    }
+
+    public void setSpecial(boolean special)
+    {
+        this.special = special;
+    }
+
+    public void takeDamage(int damage)
+    {
+        this.health -= damage;
     }
 
     public boolean move (Board board, int currentX, int currentY, int newX, int newY)
@@ -72,7 +97,7 @@ public abstract class Piece
         if(board.getSquarePiece(newX, newY) != null)
         {
             //If new position has the character of same team.
-            if(board.getSquarePiece(newX, newY).getPlayer() == this.getPlayer())
+            if(board.getSquarePiece(newX, newY).getPLAYER() == this.getPLAYER())
             {
                 System.err.println("Cannot place two characters of same team on the same square.");
             }
@@ -87,7 +112,7 @@ public abstract class Piece
         }
 
         //Checks if the move is out of range.
-        if(countMoveLen(currentX, currentY, newX, newY) > range)
+        if(countMoveLen(currentX, currentY, newX, newY) > RANGE)
         {
             System.err.println("Move length is greater than the range of the character.");
             return false;

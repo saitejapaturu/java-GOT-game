@@ -97,19 +97,19 @@ public class Board
             }
         }
         
-        board[0][5].setPiece(new Assassin("Assassin", 1));
-        board[1][4].setPiece(new Assassin("Assasin", 2));
-        board[1][6].setPiece(new Mage("Mage", 1));
-        board[2][3].setPiece(new Mage("Mage", 2));
-        board[2][7].setPiece(new Scout("Scout", 1));
-        board[3][2].setPiece(new Scout("Scout", 2));
+        board[0][5].setPiece(new Assassin(1));
+        board[1][4].setPiece(new Assassin(2));
+        board[1][6].setPiece(new Mage(1));
+        board[2][3].setPiece(new Mage(2));
+        board[2][7].setPiece(new Scout(1));
+        board[3][2].setPiece(new Scout(2));
         
-        board[10][5].setPiece(new Soldier("Soldier",1));
-        board[9][4].setPiece(new Soldier("Soldier",2));
-        board[9][6].setPiece(new Support("Support",1));
-        board[8][3].setPiece(new Support("Support",2));
-        board[8][7].setPiece(new Tank("Tank",1));
-        board[7][2].setPiece(new Tank("Tank",2));
+        board[10][5].setPiece(new Soldier(1));
+        board[9][4].setPiece(new Soldier(2));
+        board[9][6].setPiece(new Support(1));
+        board[8][3].setPiece(new Support(2));
+        board[8][7].setPiece(new Tank(1));
+        board[7][2].setPiece(new Tank(2));
         
         
     }
@@ -125,20 +125,20 @@ public class Board
         }
 
         //if attacking character from same team
-        if(this.getSquarePiece(currentX, currentY).getPlayer() == this.getSquarePiece(newX, newY).getPlayer())
+        if(this.getSquarePiece(currentX, currentY).getPLAYER() == this.getSquarePiece(newX, newY).getPLAYER())
         {
             System.err.println("Attacking character from your team");
             return false;
         }
 
-        this.getSquarePiece(newX, newY).takeDamage(this.getSquarePiece(currentX, currentY).getDamage());
+        this.getSquarePiece(newX, newY).takeDamage(this.getSquarePiece(currentX, currentY).getDAMAGE());
         System.out.println(this.getSquarePiece(currentX, currentY).getID() + " attacked " + getSquarePiece(newX, newY).getID());
 
 
         //Post conditions
         //Update healths to client
         //Update deaths if killed
-        System.out.println(this.getSquarePiece(newX, newY).getID() + " took " + this.getSquarePiece(currentX, currentY).getDamage() + " damage from " + getSquarePiece(currentX, currentY).getID());
+        System.out.println(this.getSquarePiece(newX, newY).getID() + " took " + this.getSquarePiece(currentX, currentY).getDAMAGE() + " damage from " + getSquarePiece(currentX, currentY).getID());
 
         if(this.getSquarePiece(newX, newY).getHealth() <= 0)
         {
