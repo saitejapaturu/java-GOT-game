@@ -97,19 +97,19 @@ public class Board
             }
         }
         
-        board[0][5].setPiece(new Assassin(1));
-        board[1][4].setPiece(new Assassin(2));
-        board[1][6].setPiece(new Mage(1));
-        board[2][3].setPiece(new Mage(2));
-        board[2][7].setPiece(new Scout(1));
-        board[3][2].setPiece(new Scout(2));
+        board[0][5].setPiece(new Assassin("Assassin", 1));
+        board[1][4].setPiece(new Soldier("Soldier", 1));
+        board[1][6].setPiece(new Mage("Mage", 1));
+        board[2][3].setPiece(new Support("Support", 1));
+        board[2][7].setPiece(new Scout("Scout", 1));
+        board[3][2].setPiece(new Tank("Tank", 1));
         
-        board[10][5].setPiece(new Soldier(1));
-        board[9][4].setPiece(new Soldier(2));
-        board[9][6].setPiece(new Support(1));
-        board[8][3].setPiece(new Support(2));
-        board[8][7].setPiece(new Tank(1));
-        board[7][2].setPiece(new Tank(2));
+        board[10][5].setPiece(new Assassin("Assassin", 2));
+        board[9][4].setPiece(new Soldier("Soldier",2));
+        board[9][6].setPiece(new Mage("Mage",2));
+        board[8][3].setPiece(new Support("Support",2));
+        board[8][7].setPiece(new Scout("Scout",2));
+        board[7][2].setPiece(new Tank("Tank",2));
         
         
     }
