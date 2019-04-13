@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Assassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Assassin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Scout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Scout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soldier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Support.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Support.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JUnitTests/JUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -143,15 +126,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="285">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#242#243#0" expanded="true" />
                 <element signature="e#298#299#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="236" column="60" lean-forward="true" selection-start-line="236" selection-start-column="60" selection-end-line="236" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -187,13 +179,13 @@
         <option value="$PROJECT_DIR$/src/Model/Tank.java" />
         <option value="$PROJECT_DIR$/src/Model/Assassin.java" />
         <option value="$PROJECT_DIR$/src/Model/Soldier.java" />
+        <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="822" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="858" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -260,7 +252,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555161262884" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555161424571" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -340,18 +332,18 @@
       <workItem from="1554977217604" duration="864000" />
       <workItem from="1555033232951" duration="604000" />
       <workItem from="1555155921522" duration="21000" />
-      <workItem from="1555156071611" duration="3093000" />
+      <workItem from="1555156071611" duration="3201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14621000" />
+    <option name="totallyTimeSpent" value="14729000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16056167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16056167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -372,7 +364,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="13" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -437,13 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1902">
-          <caret line="171" column="46" lean-forward="true" selection-start-line="171" selection-start-column="46" selection-end-line="171" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -553,12 +538,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#298#299#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="236" column="60" lean-forward="true" selection-start-line="236" selection-start-column="60" selection-end-line="236" selection-end-column="60" />
         </state>
       </provider>
     </entry>

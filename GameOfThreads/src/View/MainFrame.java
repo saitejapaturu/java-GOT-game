@@ -240,7 +240,7 @@ public class MainFrame extends JFrame {
 		            	{
 		            		if(gameBoard.getSquare(i, j).getPiece()!=null)
 		            		{
-		            		squares[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPlayer());
+		            		squares[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
 		            		}
 		            	}
 		            	else

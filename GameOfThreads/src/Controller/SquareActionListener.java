@@ -52,7 +52,7 @@ public class SquareActionListener implements ActionListener {
 		int player;
 		if(gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()) != null)
 		{
-			player = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()).getPlayer();
+			player = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()).getPLAYER();
 			//checks piece belongs to player whose turn it is
 			if(player == turnController.getTurn())
 			{
