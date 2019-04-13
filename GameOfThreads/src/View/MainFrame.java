@@ -24,6 +24,7 @@ public class MainFrame extends JFrame {
 	private GameEngine gameEngine;
 	private JButton[][] squares;
 	private Model.Board gameBoard;
+	private StatusBar statusBar;
 	 public ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
 	 private TurnController turnController;
 
@@ -42,7 +43,9 @@ public class MainFrame extends JFrame {
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
-		
+		this.statusBar = new StatusBar(turnController);
+		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
+		statusBar.setMessage("Player " + turnController.getTurn() + " your turn!");
 	}
 
 	
@@ -272,5 +275,10 @@ public class MainFrame extends JFrame {
 		   button.setOpaque(true);
            button.setContentAreaFilled(true);
            button.setBorderPainted(true);
+	   }
+	   
+	   public void update()
+	   {
+		   statusBar.update();
 	   }
 }

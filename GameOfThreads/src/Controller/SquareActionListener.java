@@ -97,7 +97,7 @@ public class SquareActionListener implements ActionListener {
 		
 		}
 		mainFrame.revalidate();
-		
+		mainFrame.update();
 
 	}
 
