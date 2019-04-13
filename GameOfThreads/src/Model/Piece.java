@@ -11,9 +11,10 @@ public abstract class Piece
 
     private final String ID;
     private final int PLAYER;
+    private final int SPECIALTURN;
 
     // Initially, i.e turn 1, specials are turned off.
-    public Piece(int health, int MAX_MOVE, int RANGE, int DAMAGE, String ID, int PLAYER)
+    public Piece(int health, int MAX_MOVE, int RANGE, int DAMAGE, String ID, int PLAYER, int SPECIALTURN)
     {
     	this.health = health;
         this.MAX_MOVE = MAX_MOVE;
@@ -22,6 +23,7 @@ public abstract class Piece
         this.ID = ID;
        
         this.PLAYER = PLAYER;
+        this.SPECIALTURN = SPECIALTURN;
 
         this.special = false;
     }
@@ -69,6 +71,11 @@ public abstract class Piece
     public void setSpecial(boolean special)
     {
         this.special = special;
+    }
+
+    public int getSPECIALTURN()
+    {
+        return SPECIALTURN;
     }
 
     public void takeDamage(int damage)
@@ -172,4 +179,6 @@ public abstract class Piece
         return maxDiff;
 
     }
+
+    public abstract void special();
 }
