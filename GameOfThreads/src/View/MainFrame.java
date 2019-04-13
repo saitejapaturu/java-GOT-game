@@ -68,7 +68,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setIcons()
-	{/*
+	{
 		createImages();
 	   	for (int i = 0; i < squares.length; i++) {
             for (int j = 0; j < squares[i].length; j++) {
@@ -88,7 +88,7 @@ public class MainFrame extends JFrame {
         squares[8][3].setIcon(Support);
         squares[8][7].setIcon(Tank);
         squares[7][2].setIcon(Tank);
-        */
+        
 		
 	}
 	
