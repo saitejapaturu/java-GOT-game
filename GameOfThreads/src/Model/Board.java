@@ -371,4 +371,55 @@ public class Board
 
         return 0;
     }
+
+    public void activateSpecial(int specialTurn)
+    {
+        //This for loops checks all squares of the grid for pieces and activate appropriate specials.
+        for(int i=0; i<GRID_WIDTH; i++)
+        {
+            for(int j=0; j<GRID_WIDTH; j++)
+            {
+                //Check if the square isn't null;
+                if(grid[i][j] != null)
+                {
+                    //Check if the square has a piece
+                    if(grid[i][j].getPiece() != null)
+                    {
+                        //If the special turn is the same activate special.
+                        if(grid[i][j].getPiece().getSPECIALTURN() == specialTurn)
+                        {
+                            grid[i][j].getPiece().special();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void deactivateSpecial()
+    {
+        //This for loops checks all squares of the grid for pieces and activate appropriate specials.
+        for(int i=0; i<GRID_WIDTH; i++)
+        {
+            for(int j=0; j<GRID_WIDTH; j++)
+            {
+                //Check if the square isn't null;
+                if(grid[i][j] != null)
+                {
+                    //Check if the square has a piece
+                    if(grid[i][j].getPiece() != null)
+                    {
+                        //If the special turn is the same deactivate special.
+                        if(grid[i][j].getPiece().getSpecial())
+                        {
+                            grid[i][j].getPiece().deactivateSpecial();
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
 }

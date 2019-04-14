@@ -138,12 +138,20 @@ public class SquareActionListener implements ActionListener {
 		turnController.reset();
 		mainFrame.revalidate();
 		mainFrame.updateComponents();
+
+		specials();
 	}
 
 	//If game ends
 	private void gameOver()
 	{
 
+	}
+
+	private void specials()
+	{
+		gameBoard.deactivateSpecial();
+		gameBoard.activateSpecial(turnController.getTurn());
 	}
 
 
