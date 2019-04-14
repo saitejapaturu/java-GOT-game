@@ -134,14 +134,14 @@ public class Board
             return false;
         }
 
-        this.getSquarePiece(newX, newY).takeDamage(this.getSquarePiece(currentX, currentY).getDAMAGE());
+        this.getSquarePiece(newX, newY).takeDamage(this.getSquarePiece(currentX, currentY).getDamage());
         System.out.println(this.getSquarePiece(currentX, currentY).getID() + " attacked " + getSquarePiece(newX, newY).getID());
 
 
         //Post conditions
         //Update healths to client
         //Update deaths if killed
-        System.out.println(this.getSquarePiece(newX, newY).getID() + " took " + this.getSquarePiece(currentX, currentY).getDAMAGE() + " damage from " + getSquarePiece(currentX, currentY).getID());
+        System.out.println(this.getSquarePiece(newX, newY).getID() + " took " + this.getSquarePiece(currentX, currentY).getDamage() + " damage from " + getSquarePiece(currentX, currentY).getID());
 
         if(this.getSquarePiece(newX, newY).getHealth() <= 0)
         {
@@ -202,7 +202,7 @@ public class Board
         }
 
         //Checks if the move is out of range.
-        else if(countMoveLength(currentX, currentY, newX, newY) > grid[currentX][currentY].getPiece().getRANGE())
+        else if(countMoveLength(currentX, currentY, newX, newY) > grid[currentX][currentY].getPiece().getRange())
         {
             System.err.println("Move length is greater than the range of the character.");
             return false;

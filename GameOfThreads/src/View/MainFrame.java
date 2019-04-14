@@ -85,8 +85,6 @@ public class MainFrame extends JFrame {
         gridGUI[8][3].setIcon(Support2);
         gridGUI[8][7].setIcon(Scout2);
         gridGUI[7][2].setIcon(Tank2);
-        
-		
 	}
 	
 	private final void createImages()

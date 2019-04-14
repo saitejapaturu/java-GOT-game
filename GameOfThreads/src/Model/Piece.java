@@ -4,22 +4,19 @@ public abstract class Piece
 {
     private int health;
     private boolean special;
-
-    private final int MAX_MOVE;
-    private final int RANGE;
-    private final int DAMAGE;
+    private  int range;
+    private  int damage;
 
     private final String ID;
     private final int PLAYER;
     private final int SPECIALTURN;
 
     // Initially, i.e turn 1, specials are turned off.
-    public Piece(int health, int MAX_MOVE, int RANGE, int DAMAGE, String ID, int PLAYER, int SPECIALTURN)
+    public Piece(int health, int range, int damage, String ID, int PLAYER, int SPECIALTURN)
     {
     	this.health = health;
-        this.MAX_MOVE = MAX_MOVE;
-        this.RANGE = RANGE;
-        this.DAMAGE = DAMAGE;
+        this.range = range;
+        this.damage = damage;
         this.ID = ID;
        
         this.PLAYER = PLAYER;
@@ -38,19 +35,24 @@ public abstract class Piece
         this.health = health;
     }
 
-    public int getMAX_MOVE()
+    public int getRange()
     {
-        return MAX_MOVE;
+        return range;
     }
 
-    public int getRANGE()
+    public int getDamage()
     {
-        return RANGE;
+        return damage;
     }
 
-    public int getDAMAGE()
+    public void setRange(int range)
     {
-        return DAMAGE;
+        this.range = range;
+    }
+
+    public void setDamage(int damage)
+    {
+        this.damage = damage;
     }
 
     public String getID()
@@ -84,4 +86,5 @@ public abstract class Piece
     }
 
     public abstract void special();
+    public abstract void deactivateSpecial();
 }

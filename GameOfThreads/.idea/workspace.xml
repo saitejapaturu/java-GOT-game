@@ -3,83 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TurnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TurnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Assassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Assassin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/CornerSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CornerSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_Bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_King.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_Pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_Queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Black_Rook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Scout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Scout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soldier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Support.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Support.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_Bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_King.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_Pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_Queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/White_Rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_Bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_King.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_Pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_Queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Black_Rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/3way.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/4way.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Curved.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Hero1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Hero2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Hero3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Hero4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/Poison.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedHero1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedHero4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedMonster1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedMonster2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedMonster3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/PoisonedMonster4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/corner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/space.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/straight.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Images/straightPath.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Monster1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Monster2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Monster3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Monster4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/PoisonedHero2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/PoisonedHero3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_Bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_King.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_Pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_Queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/White_Rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._3way.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._4way.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Curved.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Hero1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Hero2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Hero3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Hero4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Monster1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Monster2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Monster3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Monster4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._Poison.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedHero1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedHero2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedHero3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedHero4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedMonster1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedMonster2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedMonster3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._PoisonedMonster4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._corner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._space.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._straight.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/__MACOSX/Images/._straightPath.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,6 +24,15 @@
     <splitter split-orientation="horizontal" split-proportion="0.5214546">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -110,10 +51,16 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/CornerSquare.java">
+            <entry file="file://$PROJECT_DIR$/src/Model/Mage.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="23" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="23" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#277#278#0" expanded="true" />
+                    <element signature="e#341#342#0" expanded="true" />
+                    <element signature="e#568#569#0" expanded="true" />
+                    <element signature="e#591#592#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -121,8 +68,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Support.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+                <state relative-caret-position="225">
+                  <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -130,9 +77,13 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+                <state relative-caret-position="531">
+                  <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
                   <folding>
+                    <element signature="e#924#925#0" expanded="true" />
+                    <element signature="e#958#959#0" expanded="true" />
+                    <element signature="e#999#1000#0" expanded="true" />
+                    <element signature="e#1035#1036#0" expanded="true" />
                     <element signature="e#1361#1362#0" expanded="true" />
                     <element signature="e#1395#1396#0" expanded="true" />
                     <element signature="e#1441#1442#0" expanded="true" />
@@ -143,12 +94,27 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Model/Scout.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="22" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#553#554#0" expanded="true" />
+                    <element signature="e#576#577#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Assassin.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
                   <folding>
-                    <element signature="e#353#354#0" expanded="true" />
+                    <element signature="e#223#224#0" expanded="true" />
+                    <element signature="e#575#576#0" expanded="true" />
+                    <element signature="e#596#597#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -157,66 +123,32 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+                <state relative-caret-position="255">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                   <folding>
                     <element signature="e#242#243#0" expanded="true" />
                     <element signature="e#298#299#0" expanded="true" />
+                    <element signature="e#525#526#0" expanded="true" />
+                    <element signature="e#557#558#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="15" column="87" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/View/ToolBar.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#323#324#0" expanded="true" />
-                    <element signature="e#350#351#0" expanded="true" />
-                    <element signature="e#333#334#0" expanded="true" />
-                    <element signature="e#360#361#0" expanded="true" />
-                    <element signature="e#523#524#0" expanded="true" />
-                    <element signature="e#557#558#0" expanded="true" />
-                    <element signature="e#620#621#0" expanded="true" />
-                    <element signature="e#701#702#0" expanded="true" />
-                    <element signature="e#764#765#0" expanded="true" />
-                    <element signature="e#845#846#0" expanded="true" />
-                    <element signature="e#917#918#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#481#482#0" expanded="true" />
-                    <element signature="e#504#505#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="517">
+                  <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -238,7 +170,7 @@
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="645">
-                  <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+                  <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -262,7 +194,7 @@
             <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="75">
-                  <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
                 </state>
               </provider>
             </entry>
@@ -298,6 +230,7 @@
       <find>click = 1</find>
       <find>click = 0</find>
       <find>mons</find>
+      <find>ImageIcon</find>
     </findStrings>
     <replaceStrings>
       <replace>ID</replace>
@@ -314,14 +247,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" />
-        <option value="$PROJECT_DIR$/src/Model/Mage.java" />
-        <option value="$PROJECT_DIR$/src/Model/Support.java" />
-        <option value="$PROJECT_DIR$/src/Model/Tank.java" />
-        <option value="$PROJECT_DIR$/src/Model/Assassin.java" />
-        <option value="$PROJECT_DIR$/src/Model/Scout.java" />
-        <option value="$PROJECT_DIR$/src/Model/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
-        <option value="$PROJECT_DIR$/src/Model/Piece.java" />
         <option value="$PROJECT_DIR$/src/View/StatusBar.java" />
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
         <option value="$PROJECT_DIR$/src/Model/Board.java" />
@@ -329,6 +255,13 @@
         <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
         <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
         <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/Model/Piece.java" />
+        <option value="$PROJECT_DIR$/src/Model/Assassin.java" />
+        <option value="$PROJECT_DIR$/src/Model/Mage.java" />
+        <option value="$PROJECT_DIR$/src/Model/Scout.java" />
+        <option value="$PROJECT_DIR$/src/Model/Soldier.java" />
+        <option value="$PROJECT_DIR$/src/Model/Support.java" />
+        <option value="$PROJECT_DIR$/src/Model/Tank.java" />
       </list>
     </option>
   </component>
@@ -408,7 +341,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555242422608" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555244057460" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -493,7 +426,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34072000" />
+    <option name="totallyTimeSpent" value="35702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -730,71 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JUnitTests/JUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Mage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Scout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#201#202#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Assassin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding>
-            <element signature="e#353#354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +690,7 @@
     <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -828,26 +700,6 @@
           <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Support.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <element signature="e#1361#1362#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1478#1479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -862,7 +714,7 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding>
             <element signature="e#323#324#0" expanded="true" />
             <element signature="e#350#351#0" expanded="true" />
@@ -910,8 +762,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+        <state relative-caret-position="517">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Assassin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Mage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Scout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Support.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="87" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
         </state>
       </provider>
     </entry>
