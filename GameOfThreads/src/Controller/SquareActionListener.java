@@ -60,6 +60,15 @@ public class SquareActionListener implements ActionListener
 		{
 			player = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY()).getPLAYER();
 			//checks piece belongs to player whose turn it is
+			if(gameBoard.getSquarePiece(x,y) != null)
+	        {
+	            //If new position has the character of enemy team.
+	            if(gameBoard.getSquarePiece(x,y).getPLAYER() != gameBoard.getSquarePiece(pieceX, pieceY).getPLAYER())
+	            {
+	                //attack
+	            	System.out.println("Attack Move Requested");
+	            }
+	        }
 			if(player == turnControllerBackUp.getTurn())
 			{
 				if(gameBoard.movePiece(pieceX, pieceY, x, y))
@@ -106,6 +115,7 @@ public class SquareActionListener implements ActionListener
 		}
 		mainFrame.revalidate();
 		mainFrame.updateComponents();
+		
 
 	}
 
