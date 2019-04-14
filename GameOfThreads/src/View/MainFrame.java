@@ -20,6 +20,8 @@ public class MainFrame extends JFrame {
 	private StatusBar statusBar;
 	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
 	private TurnController turnController;
+	String p1Name;
+	String p2Name;
 
 	public MainFrame(String title, Model.Board board, GameEngine gameEngine, TurnController turnController)
 	{
@@ -36,20 +38,16 @@ public class MainFrame extends JFrame {
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
-		this.statusBar = new StatusBar(turnController);
+		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
-		statusBar.setMessage("Player " + turnController.getPlayerTurn() + " your turn!");
+		statusBar.update();
 	}
 
 	
-	//takes input of players and passes them to gameEngine for player object creation
+	//takes input of players and passes them to gameEngine for status bar and win screen
 	private void setPlayers() {
-		String p1Name = JOptionPane.showInputDialog("Enter Player 1 Name:");
-		gameEngine.setPlayer(p1Name, 1);
-
-		String p2Name = JOptionPane.showInputDialog("Enter Player 2 Name:");
-		gameEngine.setPlayer(p2Name, 2);
-
+		p1Name = JOptionPane.showInputDialog("Enter Player 1 Name:");
+		p2Name = JOptionPane.showInputDialog("Enter Player 2 Name:");
 	}
 
 	//ensures app starts in the middle of the screen
@@ -87,6 +85,7 @@ public class MainFrame extends JFrame {
         gridGUI[7][2].setIcon(Tank2);
 	}
 	
+	//simple method for making piece icons
 	private final void createImages()
 	{
 		//For Player 1
@@ -106,6 +105,7 @@ public class MainFrame extends JFrame {
 		Tank2 = createImageIcon("images/Tank2.png","Tank for player 2");
 	}
 	
+	//from java help docs
 	 protected ImageIcon createImageIcon(String path,String description)
 	   {
 		 	
@@ -125,27 +125,16 @@ public class MainFrame extends JFrame {
 	 public void Initialise()
 	 {
 		 int width = gameBoard.getWidth();
-//		  int max = (gameBoard.getWidth() - 1);    // the maximum co-ordinate
-//
-//	        int mid;                            //the middle co-ordinate
-//	        int min = 0;                        //the starting co-ordinate
-//
-//	        if((max%2) == 0)
-//	            mid = max/2;
-//	        else
-//	            mid = (max+1)/2;
 
 		 int max=10, mid=5, min=0;
 
 		 //Initialising GUI
-		 //Creading grid
+		 //Creating grid
 	        gridGUI = new JButton[width][width];
 			gui.setBorder(new EmptyBorder(4,4,4,4));
 			JToolBar toolbar = new JToolBar();
-			JButton newGame = new JButton("New Game");
 			toolbar.setFloatable(false);
 			gui.add(toolbar, BorderLayout.PAGE_START);
-			
 			
 			 Board = new JPanel(new GridLayout(width, width));
 			 Board.setBorder(new LineBorder(Color.BLACK));
@@ -172,32 +161,6 @@ public class MainFrame extends JFrame {
 					}
 				}
 
-	        
-	        //creating corner gridGUI
-	        gridGUI[max][mid] = new JButton();
-	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnController));
-            gridGUI[max][mid].setBackground(Color.GREEN);
-            setButtonProperties(gridGUI[max][mid]);
-
-            gridGUI[min][mid] = new JButton();
-	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnController));
-            gridGUI[min][mid].setBackground(Color.GREEN);
-            setButtonProperties(gridGUI[min][mid]);
-
-            //debug
-            gridGUI[mid][min] = new JButton();
-	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnController));
-            gridGUI[mid][min].setBackground(Color.GREEN);
-            gridGUI[mid][min].setOpaque(true);
-            gridGUI[mid][min].setContentAreaFilled(true);
-    		gridGUI[mid][min].setBorderPainted(true);
-    		setButtonProperties(gridGUI[mid][min]);
-            
-            gridGUI[mid][max] = new JButton();
-	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnController));
-            gridGUI[mid][max].setBackground(Color.GREEN);
-           
-    		setButtonProperties(gridGUI[mid][max]);
 
 
     		/* Initialising normal squares of the diamond block.
@@ -248,6 +211,27 @@ public class MainFrame extends JFrame {
 					System.out.println("line 245: GUI for Squares created for : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
     			}
     		}
+    		
+    		//individually creating corner squares so they can be assigned different colour
+	        gridGUI[max][mid] = new JButton();
+	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnController));
+            gridGUI[max][mid].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[max][mid]);
+
+            gridGUI[min][mid] = new JButton();
+	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnController));
+            gridGUI[min][mid].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[min][mid]);
+
+            gridGUI[mid][min] = new JButton();
+	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnController));
+            gridGUI[mid][min].setBackground(Color.GREEN);
+    		setButtonProperties(gridGUI[mid][min]);
+            
+            gridGUI[mid][max] = new JButton();
+	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnController));
+            gridGUI[mid][max].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[mid][max]);
 				
     		//adding buttons to view
 		        for(int i = 0;i<width;i++)

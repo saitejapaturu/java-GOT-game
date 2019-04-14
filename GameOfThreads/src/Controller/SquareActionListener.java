@@ -14,7 +14,6 @@ public class SquareActionListener implements ActionListener {
 
 
 
-	private GameEngine gameEngine;
 	private MainFrame mainFrame;
 	private TurnController turnController;
 
@@ -23,7 +22,6 @@ public class SquareActionListener implements ActionListener {
 		this.gameBoard = gameBoard;
 		this.currentX = currentX;
 		this.currentY = currentY;
-		this.gameEngine = gameEngine;
 		this.mainFrame = mainFrame;
 		//System.out.println("Listener for square " + x + ", " + y + " was created");
 		this.turnController = turnController;

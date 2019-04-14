@@ -9,12 +9,17 @@ import Controller.TurnController;
 public class StatusBar extends JLabel {
     //	statusbar class from java tips.org
 	
+	private String p1Name;
+	private String p2Name;
+
 	private TurnController turnController;
-    public StatusBar(TurnController turnController) {
+    public StatusBar(TurnController turnController, String p1Name, String p2Name) {
         super();
         super.setPreferredSize(new Dimension(100, 16));
         setMessage("Ready");
         this.turnController = turnController;
+        this.p1Name = p1Name;
+        this.p2Name = p2Name;
     }
      
     public void setMessage(String message) {
@@ -23,6 +28,13 @@ public class StatusBar extends JLabel {
     
     public void update()
     {
-    	setMessage("Player " + turnController.getPlayerTurn() + " its your turn!");
+    	if(turnController.getPlayerTurn() == 1)
+    	{
+    	setMessage("Player " + turnController.getPlayerTurn() + " - " + p1Name + " its your turn!");
+    	}
+    	else if (turnController.getPlayerTurn() == 2)
+    	{
+    		setMessage("Player " + turnController.getPlayerTurn() + " - " + p2Name + " its your turn!");
+    	}
     }
 }
