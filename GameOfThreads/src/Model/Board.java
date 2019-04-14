@@ -2,8 +2,8 @@ package Model;
 
 public class Board
 {
-    final static int GRID_WIDTH = 11;   //Final board width
-    private Square[][] grid;
+    final static int GRID_WIDTH = 11;   // Final board width
+    private Square[][] grid;            // A 2-d array of squares
 
     public Board()
     {
@@ -11,6 +11,7 @@ public class Board
         initialiseBoard();
     }
 
+    //getter setter methods
     public int getWidth()
     {
 		return GRID_WIDTH;
@@ -26,11 +27,12 @@ public class Board
         return grid[x][y].getPiece();
     }
 
-    public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
+    public void setSquarePiece(int x, int y, Piece piece)
     {
         grid[x][y].setPiece(piece);
     }
 
+    // Sets up the pre destined squares and pieces
     private void initialiseBoard()
     {
         System.out.println("Initialising board");
@@ -39,6 +41,7 @@ public class Board
         initialisePieces();
     }
 
+    // Sets up the pre destined squares
     private void initialiseSquares()
     {
 
@@ -92,6 +95,7 @@ public class Board
         }
     }
 
+    // Sets up the pre destined pieces
     private void initialisePieces()
     {
 
@@ -117,6 +121,7 @@ public class Board
         ((CornerSquare)grid[10][5]).capture(2);
     }
 
+    // The piece in current coordinates attacks the piece in new coordinates
     public boolean attackPiece(int currentX, int currentY, int newX, int newY)
     {
         //Pre conditions
@@ -157,6 +162,7 @@ public class Board
         return true;
     }
 
+    // The piece in current coordiantes moves to new coordinates
     public boolean movePiece (int currentX, int currentY, int newX, int newY)
     {
         if(validateMove( currentX,  currentY,  newX,  newY))
@@ -179,6 +185,7 @@ public class Board
             return false;
     }
 
+    //Helper methiod to check if the move is valid and if not valid displays error messages
     private boolean validateMove(int currentX, int currentY, int newX, int newY)
     {
         //check
@@ -217,7 +224,7 @@ public class Board
         return true; //test return statement
     }
 
-    //Counts the movement length to check if it fits the character's range.
+    // Helper method that counts the movement length to check if it fits the character's range.
     private int countMoveLength(int currentX, int currentY, int newX, int newY)
     {
         int maxX, minX, xDiff;
@@ -260,6 +267,10 @@ public class Board
         return maxDiff;
     }
 
+    // Helper methiod to check if either of the players won and if they did returns the winner's id
+    // Returns 0 if no-one won
+    // Returns 1 if player 1 won
+    // returns 2 if player 2 won
     public int checkWinConditions()
     {
         //check for errors
@@ -284,6 +295,8 @@ public class Board
         return 0;
     }
 
+
+    //Checks if all squares are occupied by characters of same team and if they did returns their player id.
     //Returns 0 if all corner squares aren't occupied by the same player characters
     //Returns 1 if all corner squares are occupied by player 1.
     //Returns 2 if all corner squares are occupied by player 2.
@@ -294,11 +307,6 @@ public class Board
         {
             return 0;
         }
-
-        // Corner Square 10,5
-        // Corner Square 0,5
-        // Corner Square 5,0
-        // Corner Square 5,10
 
         if((grid[10][5].getPiece().getPLAYER() == 1) && (grid[0][5].getPiece().getPLAYER() == 1) && (grid[5][0].getPiece().getPLAYER() == 1) && (grid[5][10].getPiece().getPLAYER() == 1))
         {
@@ -315,6 +323,7 @@ public class Board
         return 0;
     }
 
+    // Checks if all characters of either team are defeated and if they did, returns the survivingg player's id.
     //Returns 0 if both player's have atleast 1 character alive.
     //Returns 1 if player 1 killed all players on player 2.
     //Returns 2 if player 2 killed all players on player 1.
@@ -349,7 +358,6 @@ public class Board
             }
         }
 
-
         //Check for errors
         if((allPlayer1CharactersDied) && (allPlayer2CharactersDied))
         {
@@ -372,6 +380,7 @@ public class Board
         return 0;
     }
 
+    //Activates special of all pieces if thir special turn is the same as the one given
     public void activateSpecial(int specialTurn)
     {
         //This for loops checks all squares of the grid for pieces and activate appropriate specials.
@@ -396,6 +405,7 @@ public class Board
         }
     }
 
+    //deactivates special of all pieces on board.
     public void deactivateSpecial()
     {
         //This for loops checks all squares of the grid for pieces and activate appropriate specials.
