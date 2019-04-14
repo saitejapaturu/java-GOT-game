@@ -16,7 +16,7 @@ public class StatusBar extends JLabel {
     public StatusBar(TurnController turnController, String p1Name, String p2Name) {
         super();
         super.setPreferredSize(new Dimension(100, 16));
-        setMessage("Ready");
+        setMessage("Game Of Threads!");
         this.turnController = turnController;
         this.p1Name = p1Name;
         this.p2Name = p2Name;
@@ -36,5 +36,10 @@ public class StatusBar extends JLabel {
     	{
     		setMessage("Player " + turnController.getPlayerTurn() + " - " + p2Name + " its your turn!");
     	}
+    }
+    
+    public void updateTurns()
+    {
+    	setMessage("Turn Number " + turnController.getTurn());
     }
 }
