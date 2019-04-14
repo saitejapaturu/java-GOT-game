@@ -13,6 +13,8 @@ public class Tank extends Piece
 
 	public void special()
 	{
+        System.out.println("Special for tank activated");
+
 		//tank piece goes fortifies itself every 3rd turn unable to move or take damage
         this.setRange(0);
         originalHealth = this.getHealth();
