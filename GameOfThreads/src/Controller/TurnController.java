@@ -1,24 +1,16 @@
 package Controller;
 
-import Model.*;
 
 public class TurnController
 {
     private int turn;
 
-    private int click;
-
-    private boolean p1;
-    private boolean p2;
-
-    private Square selectedSquare;
+    private int playerTurn;
 
     public TurnController()
     {
         this.turn = 1;
-        this.click = 0;
-        this.p1 = true;
-        this.p2 = false;
+        this.playerTurn = 1;
     }
 
     public int getTurn()
@@ -26,31 +18,23 @@ public class TurnController
         return turn;
     }
 
-    public void switchClick()
+    public int getPlayerTurn()
     {
-        if (this.click == 0)
-        {
-            this.click = 1;
-        }
-        else
-        {
-            this.click = 0;
-        }
-
+        return  playerTurn;
     }
 
     public void switchTurn()
     {
-        if (this.turn == 1)
+        if (this.playerTurn == 1)
         {
-            this.turn = 2;
+            this.playerTurn = 2;
         }
         else
         {
-            this.turn = 1;
+            this.playerTurn = 1;
         }
 
-        this.click = 0;
+        this.turn++;
 
     }
 }

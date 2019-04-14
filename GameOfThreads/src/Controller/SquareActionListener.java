@@ -8,105 +8,157 @@ import Model.GameEngine;
 import Model.Piece;
 import View.MainFrame;
 
-public class SquareActionListener implements ActionListener
-{
+public class SquareActionListener implements ActionListener {
 	private Board gameBoard;
-	private int x;
-	private int y;
+	private int currentX;
+	private int currentY;
+
+	private int firstX;
+	private int firstY;
+
+	private int click; //Is used to check if it's the first square to be selected or the second.
+
 	private GameEngine gameEngine;
 	private MainFrame mainFrame;
-	private TurnControllerBackUp turnControllerBackUp;
+	private TurnController turnController;
 
-	public SquareActionListener(Board gameBoard, int x, int y, GameEngine gameEngine, 
-			MainFrame mainFrame, TurnControllerBackUp turnControllerBackUp)
-	{
+	public SquareActionListener(Board gameBoard, int currentX, int currentY, GameEngine gameEngine,
+								MainFrame mainFrame, TurnController turnController) {
 		this.gameBoard = gameBoard;
-		this.x=x;
-		this.y=y;
+		this.currentX = currentX;
+		this.currentY = currentY;
 		this.gameEngine = gameEngine;
 		this.mainFrame = mainFrame;
 		//System.out.println("Listener for square " + x + ", " + y + " was created");
-		this.turnControllerBackUp = turnControllerBackUp;
+		this.turnController = turnController;
+		this.click = 0;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		System.out.println("l35 Square: " + x + ", " + y + "was clicked");
-		if(turnControllerBackUp.getClick() == 0)
+		System.out.println("l35 Square: " + currentX + ", " + currentY + "was clicked");
+
+		//if it is the first click.
+		if (click == 0)
 		{
-			//if it is firstclick
-			if(gameBoard.getSquarePiece(x,y) != null)
+			//Check if the square selected has a piece to perform action.
+			if (gameBoard.getSquarePiece(currentX, currentY) != null)
 			{
-				turnControllerBackUp.setSelX(x);
-				turnControllerBackUp.setSelY(y);
-				turnControllerBackUp.setClick(1);  //switch click
+				firstX = currentX;
+				firstY = currentY;
+
+				click = 1;
 			}
+
+			//If the square selected has no piece.
 			else
 			{
+				//debug
 				System.out.println("l47 Selected a square with no piece");
-				turnControllerBackUp.setClick(0);
-				return;
+				resetClick();
+				return; // end method.
 			}
 		}
 
-		else if (turnControllerBackUp.getClick()==1)
+		//If the piece is already selected and a new is square selected
+		else if (click == 1)
 		{
-			int pieceX = turnControllerBackUp.getSelX();
-			int pieceY = turnControllerBackUp.getSelY();
-			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
-			int player;
-			if(gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY()) != null)
-		{
-			player = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY()).getPLAYER();
+//			int pieceX = turnControllerBackUp.getSelX();
+//			int pieceY = turnControllerBackUp.getSelY();
+
+//			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
+
 			//checks piece belongs to player whose turn it is
-			if(player == turnControllerBackUp.getTurn())
+			if(gameBoard.getSquarePiece(firstX,firstY).getPLAYER() != turnController.getPlayerTurn())
 			{
-				if(gameBoard.movePiece(pieceX, pieceY, x, y))
+				System.err.println("This piece belongs to enemy!");
+				return; //end action method
+			}
+
+			//Make sure the first square selected has a piece.
+			else if (gameBoard.getSquarePiece(firstX, firstY) != null)
+			{
+				//if the second square selected is empty, the piece moves.
+				if (gameBoard.getSquarePiece(currentX,currentY) == null)
 				{
-					//moving piece
-					//gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
-					mainFrame.movePiece(pieceX, pieceY, x, y);
-					turnControllerBackUp.setClick(0);
-					System.out.println("Valid move");
-					turnControllerBackUp.switchTurn();
-					turnControllerBackUp.setClick(0);
-					mainFrame.updateComponents();
-					mainFrame.revalidate();
-					return;
+					//if move is valid
+					if (gameBoard.movePiece(firstX, firstY, currentX, currentY))
+					{
+						//moving piece
+						//gameEngine.movePiece(gameBoard, firstX, firstY, x, y);
+						mainFrame.movePiece(firstX, firstY, currentX, currentY);
+						System.out.println("Valid move");
+
+						endOfTurn();
+						return;
+					}
+					//If move isn't valid, doesn't end turn, just reset's click
+					else
+					{
+						System.out.println("Not a Valid Move");
+
+						resetClick();
+
+						return;
+					}
 				}
-				else
+
+				//if the square the piece wants to move to has an piece
+				else if (gameBoard.getSquarePiece(currentX,currentY) != null)
 				{
-					System.out.println("Not a Valid Move");
-					turnControllerBackUp.setClick(0);
-					return;
+					//Check if the piece is oon our team, if so method ends.
+					if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() == gameBoard.getSquarePiece(firstX,firstY).getPLAYER())
+					{
+						System.err.println("Cannot move onto already occupied square!");
+					}
+
+					else
+					{
+						//If attack is valid
+						if(gameBoard.attackPiece(firstX,firstY,currentX,currentY))
+						{
+							System.out.println("Valid Attack");
+
+							endOfTurn();
+							return;
+						}
+						//If move isn't valid, doesn't end turn, just reset's click
+						else
+						{
+							System.out.println("Not a Valid Attack");
+
+							resetClick();
+							return;
+						}
+					}
 				}
 			}
-			//if validatemove fails
-			
-			else
-			{
-				System.out.println("Not Your Turn");
-				turnControllerBackUp.setClick(0);
-				return;
-			}
-			
 		}
-		else if(turnControllerBackUp.getClick() == 1)
+	}
+
+	private void endOfTurn()
+	{
+		if(gameBoard.checkWinConditions() != 0)
 		{
-			//functionality for if it is enemy piece and second click
-			//gameEngine.pieceAttack(gameBoard.getSquarePiece(pieceX, pieceY),x , y);
+			gameOver();
 		}
-		else
-		{
-			turnControllerBackUp.setClick(0);
-			return;
-		}
-		
-		}
+
+		turnController.switchTurn();
+		resetClick();
 		mainFrame.revalidate();
 		mainFrame.updateComponents();
+	}
 
+	//If game ends
+	private void gameOver()
+	{
+
+	}
+
+	private void resetClick()
+	{
+		click = 0;
 	}
 
 }
