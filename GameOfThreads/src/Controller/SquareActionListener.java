@@ -8,63 +8,69 @@ import Model.GameEngine;
 import Model.Piece;
 import View.MainFrame;
 
-public class SquareActionListener implements ActionListener {
-	Board gameBoard;
+public class SquareActionListener implements ActionListener
+{
+	private Board gameBoard;
 	private int x;
 	private int y;
-	GameEngine gameEngine;
-	MainFrame mainFrame;
-	TurnController turnController;
+	private GameEngine gameEngine;
+	private MainFrame mainFrame;
+	private TurnControllerBackUp turnControllerBackUp;
 
 	public SquareActionListener(Board gameBoard, int x, int y, GameEngine gameEngine, 
-			MainFrame mainFrame, TurnController turnController) {
+			MainFrame mainFrame, TurnControllerBackUp turnControllerBackUp)
+	{
 		this.gameBoard = gameBoard;
 		this.x=x;
 		this.y=y;
 		this.gameEngine = gameEngine;
 		this.mainFrame = mainFrame;
 		//System.out.println("Listener for square " + x + ", " + y + " was created");
-		this.turnController = turnController;
+		this.turnControllerBackUp = turnControllerBackUp;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-	//	System.out.println("Square: " + x + ", " + y + "was clicked");
-		if(turnController.getClick() == 0)
+	public void actionPerformed(ActionEvent arg0)
+	{
+		System.out.println("l35 Square: " + x + ", " + y + "was clicked");
+		if(turnControllerBackUp.getClick() == 0)
 		{
 			//if it is firstclick
-			if(gameBoard.getSquarePiece(x,y) != null) {
-		turnController.setSelX(x);
-		turnController.setSelY(y);
-		turnController.setClick(1);
+			if(gameBoard.getSquarePiece(x,y) != null)
+			{
+				turnControllerBackUp.setSelX(x);
+				turnControllerBackUp.setSelY(y);
+				turnControllerBackUp.setClick(1);  //switch click
 			}
 			else
 			{
-				turnController.setClick(0);
+				System.out.println("l47 Selected a square with no piece");
+				turnControllerBackUp.setClick(0);
 				return;
 			}
 		}
-		else if (turnController.getClick()==1)
+
+		else if (turnControllerBackUp.getClick()==1)
 		{
-		int pieceX = turnController.getSelX();
-		int pieceY = turnController.getSelY();
-		Piece test = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY());
-		int player;
-		if(gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()) != null)
+			int pieceX = turnControllerBackUp.getSelX();
+			int pieceY = turnControllerBackUp.getSelY();
+			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
+			int player;
+			if(gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY()) != null)
 		{
-			player = gameBoard.getSquarePiece(turnController.getSelX(), turnController.getSelY()).getPLAYER();
+			player = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY()).getPLAYER();
 			//checks piece belongs to player whose turn it is
-			if(player == turnController.getTurn())
+			if(player == turnControllerBackUp.getTurn())
 			{
-				if(test.validateMove(gameBoard, pieceX, pieceY, x, y))
+				if(gameBoard.movePiece(pieceX, pieceY, x, y))
 				{
 					//moving piece
-					gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
+					//gameEngine.movePiece(gameBoard, pieceX, pieceY, x, y);
 					mainFrame.movePiece(pieceX, pieceY, x, y);
-					turnController.setClick(0);
+					turnControllerBackUp.setClick(0);
 					System.out.println("Valid move");
-					turnController.switchTurn();
-					turnController.setClick(0);
+					turnControllerBackUp.switchTurn();
+					turnControllerBackUp.setClick(0);
 					mainFrame.updateComponents();
 					mainFrame.revalidate();
 					return;
@@ -72,7 +78,7 @@ public class SquareActionListener implements ActionListener {
 				else
 				{
 					System.out.println("Not a Valid Move");
-					turnController.setClick(0);
+					turnControllerBackUp.setClick(0);
 					return;
 				}
 			}
@@ -81,19 +87,19 @@ public class SquareActionListener implements ActionListener {
 			else
 			{
 				System.out.println("Not Your Turn");
-				turnController.setClick(0);
+				turnControllerBackUp.setClick(0);
 				return;
 			}
 			
 		}
-		else if(turnController.getClick() == 1)
+		else if(turnControllerBackUp.getClick() == 1)
 		{
 			//functionality for if it is enemy piece and second click
 			//gameEngine.pieceAttack(gameBoard.getSquarePiece(pieceX, pieceY),x , y);
 		}
 		else
 		{
-			turnController.setClick(0);
+			turnControllerBackUp.setClick(0);
 			return;
 		}
 		

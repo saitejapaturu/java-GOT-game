@@ -4,17 +4,17 @@ import java.awt.Dimension;
 
 import javax.swing.JLabel;
 
-import Controller.TurnController;
+import Controller.TurnControllerBackUp;
 
 public class StatusBar extends JLabel {
     //	statusbar class from java tips.org
 	
-	private TurnController turnController;
-    public StatusBar(TurnController turnController) {
+	private TurnControllerBackUp turnControllerBackUp;
+    public StatusBar(TurnControllerBackUp turnControllerBackUp) {
         super();
         super.setPreferredSize(new Dimension(100, 16));
         setMessage("Ready");
-        this.turnController = turnController;
+        this.turnControllerBackUp = turnControllerBackUp;
     }
      
     public void setMessage(String message) {
@@ -23,6 +23,6 @@ public class StatusBar extends JLabel {
     
     public void update()
     {
-    	setMessage("Player " + turnController.getTurn() + " its your turn!");
+    	setMessage("Player " + turnControllerBackUp.getTurn() + " its your turn!");
     }
 }
