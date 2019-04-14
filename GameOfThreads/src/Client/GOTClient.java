@@ -24,7 +24,6 @@ public class GOTClient {
 			{
 				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine, turnController);
 
-				//mainFrame.Update("Welcome to the Game Of Threads", 0);
 			}
 		});
 	}
