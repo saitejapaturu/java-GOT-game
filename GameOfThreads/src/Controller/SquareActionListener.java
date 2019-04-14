@@ -6,30 +6,32 @@ import java.awt.event.ActionListener;
 import Model.Board;
 import View.MainFrame;
 
-public class SquareActionListener implements ActionListener {
+public class SquareActionListener implements ActionListener
+{
 	private Board gameBoard;
-	private int currentX;
-	private int currentY;
-
-
+	private int currentX;		// X coordinate of the currently selected square
+	private int currentY;		// Y coordinate of the currently selected square
 
 	private MainFrame mainFrame;
 	private TurnController turnController;
 
 	public SquareActionListener(Board gameBoard, int currentX, int currentY,
-								MainFrame mainFrame, TurnController turnController) {
+								MainFrame mainFrame, TurnController turnController)
+	{
 		this.gameBoard = gameBoard;
 		this.currentX = currentX;
 		this.currentY = currentY;
 		this.mainFrame = mainFrame;
-		//System.out.println("Listener for square " + x + ", " + y + " was created");
 		this.turnController = turnController;
 	}
 
+	//When a square is clicked, if it's the second click, if all conditions apply either moves the piece
+	// or attacks enemy piece based on the square selected
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		System.out.println("l35 Square: " + currentX + ", " + currentY + "was clicked");
+		//For debugging
+		//System.out.println("l35 Square: " + currentX + ", " + currentY + "was clicked");
 
 		//if it is the first click.
 		if (turnController.getclick() == 0)
@@ -61,11 +63,6 @@ public class SquareActionListener implements ActionListener {
 		//If the piece is already selected and a new is square selected
 		else if (turnController.getclick() == 1)
 		{
-//			int pieceX = turnControllerBackUp.getSelX();
-//			int pieceY = turnControllerBackUp.getSelY();
-
-//			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
-
 			//Make sure the first square selected has a piece.
 			 if (gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()) != null)
 			{
@@ -127,6 +124,7 @@ public class SquareActionListener implements ActionListener {
 		}
 	}
 
+	//This method gets called at the end of the turn.
 	private void endOfTurn()
 	{
 		if(gameBoard.checkWinConditions() != 0)
@@ -142,16 +140,28 @@ public class SquareActionListener implements ActionListener {
 		specials();
 	}
 
-	//If game ends
+	//If game ends call this method
 	private void gameOver()
 	{
 
 	}
 
+	//Deactivates specials of all pieces and activates specials of appropriate pieces for next turn.
 	private void specials()
 	{
 		gameBoard.deactivateSpecial();
-		gameBoard.activateSpecial(turnController.getTurn());
+
+		//If the turn is a multiple of 2, activate specials of the pieces whose special activates on every 3rd turn
+		if(turnController.getTurn()%2 == 0)
+		{
+			gameBoard.activateSpecial(2);
+		}
+
+		//If the turn is a multiple of 3, activate specials of the pieces whose special activates on every 3rd turn
+		else if(turnController.getTurn()%3 == 0)
+		{
+			gameBoard.activateSpecial(3);
+		}
 	}
 
 
