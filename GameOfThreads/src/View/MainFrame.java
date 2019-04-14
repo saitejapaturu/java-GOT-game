@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
 	private JButton[][] gridGUI;
 	private Model.Board gameBoard;
 	private StatusBar statusBar;
-	private ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
+	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
 	private TurnController turnController;
 	String p1Name;
 	String p2Name;
@@ -68,33 +68,41 @@ public class MainFrame extends JFrame {
             	gridGUI[i][j].setIcon(null);
             }
 	   	}
-        gridGUI[0][5].setIcon(Assasin);
-        gridGUI[1][4].setIcon(Assasin);
-        gridGUI[1][6].setIcon(Mage);
-        gridGUI[2][3].setIcon(Mage);
-        gridGUI[2][7].setIcon(Scout);
-        gridGUI[3][2].setIcon(Scout);
-        
-        gridGUI[10][5].setIcon(Soldier);
-        gridGUI[9][4].setIcon(Soldier);
-        gridGUI[9][6].setIcon(Support);
-        gridGUI[8][3].setIcon(Support);
-        gridGUI[8][7].setIcon(Tank);
-        gridGUI[7][2].setIcon(Tank);
-        
-		
+	   	//Player 1
+        gridGUI[0][5].setIcon(Assasin1);
+        gridGUI[1][4].setIcon(Soldier1);
+        gridGUI[1][6].setIcon(Mage1);
+        gridGUI[2][3].setIcon(Support1);
+        gridGUI[2][7].setIcon(Scout1);
+        gridGUI[3][2].setIcon(Tank1);
+
+        //Player 2
+        gridGUI[10][5].setIcon(Assasin2);
+        gridGUI[9][4].setIcon(Soldier2);
+        gridGUI[9][6].setIcon(Mage2);
+        gridGUI[8][3].setIcon(Support2);
+        gridGUI[8][7].setIcon(Scout2);
+        gridGUI[7][2].setIcon(Tank2);
 	}
 	
 	//simple method for making piece icons
 	private final void createImages()
 	{
-		Assasin = createImageIcon("images/Monster1.png","Assasin");
-		Mage = createImageIcon("images/Monster2.png","Mage");
-		Scout = createImageIcon("images/Monster3.png","Scout");
-	       
-		Soldier = createImageIcon("images/Monster4.png","Soldier");
-		Support = createImageIcon("images/PoisonedHero2.png","Support");
-		Tank = createImageIcon("images/PoisonedHero3.png","Tank");
+		//For Player 1
+		Assasin1 = createImageIcon("images/Assassin1.png","Assasin for player 1");
+		Mage1 = createImageIcon("images/Mage1.png","Mage for player 1");
+		Scout1 = createImageIcon("images/Scout1.png","Scout for player 1");
+		Soldier1 = createImageIcon("images/Soldier1.png","Soldier for player 1");
+		Support1 = createImageIcon("images/Support1.png","Support for player 1");
+		Tank1 = createImageIcon("images/Tank1.png","Tank for player 1");
+
+		//For player 2
+		Assasin2 = createImageIcon("images/Assassin2.png","Assasin for player 2");
+		Mage2 = createImageIcon("images/Mage2.png","Mage for player 2");
+		Scout2 = createImageIcon("images/Scout2.png","Scout for player 2");
+		Soldier2 = createImageIcon("images/Soldier2.png","Soldier for player 2");
+		Support2 = createImageIcon("images/Support2.png","Support for player 2");
+		Tank2 = createImageIcon("images/Tank2.png","Tank for player 2");
 	}
 	
 	//from java help docs

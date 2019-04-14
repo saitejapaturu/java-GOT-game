@@ -2,19 +2,29 @@ package Model;
 
 public class Assassin extends Piece
 {
-	private static final int MAXMOVE = 2;
-	private static final int RANGE = 3;
-	private static final int DAMAGE = 3;
+
 	private static final String ID = "Assassin";
 	private static final int SPECIALTURN = 2;
+
 	
 	public Assassin(int player)
 	{
-		super(5, MAXMOVE, RANGE, DAMAGE, ID, player, SPECIALTURN);
+		super(5, 3, 3, ID, player, SPECIALTURN);
 	}
 	
 	public void special()
 	{
-		//cancels any special abilities of enemy pieces for 2nd turn
+		//Increases range by 1 every 2nd turn;
+		//Idea for A-2 cancels any special abilities of enemy pieces for 2nd turn
+
+		this.setRange(4);
+		this.setSpecial(true);
+	}
+
+	//Returns to original range
+	public void deactivateSpecial()
+	{
+		this.setRange(3);
+		this.setSpecial(false);
 	}
 }
