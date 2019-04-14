@@ -16,6 +16,7 @@ public class MainFrame extends JFrame {
 	private JButton[][] gridGUI;
 	private Model.Board gameBoard;
 	private StatusBar statusBar;
+	private StatusBar turnTracker;
 	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
 	private TurnController turnController;
 	static String p1Name;
@@ -36,6 +37,8 @@ public class MainFrame extends JFrame {
 		setPlayers();
 		setVisible(true);
 		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
+		this.turnTracker = new StatusBar(turnController, null, null);
+		getContentPane().add(turnTracker, java.awt.BorderLayout.NORTH);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
 		statusBar.update();
 	}
@@ -258,6 +261,7 @@ public class MainFrame extends JFrame {
 	   public void updateComponents()
 	   {
 		   statusBar.update();
+		   turnTracker.updateTurns();
 		   checkIcons();
 		   int playerWins = gameBoard.checkWinConditions();
 		   if(playerWins == 1)
