@@ -7,15 +7,28 @@ public class TurnController
 
     private int playerTurn;
 
+    private int click; //Is used to check if it's the first square to be selected or the second.
+
     public TurnController()
     {
         this.turn = 1;
         this.playerTurn = 1;
+        click = 0;
     }
 
     public int getTurn()
     {
         return turn;
+    }
+
+    public int getclick()
+    {
+        return click;
+    }
+
+    public void setClick(int click)
+    {
+        this.click = click;
     }
 
     public int getPlayerTurn()
@@ -34,6 +47,7 @@ public class TurnController
             this.playerTurn = 1;
         }
 
+        click = 0;
         this.turn++;
 
     }
