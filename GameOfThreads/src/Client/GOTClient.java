@@ -1,12 +1,11 @@
 package Client;
 
-import Model.Board;
 import Model.GameEngine;
 import View.MainFrame;
 
 import javax.swing.*;
 
-import Controller.TurnController;
+import Controller.TurnControllerBackUp;
 
 public class GOTClient {
 
@@ -15,7 +14,7 @@ public class GOTClient {
 		
 		//board.newBoard();
 		GameEngine gameEngine = new GameEngine();
-		TurnController turnController = new TurnController();
+		TurnControllerBackUp turnControllerBackUp = new TurnControllerBackUp();
 
 
 		SwingUtilities.invokeLater(new Runnable()
@@ -23,7 +22,7 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine, turnController);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine, turnControllerBackUp);
 
 				//mainFrame.Update("Welcome to the Game Of Threads", 0);
 			}

@@ -1,21 +1,15 @@
 package View;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Controller.SquareActionListener;
-import Controller.TurnController;
+import Controller.TurnControllerBackUp;
 import Model.GameEngine;
-import Model.Square;
-import Model.Board;
-import Model.CornerSquare;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class MainFrame extends JFrame {
 	
@@ -26,14 +20,14 @@ public class MainFrame extends JFrame {
 	private Model.Board gameBoard;
 	private StatusBar statusBar;
 	private ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
-	private TurnController turnController;
+	private TurnControllerBackUp turnControllerBackUp;
 
-	public MainFrame(String title, Model.Board board, GameEngine gameEngine, TurnController turnController)
+	public MainFrame(String title, Model.Board board, GameEngine gameEngine, TurnControllerBackUp turnControllerBackUp)
 	{
 		super(title);
 		this.gameEngine = gameEngine;
 		this.gameBoard = board;
-		this.turnController = turnController;
+		this.turnControllerBackUp = turnControllerBackUp;
 		Initialise();
 		setIcons();
 		add(gui);
@@ -43,9 +37,9 @@ public class MainFrame extends JFrame {
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
-		this.statusBar = new StatusBar(turnController);
+		this.statusBar = new StatusBar(turnControllerBackUp);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
-		statusBar.setMessage("Player " + turnController.getTurn() + " your turn!");
+		statusBar.setMessage("Player " + turnControllerBackUp.getTurn() + " your turn!");
 	}
 
 	
@@ -174,18 +168,18 @@ public class MainFrame extends JFrame {
 	        
 	        //creating corner gridGUI
 	        gridGUI[max][mid] = new JButton();
-	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnController));
+	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, gameEngine, this, turnControllerBackUp));
             gridGUI[max][mid].setBackground(Color.GREEN);
             setButtonProperties(gridGUI[max][mid]);
 
             gridGUI[min][mid] = new JButton();
-	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnController));
+	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, gameEngine, this, turnControllerBackUp));
             gridGUI[min][mid].setBackground(Color.GREEN);
             setButtonProperties(gridGUI[min][mid]);
 
             //debug
             gridGUI[mid][min] = new JButton();
-	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnController));
+	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, gameEngine, this, turnControllerBackUp));
             gridGUI[mid][min].setBackground(Color.GREEN);
             gridGUI[mid][min].setOpaque(true);
             gridGUI[mid][min].setContentAreaFilled(true);
@@ -193,7 +187,7 @@ public class MainFrame extends JFrame {
     		setButtonProperties(gridGUI[mid][min]);
             
             gridGUI[mid][max] = new JButton();
-	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnController));
+	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, gameEngine, this, turnControllerBackUp));
             gridGUI[mid][max].setBackground(Color.GREEN);
            
     		setButtonProperties(gridGUI[mid][max]);
@@ -216,7 +210,7 @@ public class MainFrame extends JFrame {
 					if (upperRow==(lowerRow-2))
 					{
 						JButton button = new JButton();
-						button.addActionListener(new SquareActionListener(gameBoard, upperRow+1, i, gameEngine, this, turnController));
+						button.addActionListener(new SquareActionListener(gameBoard, upperRow+1, i, gameEngine, this, turnControllerBackUp));
 						button.setBackground(Color.BLUE);
 						setButtonProperties(button);
 
@@ -227,7 +221,7 @@ public class MainFrame extends JFrame {
 					}
 
 					JButton button = new JButton();
-					button.addActionListener(new SquareActionListener(gameBoard, upperRow, i, gameEngine, this, turnController));
+					button.addActionListener(new SquareActionListener(gameBoard, upperRow, i, gameEngine, this, turnControllerBackUp));
 					button.setBackground(Color.YELLOW);
 					setButtonProperties(button);
 
@@ -235,7 +229,7 @@ public class MainFrame extends JFrame {
 
 
 					JButton button2 = new JButton();
-					button2.addActionListener(new SquareActionListener(gameBoard, lowerRow, i, gameEngine, this, turnController));
+					button2.addActionListener(new SquareActionListener(gameBoard, lowerRow, i, gameEngine, this, turnControllerBackUp));
 					button2.setBackground(Color.RED);
 					setButtonProperties(button2);
 

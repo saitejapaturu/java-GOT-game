@@ -116,7 +116,7 @@ public class Board
         grid[7][2].setPiece(new Tank(2));
     }
 
-    public boolean attack(int currentX, int currentY, int newX, int newY)
+    public boolean attackPiece(int currentX, int currentY, int newX, int newY)
     {
         //Pre conditions
         //Check square
@@ -153,5 +153,101 @@ public class Board
         }
 
         return true;
+    }
+
+    public boolean movePiece (int currentX, int currentY, int newX, int newY)
+    {
+        if(validateMove( currentX,  currentY,  newX,  newY))
+        {
+            grid[newX][newY].setPiece(grid[currentX][currentY].getPiece());
+
+            grid[currentX][currentY].setPiece(null);
+
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    private boolean validateMove(int currentX, int currentY, int newX, int newY)
+    {
+        //check
+        //Pre conditions
+        //If the new position already has a character.
+        if(grid[newX][newY].getPiece() != null)
+        {
+            //If new position has the character of same team.
+            if(grid[newX][newY].getPiece().getPLAYER() == grid[currentX][currentY].getPiece().getPLAYER())
+            {
+                System.err.println("Cannot place two characters of same team on the same square.");
+            }
+
+            //If new position has the character of different team.
+            else
+            {
+                System.err.println("Cannot place two characters of different team on the same square, attack and defeat enemy.");
+            }
+
+            return false;
+        }
+
+        //Checks if the move is out of range.
+        else if(countMoveLength(currentX, currentY, newX, newY) > grid[currentX][currentY].getPiece().getRANGE())
+        {
+            System.err.println("Move length is greater than the range of the character.");
+            return false;
+        }
+        //If new position is not placeable.
+        else if(grid[newX][newY].getIsPlacebale() == false)
+        {
+            System.err.println("Can't place character on the square selected");
+            return false;
+        }
+
+        return true; //test return statement
+    }
+
+    //Counts the movement length to check if it fits the character's range.
+    private int countMoveLength(int currentX, int currentY, int newX, int newY)
+    {
+        int maxX, minX, xDiff;
+        int maxY, minY, yDiff;
+
+
+        if(currentX>=newX)
+        {
+            maxX = currentX;
+            minX = newX;
+        }
+        else
+        {
+            maxX = newX;
+            minX = currentX;
+        }
+
+        xDiff = maxX - minX;
+
+        if(currentY>=newY)
+        {
+            maxY = currentY;
+            minY = newY;
+        }
+        else
+        {
+            maxY = newY;
+            minY = currentY;
+        }
+
+        yDiff = maxY - minY;
+
+        int maxDiff;
+
+        if(xDiff >= yDiff)
+            maxDiff = xDiff;
+        else
+            maxDiff = yDiff;
+
+        return maxDiff;
     }
 }
