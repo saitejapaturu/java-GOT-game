@@ -2,19 +2,25 @@ package Model;
 
 public class Soldier extends Piece
 {
-	private static final int MAXMOVE = 3;
-	private static final int RANGE = 2;
-	private static final int DAMAGE = 2;
 	private static final String ID = "Soldier";
 	private static final int SPECIALTURN = 2;
 
 	public Soldier(int player)
 	{
-		super(4, MAXMOVE, RANGE, DAMAGE, ID, player, SPECIALTURN);
+		super(4, 2, 2, ID, player, SPECIALTURN);
 	}
 
 	public void special()
 	{
-		//soldier is able to deal double damage for 2nd turn
-	}
+		//soldier is able to deal double damage every 2nd turn
+        this.setDamage(4);
+        this.setSpecial(true);
+    }
+
+    //Returns to original range
+    public void deactivateSpecial()
+    {
+        this.setDamage(2);
+        this.setSpecial(false);
+    }
 }
