@@ -33,7 +33,7 @@ public class Board
 
     public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
     {
-        grid[y][x].setPiece(piece);
+        grid[x][y].setPiece(piece);
     }
 
     private void initialiseBoard()
@@ -167,19 +167,6 @@ public class Board
             grid[currentX][currentY].setPiece(null);
 
             return true;
-        }
-        
-        if(grid[newX][newY].getPiece() != null)
-        {
-            //If new position has the character of same team.
-            if(grid[newX][newY].getPiece().getPLAYER() != grid[currentX][currentY].getPiece().getPLAYER())
-            {
-                //attack
-                return true;
-            }
-
-
-            return false;
         }
 
         else

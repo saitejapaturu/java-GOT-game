@@ -285,5 +285,24 @@ public class MainFrame extends JFrame {
 	   public void updateComponents()
 	   {
 		   statusBar.update();
+		   checkIcons();
+	   }
+	   
+	   public void checkIcons()
+	   {
+		   int dim = gameBoard.getWidth();
+		   for(int i = 0;i<dim;i++)
+	        {
+	        	for (int j= 0; j<dim;j++)
+	        	{
+	        		if(gameBoard.getSquare(i, j)!=null)
+	        		{
+	        			if(gameBoard.getSquare(i, j).getPiece() == null)
+	        		{
+	        			gridGUI[i][j].setIcon(null);
+	        		}
+	        		}
+	        	}
+	        }
 	   }
 }
