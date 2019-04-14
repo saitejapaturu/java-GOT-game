@@ -7,8 +7,8 @@ import javax.swing.JLabel;
 import Controller.TurnController;
 
 public class StatusBar extends JLabel {
-    //	statusbar class from java tips.org
-	
+    //	statusbar class from java docs
+	// simple class used to display player turn and total turns
 	private String p1Name;
 	private String p2Name;
 
