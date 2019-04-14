@@ -12,8 +12,7 @@ public class SquareActionListener implements ActionListener {
 	private int currentX;
 	private int currentY;
 
-	private int firstX;
-	private int firstY;
+
 
 	private GameEngine gameEngine;
 	private MainFrame mainFrame;
@@ -70,17 +69,17 @@ public class SquareActionListener implements ActionListener {
 //			}
 
 			//Make sure the first square selected has a piece.
-			 if (gameBoard.getSquarePiece(firstX, firstY) != null)
+			 if (gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()) != null)
 			{
 				//if the second square selected is empty, the piece moves.
 				if (gameBoard.getSquarePiece(currentX,currentY) == null)
 				{
 					//if move is valid
-					if (gameBoard.movePiece(firstX, firstY, currentX, currentY))
+					if (gameBoard.movePiece(turnController.getFirstX(), turnController.getFirstY(), currentX, currentY))
 					{
 						//moving piece
 						//gameEngine.movePiece(gameBoard, firstX, firstY, x, y);
-						mainFrame.movePiece(firstX, firstY, currentX, currentY);
+						mainFrame.movePiece(turnController.getFirstX(), turnController.getFirstY(), currentX, currentY);
 						System.out.println("Valid move");
 
 						endOfTurn();
@@ -101,7 +100,7 @@ public class SquareActionListener implements ActionListener {
 				else if (gameBoard.getSquarePiece(currentX,currentY) != null)
 				{
 					//Check if the piece is oon our team, if so method ends.
-					if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() == gameBoard.getSquarePiece(firstX,firstY).getPLAYER())
+					if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() == gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()).getPLAYER())
 					{
 						System.err.println("Cannot move onto already occupied square!");
 					}
@@ -109,7 +108,7 @@ public class SquareActionListener implements ActionListener {
 					else
 					{
 						//If attack is valid
-						if(gameBoard.attackPiece(firstX,firstY,currentX,currentY))
+						if(gameBoard.attackPiece(turnController.getFirstX(), turnController.getFirstY(),currentX,currentY))
 						{
 							System.out.println("Valid Attack");
 
@@ -151,15 +150,15 @@ public class SquareActionListener implements ActionListener {
 
 	private void reset()
 	{
-		firstX = 0;
-		firstY = 0;
+		turnController.setFirstX(0);
+		turnController.setFirstY(0);
 		turnController.setClick(0);
 	}
 
 	private void validFirstClick(int firstX, int firstY)
 	{
-		this.firstX = firstX;
-		this.firstY = firstY;
+		turnController.setFirstX(firstX);
+		turnController.setFirstY(firstY);
 		turnController.setClick(1);
 	}
 
