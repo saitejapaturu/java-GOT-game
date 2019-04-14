@@ -59,13 +59,6 @@ public class Board
 
         int max=10, mid=5, min=0;
 
-        //Initialising corner squares;
-        grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
-        grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
-        grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
-        grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
-
-
         /* Initialising normal squares of the diamond block.
          * upperRow initialises the rows 1 to 5
          * and lowerRow initialises 6 to 9
@@ -99,6 +92,15 @@ public class Board
 
     private void initialisePieces()
     {
+        int max=10, mid=5, min=0;
+
+        //Initialising corner squares;
+        grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
+        grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
+        grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
+        grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
+
+
         //Placing Player 1 pieces
         grid[0][5].setPiece(new Assassin(1));
         grid[1][4].setPiece(new Soldier(1));
@@ -249,5 +251,117 @@ public class Board
             maxDiff = yDiff;
 
         return maxDiff;
+    }
+
+    public int checkWinConditions()
+    {
+        //check for errors
+        if(((allCornerSquareCaputeredBy() == 1) && (allEnemyCharactersDefeatedBy() == 2)) || ((allCornerSquareCaputeredBy() == 2) && (allEnemyCharactersDefeatedBy() == 1)))
+        {
+            System.err.println("Error: Both Player 1 and Player 2 have win conditions!");
+            return 1;
+        }
+
+        else if((allCornerSquareCaputeredBy() == 1) || (allEnemyCharactersDefeatedBy() == 1))
+        {
+            System.out.println("Player 1 wins!");
+            return 1;
+        }
+
+        else if((allCornerSquareCaputeredBy() == 2) || (allEnemyCharactersDefeatedBy() == 2))
+        {
+            System.out.println("Player 2 wins!");
+            return 1;
+        }
+
+        return 0;
+    }
+
+    //Returns 0 if all corner squares aren't occupied by the same player characters
+    //Returns 1 if all corner squares are occupied by player 1.
+    //Returns 2 if all corner squares are occupied by player 2.
+    public int allCornerSquareCaputeredBy()
+    {
+        //Check if any corner squares are unoccupied
+        if((grid[10][5].getPiece() == null) || (grid[0][5].getPiece() == null) || (grid[5][0].getPiece() == null) || (grid[5][10].getPiece() == null))
+        {
+            return 0;
+        }
+
+        // Corner Square 10,5
+        // Corner Square 0,5
+        // Corner Square 5,0
+        // Corner Square 5,10
+
+        if((grid[10][5].getPiece().getPLAYER() == 1) && (grid[0][5].getPiece().getPLAYER() == 1) && (grid[5][0].getPiece().getPLAYER() == 1) && (grid[5][10].getPiece().getPLAYER() == 1))
+        {
+            System.out.println("All Corner Squares Captured by Player 1.");
+            return 1;
+        }
+
+        else if((grid[10][5].getPiece().getPLAYER() == 2) && (grid[0][5].getPiece().getPLAYER() == 2) && (grid[5][0].getPiece().getPLAYER() == 2) && (grid[5][10].getPiece().getPLAYER() == 2))
+        {
+            System.out.println("All Corner Squares Captured by Player 2.");
+            return 2;
+        }
+
+        return 0;
+    }
+
+    //Returns 0 if both player's have atleast 1 character alive.
+    //Returns 1 if player 1 killed all players on player 2.
+    //Returns 2 if player 2 killed all players on player 1.
+    public int allEnemyCharactersDefeatedBy()
+    {
+        boolean allPlayer1CharactersDied = true;
+        boolean allPlayer2CharactersDied = true;
+
+        //This for loops checks all squares of the grid for players and check's what team the players belong to.
+        for(int i=0; i<GRID_WIDTH; i++)
+        {
+            for(int j=0; j<GRID_WIDTH; j++)
+            {
+                //Check if the square isn't null;
+                if(grid[i][j] != null)
+                {
+                    //Check if the square has a piece
+                    if(grid[i][j].getPiece() != null)
+                    {
+                        //Check what player characters belong to.
+                        if(grid[i][j].getPiece().getPLAYER() == 1)
+                        {
+                            allPlayer1CharactersDied = false;
+                        }
+                        else if(grid[i][j].getPiece().getPLAYER() == 2)
+                        {
+                            allPlayer2CharactersDied = false;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+        //Check for errors
+        if((allPlayer1CharactersDied) && (allPlayer2CharactersDied))
+        {
+            System.err.println("Error: All Characters Died.");
+            return 0;
+        }
+
+        else if(allPlayer1CharactersDied)
+        {
+            System.out.println("All Player 1 Characters Died.");
+            return 2;
+        }
+
+        else if(allPlayer2CharactersDied)
+        {
+            System.out.println("All Player 2 Characters Died.");
+            return 1;
+        }
+
+        return 0;
     }
 }
