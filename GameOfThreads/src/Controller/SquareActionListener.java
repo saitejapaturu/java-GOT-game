@@ -30,8 +30,6 @@ public class SquareActionListener implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		//For debugging
-		//System.out.println("l35 Square: " + currentX + ", " + currentY + "was clicked");
 
 		//if it is the first click.
 		if (turnController.getclick() == 0)
@@ -53,8 +51,7 @@ public class SquareActionListener implements ActionListener
 			//If the square selected has no piece.
 			else
 			{
-				//debug
-				System.out.println("l47 Selected a square with no piece");
+				
 				turnController.reset();
 				return; // end method.
 			}
