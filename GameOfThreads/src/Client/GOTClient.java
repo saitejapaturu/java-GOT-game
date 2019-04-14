@@ -1,6 +1,6 @@
 package Client;
 
-import Model.GameEngine;
+import Model.Board;
 import View.MainFrame;
 
 import javax.swing.*;
@@ -13,8 +13,9 @@ public class GOTClient {
 
 		
 		//board.newBoard();
-		GameEngine gameEngine = new GameEngine();
+		
 		TurnController turnController = new TurnController();
+		Board board = new Board();
 
 
 		SwingUtilities.invokeLater(new Runnable()
@@ -22,7 +23,7 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", gameEngine.getBoard(), gameEngine, turnController);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController);
 
 			}
 		});
