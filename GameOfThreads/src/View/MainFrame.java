@@ -210,6 +210,8 @@ public class MainFrame extends JFrame {
 			 * and creating squares at columns 4 to 6 in those rows.
 			 * After every loop, upperRow increments and lowerRow decrements by 1
 			 * and the column width increases on both sides by 1.
+			 * 
+			 * Jbuttons are created and given correct properties
 			 */
     		for (int upperRow=1,lowerRow=9,low=4,high=6;upperRow<lowerRow;upperRow++,lowerRow--,low--,high++)
     		{
@@ -220,7 +222,7 @@ public class MainFrame extends JFrame {
 					{
 						JButton button = new JButton();
 						button.addActionListener(new SquareActionListener(gameBoard, upperRow+1, i, gameEngine, this, turnController));
-						button.setBackground(Color.BLUE);
+						button.setBackground(Color.DARK_GRAY);
 						setButtonProperties(button);
 
 						gridGUI[upperRow+1][i] = button;
@@ -231,7 +233,7 @@ public class MainFrame extends JFrame {
 
 					JButton button = new JButton();
 					button.addActionListener(new SquareActionListener(gameBoard, upperRow, i, gameEngine, this, turnController));
-					button.setBackground(Color.YELLOW);
+					button.setBackground(Color.DARK_GRAY);
 					setButtonProperties(button);
 
 					gridGUI[upperRow][i] = button;
@@ -239,7 +241,7 @@ public class MainFrame extends JFrame {
 
 					JButton button2 = new JButton();
 					button2.addActionListener(new SquareActionListener(gameBoard, lowerRow, i, gameEngine, this, turnController));
-					button2.setBackground(Color.RED);
+					button2.setBackground(Color.DARK_GRAY);
 					setButtonProperties(button2);
 
 					gridGUI[lowerRow][i] = button2;
@@ -248,27 +250,8 @@ public class MainFrame extends JFrame {
 					System.out.println("line 245: GUI for Squares created for : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
     			}
     		}
-
-
-		      //move down to test
-				for (int i = 0; i < gridGUI.length-1; i++)
-				{
-		            for (int j = 0; j < gridGUI[i].length-1; j++)
-		            {
-		            	if(gameBoard.getSquare(i, j) != null)
-		            	{
-		            		if(gameBoard.getSquare(i, j).getPiece()!=null)
-		            		{
-		            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
-		            		}
-		            	}
-		            	else
-		            	{
-		            		gridGUI[i][j].setText(i+ " " + j);
-		            	}
-		            }
-				}
-
+				
+    		//adding buttons to view
 		        for(int i = 0;i<width;i++)
 		        {
 		        	for (int j= 0; j<width;j++)
@@ -284,7 +267,7 @@ public class MainFrame extends JFrame {
 		   gridGUI[moveX][moveY].setIcon(gridGUI[pieceX][pieceY].getIcon());
 		   gridGUI[pieceX][pieceY].setIcon(null);
 	   }
-	   
+	 //simple helper method to set buttons not a part of board
 	   public void setButtonProperties(JButton button)
 	   {
 		   button.setOpaque(true);
@@ -292,6 +275,7 @@ public class MainFrame extends JFrame {
            button.setBorderPainted(true);
 	   }
 	   
+	   //updates individual gui components according to board
 	   public void updateComponents()
 	   {
 		   statusBar.update();
@@ -307,6 +291,7 @@ public class MainFrame extends JFrame {
 		   }
 	   }
 	   
+	 //checks for dead pieces and updates gui
 	   public void checkIcons()
 	   {
 		   int dim = gameBoard.getWidth();
@@ -328,13 +313,35 @@ public class MainFrame extends JFrame {
 	   
 	   private static void displayWin(int player)
 	    {
+		   //creates a simple win alert and closes game
 		   String winningMessage = "Congratulations player " + player + " you win!";
-		   //String title = "We have a Winner!";
-		   JOptionPane winningAlert = new JOptionPane();
 	       int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
 	       if (close == 0)
 	       {
 	    	   System.exit(0);
 	       }
 	    }
+	   
+	   // a simple testing method for help when debugging, labels piece squares with their set position and
+	   // number of player they are associated with
+	   private void squarePlacementTest()
+	   {
+		   for (int i = 0; i < gridGUI.length-1; i++)
+			{
+	            for (int j = 0; j < gridGUI[i].length-1; j++)
+	            {
+	            	if(gameBoard.getSquare(i, j) != null)
+	            	{
+	            		if(gameBoard.getSquare(i, j).getPiece()!=null)
+	            		{
+	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
+	            		}
+	            	}
+	            	else
+	            	{
+	            		gridGUI[i][j].setText(i+ " " + j);
+	            	}
+	            }
+			}
+	   }
 }
