@@ -2,10 +2,10 @@ package Model;
 
 public abstract class Piece
 {
-    private int health;
-    private boolean special;
-    private  int range;
-    private  int damage;
+    private int health;             // Health of the piece.
+    private boolean special;        // To check weather the special is activated.
+    private  int range;             // The range within which the piece can move or attack.
+    private  int damage;            // How much damage can this piece do when it attacks enemy's piece.
 
     private final String ID;
     private final int PLAYER;
@@ -25,6 +25,7 @@ public abstract class Piece
         this.special = false;
     }
 
+    //getter and setter methods
     public int getHealth()
     {
         return health;
@@ -80,11 +81,15 @@ public abstract class Piece
         return SPECIALTURN;
     }
 
+    // Takes damage from enemy and health decreases accordingly.
     public void takeDamage(int damage)
     {
         this.health -= damage;
     }
 
+    //Each piece has a special attribute which will be activated when this method is called.
     public abstract void special();
+
+    //The special attribute is deactivated.
     public abstract void deactivateSpecial();
 }

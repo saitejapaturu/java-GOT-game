@@ -15,6 +15,8 @@ public class Support extends Piece
 		//Heals itself by 25% of total hp every 2nd turn
 		this.setHealth((this.getHealth())+1);
 		this.setSpecial(true);
+
+		System.out.println("Special for Player - " + this.getPLAYER() + " Support activated. Health increased by 25%. Health is now: " + this.getHealth());
 	}
 
 	//Returns to original range
