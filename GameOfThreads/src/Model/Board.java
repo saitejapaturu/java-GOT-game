@@ -167,6 +167,19 @@ public class Board
 
             return true;
         }
+        
+        if(grid[newX][newY].getPiece() != null)
+        {
+            //If new position has the character of same team.
+            if(grid[newX][newY].getPiece().getPLAYER() != grid[currentX][currentY].getPiece().getPLAYER())
+            {
+                //attack
+                return true;
+            }
+
+
+            return false;
+        }
 
         else
             return false;
