@@ -17,7 +17,7 @@ public class Assassin extends Piece
 		//Increases range by 1 every 2nd turn;
 		//Idea for A-2 cancels any special abilities of enemy pieces for 2nd turn
 
-		System.out.println("Special for assassin activated");
+		System.out.println("Special for Player - " + this.getPLAYER() + " Assassin activated. Range Increased for this turn");
 
 		this.setRange(4);
 		this.setSpecial(true);
@@ -26,6 +26,8 @@ public class Assassin extends Piece
 	//Returns to original range
 	public void deactivateSpecial()
 	{
+		System.out.println("Special for Player - " + this.getPLAYER() + " Assassin de-activated. Range back to normal");
+
 		this.setRange(3);
 		this.setSpecial(false);
 	}

@@ -15,6 +15,8 @@ public class Soldier extends Piece
 		//soldier is able to deal double damage every 2nd turn
         this.setDamage(4);
         this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Soldier activated. Damage doubled for this turn.");
     }
 
     //Returns to original range
@@ -22,5 +24,7 @@ public class Soldier extends Piece
     {
         this.setDamage(2);
         this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Soldier de-activated. Damage back to normal.");
     }
 }

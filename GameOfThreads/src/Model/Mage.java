@@ -5,7 +5,7 @@ public class Mage extends Piece
 	private static final String ID = "Mage";
 	private static final int SPECIALTURN = 3;
 
-	private int originalHealth;
+	private int originalHealth; //As the special involves immunity. Stores the original health to return back to it next turn.
 
 	public Mage (int player)
 	{
@@ -19,6 +19,8 @@ public class Mage extends Piece
         originalHealth = this.getHealth();
         this.setHealth(10);
         this.setSpecial(true);
+
+		System.out.println("Special for Player - " + this.getPLAYER() + " Mage activated. Immune for this turn.");
 	}
 
     //Returns to original range
@@ -26,5 +28,7 @@ public class Mage extends Piece
     {
         this.setRange(originalHealth);
         this.setSpecial(false);
+
+		System.out.println("Special for Player - " + this.getPLAYER() + " Mage de-activated. Health back to normal.");
     }
 }
