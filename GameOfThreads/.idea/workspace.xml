@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/GOTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/GOTClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TurnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TurnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/StatusBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StatusBar.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.32945454">
+    <splitter split-orientation="horizontal" split-proportion="0.37890908">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -117,11 +114,15 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="26" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="26" />
+                <state relative-caret-position="228">
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
                   <folding>
                     <element signature="e#323#324#0" expanded="true" />
                     <element signature="e#350#351#0" expanded="true" />
+                    <element signature="e#333#334#0" expanded="true" />
+                    <element signature="e#360#361#0" expanded="true" />
+                    <element signature="e#412#413#0" expanded="true" />
+                    <element signature="e#445#446#0" expanded="true" />
                     <element signature="e#295#296#0" expanded="true" />
                     <element signature="e#328#329#0" expanded="true" />
                   </folding>
@@ -150,12 +151,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1815">
-                  <caret line="127" column="25" lean-forward="true" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#3656#3657#0" expanded="true" />
-                    <element signature="e#3672#3673#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="320">
+                  <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -163,7 +160,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
+                <state relative-caret-position="645">
                   <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -175,8 +172,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                <state relative-caret-position="465">
+                  <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -212,6 +209,8 @@
       <find>getId</find>
       <find>squares</find>
       <find>turnControllerBackUp</find>
+      <find>click = 1</find>
+      <find>click = 0</find>
     </findStrings>
     <replaceStrings>
       <replace>ID</replace>
@@ -237,11 +236,11 @@
         <option value="$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
         <option value="$PROJECT_DIR$/src/Model/Piece.java" />
         <option value="$PROJECT_DIR$/src/Model/Board.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
-        <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
         <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/View/StatusBar.java" />
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
       </list>
     </option>
   </component>
@@ -314,7 +313,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555232102837" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555234307160" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -399,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28672000" />
+    <option name="totallyTimeSpent" value="30626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -416,7 +415,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.18930481" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32513368" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32513368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -426,7 +425,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -475,6 +474,168 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>109</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/TurnController.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/TurnController.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>132</line>
+          <properties class="Controller.SquareActionListener" method="endOfTurn">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>146</line>
+          <properties class="Controller.SquareActionListener" method="gameOver">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>151</line>
+          <properties class="Controller.SquareActionListener" method="reset">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
+          <line>158</line>
+          <properties class="Controller.SquareActionListener" method="validFirstClick">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/TurnController.java</url>
+          <line>28</line>
+          <properties class="Controller.TurnController" method="setClick">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/TurnController.java</url>
+          <line>23</line>
+          <properties class="Controller.TurnController" method="getclick">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/Controller/TurnController.java</url>
+          <line>9</line>
+          <properties field="click" class="Controller.TurnController" />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
@@ -606,30 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="127" column="25" lean-forward="true" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
-          <folding>
-            <element signature="e#3656#3657#0" expanded="true" />
-            <element signature="e#3672#3673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -639,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
+        <state relative-caret-position="645">
           <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -647,10 +784,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import Model.Board;
 import Model.GameEngine;
-import Model.Piece;
 import View.MainFrame;
 
 public class SquareActionListener implements ActionListener {
@@ -15,8 +14,6 @@ public class SquareActionListener implements ActionListener {
 
 	private int firstX;
 	private int firstY;
-
-	private int click; //Is used to check if it's the first square to be selected or the second.
 
 	private GameEngine gameEngine;
 	private MainFrame mainFrame;
@@ -31,7 +28,6 @@ public class SquareActionListener implements ActionListener {
 		this.mainFrame = mainFrame;
 		//System.out.println("Listener for square " + x + ", " + y + " was created");
 		this.turnController = turnController;
-		this.click = 0;
 	}
 
 	@Override
@@ -40,15 +36,12 @@ public class SquareActionListener implements ActionListener {
 		System.out.println("l35 Square: " + currentX + ", " + currentY + "was clicked");
 
 		//if it is the first click.
-		if (click == 0)
+		if (turnController.getclick() == 0)
 		{
 			//Check if the square selected has a piece to perform action.
 			if (gameBoard.getSquarePiece(currentX, currentY) != null)
 			{
-				firstX = currentX;
-				firstY = currentY;
-
-				click = 1;
+				validFirstClick(currentX,currentY);
 			}
 
 			//If the square selected has no piece.
@@ -56,13 +49,13 @@ public class SquareActionListener implements ActionListener {
 			{
 				//debug
 				System.out.println("l47 Selected a square with no piece");
-				resetClick();
+				reset();
 				return; // end method.
 			}
 		}
 
 		//If the piece is already selected and a new is square selected
-		else if (click == 1)
+		else if (turnController.getclick() == 1)
 		{
 //			int pieceX = turnControllerBackUp.getSelX();
 //			int pieceY = turnControllerBackUp.getSelY();
@@ -98,7 +91,7 @@ public class SquareActionListener implements ActionListener {
 					{
 						System.out.println("Not a Valid Move");
 
-						resetClick();
+						reset();
 
 						return;
 					}
@@ -128,7 +121,7 @@ public class SquareActionListener implements ActionListener {
 						{
 							System.out.println("Not a Valid Attack");
 
-							resetClick();
+							reset();
 							return;
 						}
 					}
@@ -145,7 +138,7 @@ public class SquareActionListener implements ActionListener {
 		}
 
 		turnController.switchTurn();
-		resetClick();
+		reset();
 		mainFrame.revalidate();
 		mainFrame.updateComponents();
 	}
@@ -156,9 +149,18 @@ public class SquareActionListener implements ActionListener {
 
 	}
 
-	private void resetClick()
+	private void reset()
 	{
-		click = 0;
+		firstX = 0;
+		firstY = 0;
+		turnController.setClick(0);
+	}
+
+	private void validFirstClick(int firstX, int firstY)
+	{
+		this.firstX = firstX;
+		this.firstY = firstY;
+		turnController.setClick(1);
 	}
 
 }
