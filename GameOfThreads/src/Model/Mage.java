@@ -18,11 +18,13 @@ public class Mage extends Piece
 
         originalHealth = this.getHealth();
         this.setHealth(10);
+        this.setSpecial(true);
 	}
 
     //Returns to original range
     public void deactivateSpecial()
     {
         this.setRange(originalHealth);
+        this.setSpecial(false);
     }
 }

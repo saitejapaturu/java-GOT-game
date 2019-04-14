@@ -14,11 +14,13 @@ public class Soldier extends Piece
 	{
 		//soldier is able to deal double damage every 2nd turn
         this.setDamage(4);
+        this.setSpecial(true);
     }
 
     //Returns to original range
     public void deactivateSpecial()
     {
         this.setDamage(2);
+        this.setSpecial(false);
     }
 }

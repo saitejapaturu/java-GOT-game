@@ -14,11 +14,13 @@ public class Scout extends Piece
     {
         //scout is able to move to any square on the map instantly every 2nd turn
         this.setRange(10);
+        this.setSpecial(true);
     }
 
     //Returns to original range
     public void deactivateSpecial()
     {
         this.setRange(4);
+        this.setSpecial(false);
     }
 }

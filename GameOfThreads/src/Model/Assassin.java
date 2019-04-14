@@ -18,11 +18,13 @@ public class Assassin extends Piece
 		//Idea for A-2 cancels any special abilities of enemy pieces for 2nd turn
 
 		this.setRange(4);
+		this.setSpecial(true);
 	}
 
 	//Returns to original range
 	public void deactivateSpecial()
 	{
 		this.setRange(3);
+		this.setSpecial(false);
 	}
 }

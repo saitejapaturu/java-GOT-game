@@ -14,11 +14,13 @@ public class Support extends Piece
 	{
 		//Heals itself by 25% of total hp every 2nd turn
 		this.setHealth((this.getHealth())+1);
+		this.setSpecial(true);
 	}
 
 	//Returns to original range
 	public void deactivateSpecial()
 	{
 		//Nothing to be done later, decide on what to do in A-2
+		this.setSpecial(false);
 	}
 }

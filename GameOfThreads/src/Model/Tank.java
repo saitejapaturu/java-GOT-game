@@ -17,6 +17,7 @@ public class Tank extends Piece
         this.setRange(0);
         originalHealth = this.getHealth();
         this.setHealth(10);
+        this.setSpecial(true);
     }
 
     //Returns to original range
@@ -24,5 +25,6 @@ public class Tank extends Piece
     {
         this.setHealth(originalHealth);
         this.setRange(2);
+        this.setSpecial(false);
     }
 }
