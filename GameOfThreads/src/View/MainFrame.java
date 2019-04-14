@@ -286,6 +286,15 @@ public class MainFrame extends JFrame {
 	   {
 		   statusBar.update();
 		   checkIcons();
+		   int playerWins = gameBoard.checkWinConditions();
+		   if(playerWins == 1)
+		   {
+			   displayWin(playerWins);
+		   }
+		   else if(playerWins == 2)
+		   {
+			  displayWin(playerWins);
+		   }
 	   }
 	   
 	   public void checkIcons()
@@ -304,5 +313,18 @@ public class MainFrame extends JFrame {
 	        		}
 	        	}
 	        }
+		   
 	   }
+	   
+	   private static void displayWin(int player)
+	    {
+		   String winningMessage = "Congratulations player " + player + " you win!";
+		   //String title = "We have a Winner!";
+		   JOptionPane winningAlert = new JOptionPane();
+	       int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
+	       if (close == 0)
+	       {
+	    	   System.exit(0);
+	       }
+	    }
 }
