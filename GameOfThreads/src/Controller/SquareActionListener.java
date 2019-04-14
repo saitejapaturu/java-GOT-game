@@ -63,14 +63,14 @@ public class SquareActionListener implements ActionListener {
 //			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
 
 			//checks piece belongs to player whose turn it is
-			if(gameBoard.getSquarePiece(firstX,firstY).getPLAYER() != turnController.getPlayerTurn())
-			{
-				System.err.println("This piece belongs to enemy!");
-				return; //end action method
-			}
+//			if(gameBoard.getSquarePiece(firstX,firstY).getPLAYER() != turnController.getPlayerTurn())
+//			{
+//				System.err.println("This piece belongs to enemy!");
+//				return; //end action method
+//			}
 
 			//Make sure the first square selected has a piece.
-			else if (gameBoard.getSquarePiece(firstX, firstY) != null)
+			 if (gameBoard.getSquarePiece(firstX, firstY) != null)
 			{
 				//if the second square selected is empty, the piece moves.
 				if (gameBoard.getSquarePiece(currentX,currentY) == null)
