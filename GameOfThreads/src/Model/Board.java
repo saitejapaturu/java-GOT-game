@@ -33,7 +33,7 @@ public class Board
 
     public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
     {
-        grid[y][x].setPiece(piece);
+        grid[x][y].setPiece(piece);
     }
 
     private void initialiseBoard()
