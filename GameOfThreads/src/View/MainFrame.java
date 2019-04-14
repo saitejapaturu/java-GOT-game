@@ -18,8 +18,8 @@ public class MainFrame extends JFrame {
 	private StatusBar statusBar;
 	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
 	private TurnController turnController;
-	String p1Name;
-	String p2Name;
+	static String p1Name;
+	static String p2Name;
 
 	public MainFrame(String title, Model.Board board, TurnController turnController)
 	{
@@ -262,10 +262,12 @@ public class MainFrame extends JFrame {
 		   int playerWins = gameBoard.checkWinConditions();
 		   if(playerWins == 1)
 		   {
+			   statusBar.setMessage(p1Name + " Wins!");
 			   displayWin(playerWins);
 		   }
 		   else if(playerWins == 2)
 		   {
+			  statusBar.setMessage(p2Name + " Wins!");
 			  displayWin(playerWins);
 		   }
 	   }
@@ -293,8 +295,16 @@ public class MainFrame extends JFrame {
 	   private static void displayWin(int player)
 	    {
 		   //creates a simple win alert and closes game
-		   String winningMessage = "Congratulations player " + player + " you win!";
-	       int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
+		   String winningMessage = null;
+		   if(player == 1)
+		   {
+			   winningMessage = "Congratulations player " + p1Name + " you win!";
+		   }
+		   else if(player == 2)
+		   {
+			   winningMessage = "Congratulations player " + p2Name + " you win!";
+		   }
+		   int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
 	       if (close == 0)
 	       {
 	    	   System.exit(0);
