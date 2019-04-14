@@ -17,6 +17,7 @@ public class TurnController
     {
         this.turn = 1;
         this.playerTurn = 1;
+        chanceTracker = 1;
         click = 0;
     }
 
