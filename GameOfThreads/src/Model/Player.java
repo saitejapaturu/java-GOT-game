@@ -1,9 +1,9 @@
 package Model;
 
-public class Player {
-
-	private String name;
-	private int playerNumber;
+public class Player
+{
+	private String name;		// The player's name
+	private int playerNumber;	// The player's number
 
 	public Player(String name, int playerNumber)
 	{
@@ -11,4 +11,13 @@ public class Player {
 		this.name = name;
 	}
 
+	public String getName()
+	{
+		return name;
 	}
+
+	public int getPlayerNumber()
+	{
+		return playerNumber;
+	}
+}

@@ -4,7 +4,7 @@ public class Tank extends Piece
 {
 	private static final String ID = "Tank";
 	private static final int SPECIALTURN = 3;
-	private int originalHealth;
+	private int originalHealth;                 //As the special involves immunity. Stores the original health to return back to it next turn.
 
 	public Tank(int player)
 	{
@@ -20,6 +20,8 @@ public class Tank extends Piece
         originalHealth = this.getHealth();
         this.setHealth(10);
         this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Tank activated. Immune to any attack and cannot move this turn.");
     }
 
     //Returns to original range
@@ -28,5 +30,7 @@ public class Tank extends Piece
         this.setHealth(originalHealth);
         this.setRange(2);
         this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Tank de-activated. Health and range back to normal.");
     }
 }

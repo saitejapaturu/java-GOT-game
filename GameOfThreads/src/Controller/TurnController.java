@@ -4,7 +4,7 @@ package Controller;
 public class TurnController
 {
     private int turn;           //Turn increments when both players finish their turns
-    private int chancetracker; //Tracks both players turns. i.e. is twice the urn.
+    private int chanceTracker; //Tracks both players turns. i.e. is twice the urn.
 
     private int playerTurn;
 
@@ -17,6 +17,7 @@ public class TurnController
     {
         this.turn = 1;
         this.playerTurn = 1;
+        chanceTracker = 1;
         click = 0;
     }
 
@@ -73,8 +74,8 @@ public class TurnController
 
         click = 0;
 
-        this.chancetracker++;
-        if(((this.chancetracker)%2) == 0)
+        this.chanceTracker++;
+        if(((this.chanceTracker)%2) == 0)
         {
             this.turn++;
         }

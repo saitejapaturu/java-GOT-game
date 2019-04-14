@@ -15,6 +15,8 @@ public class Scout extends Piece
         //scout is able to move to any square on the map instantly every 2nd turn
         this.setRange(10);
         this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Scout activated. Can move or attack to any empty place on board this turn.");
     }
 
     //Returns to original range
@@ -22,5 +24,7 @@ public class Scout extends Piece
     {
         this.setRange(4);
         this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Scout de-activated. Range is back to normal.");
     }
 }
