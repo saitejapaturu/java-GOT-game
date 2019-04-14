@@ -85,6 +85,7 @@ public class MainFrame extends JFrame {
 		
 	}
 	
+	//simple method for making piece icons
 	private final void createImages()
 	{
 		Assasin = createImageIcon("images/Monster1.png","Assasin");
@@ -96,6 +97,7 @@ public class MainFrame extends JFrame {
 		Tank = createImageIcon("images/PoisonedHero3.png","Tank");
 	}
 	
+	//from java help docs
 	 protected ImageIcon createImageIcon(String path,String description)
 	   {
 		 	
@@ -119,7 +121,7 @@ public class MainFrame extends JFrame {
 		 int max=10, mid=5, min=0;
 
 		 //Initialising GUI
-		 //Creading grid
+		 //Creating grid
 	        gridGUI = new JButton[width][width];
 			gui.setBorder(new EmptyBorder(4,4,4,4));
 			JToolBar toolbar = new JToolBar();
