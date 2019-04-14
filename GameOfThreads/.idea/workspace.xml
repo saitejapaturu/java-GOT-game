@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Model/Assassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Assassin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Scout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Scout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soldier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Support.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Support.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Board.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +24,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4485">
-                  <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+                <state relative-caret-position="751">
+                  <caret line="411" column="60" selection-start-line="411" selection-start-column="60" selection-end-line="411" selection-end-column="60" />
                   <folding>
                     <element signature="e#330#331#0" expanded="true" />
                     <element signature="e#354#355#0" expanded="true" />
@@ -63,7 +58,7 @@
             <entry file="file://$PROJECT_DIR$/src/Model/Support.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="315">
-                  <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+                  <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -72,7 +67,7 @@
             <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="531">
-                  <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+                  <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
                   <folding>
                     <element signature="e#924#925#0" expanded="true" />
                     <element signature="e#958#959#0" expanded="true" />
@@ -96,7 +91,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Assassin.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
@@ -112,7 +107,7 @@
             <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="315">
-                  <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+                  <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
                   <folding>
                     <element signature="e#242#243#0" expanded="true" />
                     <element signature="e#298#299#0" expanded="true" />
@@ -125,7 +120,7 @@
             <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="285">
-                  <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+                  <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -133,8 +128,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="517">
-                  <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+                <state relative-caret-position="502">
+                  <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
@@ -146,8 +141,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1200">
-                  <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
+                <state relative-caret-position="1170">
+                  <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -155,8 +150,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="645">
-                  <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+                <state relative-caret-position="630">
+                  <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -185,11 +180,34 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-870">
+                <state relative-caret-position="-615">
                   <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#523#524#0" expanded="true" />
+                    <element signature="e#557#558#0" expanded="true" />
+                    <element signature="e#591#592#0" expanded="true" />
+                    <element signature="e#620#621#0" expanded="true" />
+                    <element signature="e#665#666#0" expanded="true" />
+                    <element signature="e#701#702#0" expanded="true" />
+                    <element signature="e#735#736#0" expanded="true" />
+                    <element signature="e#764#765#0" expanded="true" />
+                    <element signature="e#809#810#0" expanded="true" />
+                    <element signature="e#845#846#0" expanded="true" />
+                    <element signature="e#883#884#0" expanded="true" />
+                    <element signature="e#917#918#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -236,7 +254,6 @@
         <option value="$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
         <option value="$PROJECT_DIR$/src/View/StatusBar.java" />
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
-        <option value="$PROJECT_DIR$/src/Model/Board.java" />
         <option value="$PROJECT_DIR$/src/Model/CornerSquare.java" />
         <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
         <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
@@ -248,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/Model/Scout.java" />
         <option value="$PROJECT_DIR$/src/Model/Mage.java" />
         <option value="$PROJECT_DIR$/src/Model/Assassin.java" />
+        <option value="$PROJECT_DIR$/src/Model/Board.java" />
       </list>
     </option>
   </component>
@@ -327,7 +345,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555244301213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555244826156" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -412,7 +430,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35897000" />
+    <option name="totallyTimeSpent" value="36382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -494,85 +512,85 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>34</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>38</line>
+          <line>35</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>37</line>
+          <line>34</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>65</line>
+          <line>62</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>53</line>
+          <line>50</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>63</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>62</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>73</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>78</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>89</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>100</line>
+          <line>97</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>103</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>109</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>58</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -584,34 +602,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>72</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>75</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>70</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>132</line>
-          <properties class="Controller.SquareActionListener">
+          <line>129</line>
+          <properties class="Controller.SquareActionListener" method="endOfTurn">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>146</line>
-          <properties class="Controller.SquareActionListener">
+          <line>143</line>
+          <properties class="Controller.SquareActionListener" method="gameOver">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="28" />
@@ -697,26 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ToolBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -726,37 +724,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4485">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1170">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        <state relative-caret-position="502">
+          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
-          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
           <folding>
             <element signature="e#924#925#0" expanded="true" />
             <element signature="e#958#959#0" expanded="true" />
@@ -773,14 +756,14 @@
     <entry file="file://$PROJECT_DIR$/src/Model/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Support.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -794,7 +777,7 @@
     <entry file="file://$PROJECT_DIR$/src/Model/Soldier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#298#299#0" expanded="true" />
@@ -820,12 +803,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <folding>
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Assassin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#223#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="411" column="60" selection-start-line="411" selection-start-column="60" selection-end-line="411" selection-end-column="60" />
+          <folding>
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
           </folding>
         </state>
       </provider>
