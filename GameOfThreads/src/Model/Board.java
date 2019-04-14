@@ -396,7 +396,7 @@ public class Board
         }
     }
 
-    public void deactivateSpecial(int specialTurn)
+    public void deactivateSpecial()
     {
         //This for loops checks all squares of the grid for pieces and activate appropriate specials.
         for(int i=0; i<GRID_WIDTH; i++)
@@ -410,7 +410,7 @@ public class Board
                     if(grid[i][j].getPiece() != null)
                     {
                         //If the special turn is the same deactivate special.
-                        if(grid[i][j].getPiece().getSPECIALTURN() == specialTurn)
+                        if(grid[i][j].getPiece().getSpecial())
                         {
                             grid[i][j].getPiece().deactivateSpecial();
                         }
