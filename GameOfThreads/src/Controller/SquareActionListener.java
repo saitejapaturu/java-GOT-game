@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Model.Board;
-import Model.GameEngine;
 import View.MainFrame;
 
 public class SquareActionListener implements ActionListener {
@@ -17,7 +16,7 @@ public class SquareActionListener implements ActionListener {
 	private MainFrame mainFrame;
 	private TurnController turnController;
 
-	public SquareActionListener(Board gameBoard, int currentX, int currentY, GameEngine gameEngine,
+	public SquareActionListener(Board gameBoard, int currentX, int currentY,
 								MainFrame mainFrame, TurnController turnController) {
 		this.gameBoard = gameBoard;
 		this.currentX = currentX;
