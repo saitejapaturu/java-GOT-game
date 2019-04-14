@@ -37,10 +37,18 @@ public class SquareActionListener implements ActionListener {
 		//if it is the first click.
 		if (turnController.getclick() == 0)
 		{
+			//checks piece belongs to player whose turn it is
+			
 			//Check if the square selected has a piece to perform action.
 			if (gameBoard.getSquarePiece(currentX, currentY) != null)
 			{
 				validFirstClick(currentX,currentY);
+				if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() != turnController.getPlayerTurn())
+				{
+				System.err.println("This piece belongs to enemy!");
+					reset();
+					return; //end action method
+				}
 			}
 
 			//If the square selected has no piece.
@@ -60,13 +68,6 @@ public class SquareActionListener implements ActionListener {
 //			int pieceY = turnControllerBackUp.getSelY();
 
 //			Piece test = gameBoard.getSquarePiece(turnControllerBackUp.getSelX(), turnControllerBackUp.getSelY());
-
-			//checks piece belongs to player whose turn it is
-//			if(gameBoard.getSquarePiece(firstX,firstY).getPLAYER() != turnController.getPlayerTurn())
-//			{
-//				System.err.println("This piece belongs to enemy!");
-//				return; //end action method
-//			}
 
 			//Make sure the first square selected has a piece.
 			 if (gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()) != null)
