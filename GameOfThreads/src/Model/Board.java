@@ -148,6 +148,7 @@ public class Board
         {
             System.out.println(this.getSquarePiece(newX, newY).getID() + " took massive damage and died.");
             this.setSquarePiece(newX, newY, null);
+
         }
         else
         {
@@ -259,7 +260,7 @@ public class Board
         if(((allCornerSquareCaputeredBy() == 1) && (allEnemyCharactersDefeatedBy() == 2)) || ((allCornerSquareCaputeredBy() == 2) && (allEnemyCharactersDefeatedBy() == 1)))
         {
             System.err.println("Error: Both Player 1 and Player 2 have win conditions!");
-            return 1;
+            return 0;
         }
 
         else if((allCornerSquareCaputeredBy() == 1) || (allEnemyCharactersDefeatedBy() == 1))
@@ -271,7 +272,7 @@ public class Board
         else if((allCornerSquareCaputeredBy() == 2) || (allEnemyCharactersDefeatedBy() == 2))
         {
             System.out.println("Player 2 wins!");
-            return 1;
+            return 2;
         }
 
         return 0;
@@ -280,7 +281,7 @@ public class Board
     //Returns 0 if all corner squares aren't occupied by the same player characters
     //Returns 1 if all corner squares are occupied by player 1.
     //Returns 2 if all corner squares are occupied by player 2.
-    public int allCornerSquareCaputeredBy()
+    private int allCornerSquareCaputeredBy()
     {
         //Check if any corner squares are unoccupied
         if((grid[10][5].getPiece() == null) || (grid[0][5].getPiece() == null) || (grid[5][0].getPiece() == null) || (grid[5][10].getPiece() == null))
@@ -311,7 +312,7 @@ public class Board
     //Returns 0 if both player's have atleast 1 character alive.
     //Returns 1 if player 1 killed all players on player 2.
     //Returns 2 if player 2 killed all players on player 1.
-    public int allEnemyCharactersDefeatedBy()
+    private int allEnemyCharactersDefeatedBy()
     {
         boolean allPlayer1CharactersDied = true;
         boolean allPlayer2CharactersDied = true;
