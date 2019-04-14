@@ -26,11 +26,6 @@ public class Board
         return grid[x][y].getPiece();
     }
 
-    public void setSquare(int x, int y, Square square)
-    {
-        grid[x][y] = square;
-    }
-
     public void setSquarePiece(int x, int y, Piece piece) // throws PlacingOnHollowException
     {
         grid[x][y].setPiece(piece);
@@ -47,6 +42,7 @@ public class Board
     private void initialiseSquares()
     {
 
+        //Implementation of max, min and mid for custom board for A2
 //        int max = (this.getWidth() - 1);    // the maximum co-ordinate
 //
 //        int mid;                            //the middle co-ordinate
@@ -58,6 +54,12 @@ public class Board
 //            mid = (max+1)/2;
 
         int max=10, mid=5, min=0;
+
+        //Initialising corner squares;
+        grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
+        grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
+        grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
+        grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
 
         /* Initialising normal squares of the diamond block.
          * upperRow initialises the rows 1 to 5
@@ -92,14 +94,6 @@ public class Board
 
     private void initialisePieces()
     {
-        int max=10, mid=5, min=0;
-
-        //Initialising corner squares;
-        grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
-        grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
-        grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
-        grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
-
 
         //Placing Player 1 pieces
         grid[0][5].setPiece(new Assassin(1));
@@ -116,6 +110,11 @@ public class Board
         grid[8][3].setPiece(new Support(2));
         grid[8][7].setPiece(new Scout(2));
         grid[7][2].setPiece(new Tank(2));
+
+        //Player 1 and 2 already occupy 1 corner square
+
+        ((CornerSquare)grid[0][5]).capture(1);
+        ((CornerSquare)grid[10][5]).capture(2);
     }
 
     public boolean attackPiece(int currentX, int currentY, int newX, int newY)
@@ -166,6 +165,13 @@ public class Board
 
             grid[currentX][currentY].setPiece(null);
 
+            //Notify user if corner square is captured and make appropriate changes
+            if(grid[newX][newY] instanceof CornerSquare)
+            {
+                System.out.println("Corner Square captured by : Player " + grid[newX][newY].getPiece().getPLAYER());
+                ((CornerSquare)(grid[newX][newY])).capture(grid[newX][newY].getPiece().getPLAYER());
+                checkWinConditions();
+            }
             return true;
         }
 

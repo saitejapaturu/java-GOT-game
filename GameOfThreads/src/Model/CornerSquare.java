@@ -12,20 +12,10 @@ public class CornerSquare extends Square
         this.capturedBy = 0;
     }
     
-    public void setCaptured(boolean isCaptured, int capturedBy)
+    public void capture(int capturedBy)
     {
-        this.isCaptured = isCaptured;
+        this.isCaptured = true;
         this.capturedBy = capturedBy;
-    }
-    
-    public boolean getCaptureStatus()
-    {
-        return this.isCaptured;
-    }
-    
-    public int getCapturedTeam()
-    {
-        return this.capturedBy;
     }
     
 

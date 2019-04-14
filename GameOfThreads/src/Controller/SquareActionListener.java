@@ -42,11 +42,11 @@ public class SquareActionListener implements ActionListener {
 			//Check if the square selected has a piece to perform action.
 			if (gameBoard.getSquarePiece(currentX, currentY) != null)
 			{
-				validFirstClick(currentX,currentY);
+				turnController.validFirstClick(currentX,currentY);
 				if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() != turnController.getPlayerTurn())
 				{
 				System.err.println("This piece belongs to enemy!");
-					reset();
+					turnController.reset();
 					return; //end action method
 				}
 			}
@@ -56,7 +56,7 @@ public class SquareActionListener implements ActionListener {
 			{
 				//debug
 				System.out.println("l47 Selected a square with no piece");
-				reset();
+				turnController.reset();
 				return; // end method.
 			}
 		}
@@ -91,7 +91,7 @@ public class SquareActionListener implements ActionListener {
 					{
 						System.out.println("Not a Valid Move");
 
-						reset();
+						turnController.reset();
 
 						return;
 					}
@@ -121,7 +121,7 @@ public class SquareActionListener implements ActionListener {
 						{
 							System.out.println("Not a Valid Attack");
 
-							reset();
+							turnController.reset();
 							return;
 						}
 					}
@@ -138,7 +138,7 @@ public class SquareActionListener implements ActionListener {
 		}
 
 		turnController.switchTurn();
-		reset();
+		turnController.reset();
 		mainFrame.revalidate();
 		mainFrame.updateComponents();
 	}
@@ -149,18 +149,6 @@ public class SquareActionListener implements ActionListener {
 
 	}
 
-	private void reset()
-	{
-		turnController.setFirstX(0);
-		turnController.setFirstY(0);
-		turnController.setClick(0);
-	}
 
-	private void validFirstClick(int firstX, int firstY)
-	{
-		turnController.setFirstX(firstX);
-		turnController.setFirstY(firstY);
-		turnController.setClick(1);
-	}
 
 }

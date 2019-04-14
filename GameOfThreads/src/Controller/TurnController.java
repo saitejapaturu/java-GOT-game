@@ -74,4 +74,18 @@ public class TurnController
         this.turn++;
 
     }
+
+    public void reset()
+    {
+        this.setFirstX(0);
+        this.setFirstY(0);
+        this.setClick(0);
+    }
+
+    public void validFirstClick(int firstX, int firstY)
+    {
+        this.setFirstX(firstX);
+        this.setFirstY(firstY);
+        this.setClick(1);
+    }
 }
