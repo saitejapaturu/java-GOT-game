@@ -71,6 +71,7 @@ public class SquareActionListener implements ActionListener
 					{
 						//moving piece
 						//gameEngine.movePiece(gameBoard, firstX, firstY, x, y);
+						//here we make a new attackCommand
 						mainFrame.movePiece(turnController.getFirstX(), turnController.getFirstY(), currentX, currentY);
 						System.out.println("Valid move");
 
@@ -100,6 +101,7 @@ public class SquareActionListener implements ActionListener
 					else
 					{
 						//If attack is valid
+						//here we make a new attack command
 						if(gameBoard.attackPiece(turnController.getFirstX(), turnController.getFirstY(),currentX,currentY))
 						{
 							System.out.println("Valid Attack");
