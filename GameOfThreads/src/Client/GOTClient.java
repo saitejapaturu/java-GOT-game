@@ -17,9 +17,9 @@ public class GOTClient {
 		//board.newBoard();
 		
 		TurnController turnController = new TurnController();
+		
 		Board board = new ImmutableBoard(0);
-
-		//BoardHistory boardHistory = new BoardHistory(board);
+		BoardHistory boardHistory = new BoardHistory(board);
 		
 
 
@@ -28,7 +28,7 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController, boardHistory);
 
 			}
 		});

@@ -1,5 +1,6 @@
 package Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Model.Board;
@@ -7,14 +8,14 @@ import Model.Board;
 public class BoardHistory
 {
 
-	private List <Board> history;
+	private List <Board> history = new ArrayList<Board>();
 	private int currentTurn;		// Stores Which move we are currently at.
 	private int turnCounter;
 
 	public BoardHistory(Board board)
 	{
 		this.currentTurn = 0;
-		this.history.add(currentTurn, board);
+		history.add(currentTurn, board);
 		turnCounter = 0;
 		
 	}
