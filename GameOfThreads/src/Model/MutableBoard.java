@@ -12,13 +12,81 @@ public class MutableBoard implements Board
 	public MutableBoard()
 	{
 		this.currentGrid = new Square[SIZE][SIZE];
+		initialiseGrid();
 		this.turn = 0;
 		this.currentBoard = new ImmutableBoard(this.turn, this.currentGrid);
 
 		//Initial BoardHistory
-		Square[][] clone = currentGrid.clone();
-		this.history = new BoardHistory(new ImmutableBoard(turn, clone));
-		turn++;
+//		Square[][] clone = currentGrid.clone();
+//		this.history = new BoardHistory(new ImmutableBoard(turn, clone));
+//		turn++;
+		addToHistory();
+	}
+
+	// Sets up the pre destined squares and pieces
+	private void initialiseGrid()
+	{
+		System.out.println("Initialising board");
+
+		initialiseSquares();
+		initialiseGridPieces();
+	}
+
+	// Sets up the pre destined squares
+	private void initialiseSquares()
+	{
+		int max=10, mid=5, min=0;
+
+		//Initialising corner squares;
+		this.currentGrid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
+		this.currentGrid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
+		this.currentGrid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
+		this.currentGrid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
+
+		/* Initialising normal squares of the diamond block.
+		 * upperRow initialises the rows 1 to 5
+		 * and lowerRow initialises 6 to 9
+		 *
+		 * The initialisation starts at row 1 and row 9
+		 * and creating squares at columns 4 to 6 in those rows.
+		 * After every loop, upperRow increments and lowerRow decrements by 1
+		 * and the column width increases on both sides by 1.
+		 */
+		for (int upperRow=1,lowerRow=9,low=4,high=6;upperRow<lowerRow;upperRow++,lowerRow--,low--,high++)
+		{
+			for(int i=low; i<=high;i++)
+			{
+				//For middle row
+				if (upperRow==(lowerRow-2))
+				{
+					this.currentGrid[upperRow+1][i] = new Square((upperRow+1), i, true);
+				}
+
+				this.currentGrid[upperRow][i] = new Square(upperRow, i, true);
+				this.currentGrid[lowerRow][i] = new Square(lowerRow, i, true);
+			}
+		}
+	}
+
+	// Sets up the pre destined pieces
+	private void initialiseGridPieces()
+	{
+		//Placing Player 1 pieces
+		this.currentGrid[0][5].setPiece(new DaenerysTargaryen());
+		this.currentGrid[1][4].setPiece(new AryaStark());
+		this.currentGrid[1][5].setPiece(new JonSnow());
+		this.currentGrid[1][6].setPiece(new Unsullied());
+
+		//Placing player 2 pieces
+		this.currentGrid[10][5].setPiece(new NightKing());
+		this.currentGrid[9][4].setPiece(new Giant());
+		this.currentGrid[9][5].setPiece(new General());
+		this.currentGrid[9][6].setPiece(new Horde());
+
+		//Player 1 and 2 already occupy 1 corner square
+
+		((CornerSquare)this.currentGrid[0][5]).capture(1);
+		((CornerSquare)this.currentGrid[10][5]).capture(2);
 	}
 
 	public int getSize()
@@ -74,7 +142,7 @@ public class MutableBoard implements Board
 	{
 		currentGrid = this.currentBoard.getGrid();
 
-		cloneBoard();
+		addToHistory();
 	}
 
 	public boolean undo()
@@ -111,10 +179,19 @@ public class MutableBoard implements Board
 		}
 	}
 
-	private void cloneBoard()
+	private void addToHistory()
 	{
-		Square[][] clone = currentGrid.clone();
-		history.moveMade(new ImmutableBoard(turn, clone));
+		Square[][] gridClone = currentGrid.clone();
+
+		// If initialising
+		if(this.turn == 0)
+		{
+			this.history = new BoardHistory(new ImmutableBoard(this.turn, gridClone));
+		}
+		else
+		{
+			this.history.moveMade(new ImmutableBoard(this.turn, gridClone));
+		}
 		turn++;
 	}
 

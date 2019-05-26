@@ -8,19 +8,26 @@ import View.MainFrame;
 
 public class RedoListener implements ActionListener{
 
-	private BoardHistory history;
 	private MutableBoard board;
 	private MainFrame mainFrame;
 
 	public RedoListener(MutableBoard board, MainFrame mainFrame)
 	{
-		this.mainFrame = mainFrame;
 		this.board = board;
+		this.mainFrame = mainFrame;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		//board = history.redo();
+	public void actionPerformed(ActionEvent arg0)
+	{
+		if(board.redo())
+		{
+			this.mainFrame.undoRedo();
+		}
+		else
+		{
+			System.err.println("Redo can't be performed.");
+		}
 		
 	}
 }

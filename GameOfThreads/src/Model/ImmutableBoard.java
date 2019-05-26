@@ -9,8 +9,6 @@ public class ImmutableBoard implements Board
     {
         this.grid = grid;
         this.turnCreated = turnCreated;
-
-        initialiseBoard();
     }
     
     public ImmutableBoard getBoard() 
@@ -42,85 +40,6 @@ public class ImmutableBoard implements Board
     public void setSquarePiece(int x, int y, Piece piece)
     {
         grid[x][y].setPiece(piece);
-    }
-
-    // Sets up the pre destined squares and pieces
-    private void initialiseBoard()
-    {
-        System.out.println("Initialising board");
-
-        initialiseSquares();
-        initialisePieces();
-    }
-
-    // Sets up the pre destined squares
-    private void initialiseSquares()
-    {
-
-        //Implementation of max, min and mid for custom board for A2
-//        int max = (this.getWidth() - 1);    // the maximum co-ordinate
-//
-//        int mid;                            //the middle co-ordinate
-//        int min = 0;                        //the starting co-ordinate
-//
-//        if((max%2) == 0)
-//            mid = max/2;
-//        else
-//            mid = (max+1)/2;
-
-        int max=10, mid=5, min=0;
-
-        //Initialising corner squares;
-        grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
-        grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
-        grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
-        grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
-
-        /* Initialising normal squares of the diamond block.
-         * upperRow initialises the rows 1 to 5
-         * and lowerRow initialises 6 to 9
-         *
-         * The initialisation starts at row 1 and row 9
-         * and creating squares at columns 4 to 6 in those rows.
-         * After every loop, upperRow increments and lowerRow decrements by 1
-         * and the column width increases on both sides by 1.
-         */
-        for (int upperRow=1,lowerRow=9,low=4,high=6;upperRow<lowerRow;upperRow++,lowerRow--,low--,high++)
-        {
-            for(int i=low; i<=high;i++)
-            {
-                //For middle row
-                if (upperRow==(lowerRow-2))
-                {
-                    grid[upperRow+1][i] = new Square((upperRow+1), i, true);
-                }
-
-                grid[upperRow][i] = new Square(upperRow, i, true);
-                grid[lowerRow][i] = new Square(lowerRow, i, true);
-            }
-        }
-    }
-
-    // Sets up the pre destined pieces
-    private void initialisePieces()
-    {
-
-        //Placing Player 1 pieces
-        grid[0][5].setPiece(new DaenerysTargaryen());
-        grid[1][4].setPiece(new AryaStark());
-        grid[1][5].setPiece(new JonSnow());
-        grid[1][6].setPiece(new Unsullied());
-
-        //Placing player 2 pieces
-        grid[10][5].setPiece(new NightKing());
-        grid[9][4].setPiece(new Giant());
-        grid[9][5].setPiece(new General());
-        grid[9][6].setPiece(new Horde());
-
-        //Player 1 and 2 already occupy 1 corner square
-
-        ((CornerSquare)grid[0][5]).capture(1);
-        ((CornerSquare)grid[10][5]).capture(2);
     }
 
     // The piece in current coordinates attacks the piece in new coordinates

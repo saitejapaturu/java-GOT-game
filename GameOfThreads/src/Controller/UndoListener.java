@@ -10,13 +10,13 @@ public class UndoListener implements ActionListener
 {
 
 	private MutableBoard board;
-	private MainFrame mainframe;
+	private MainFrame mainFrame;
 
 
 	public UndoListener(MutableBoard board, MainFrame mainFrame)
 	{
 		this.board = board;
-		this.mainframe = mainFrame;
+		this.mainFrame = mainFrame;
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class UndoListener implements ActionListener
 	{
 		if(board.undo())
 		{
-			mainframe.undoRedo();
+			this.mainFrame.undoRedo();
 		}
 		else
 		{
