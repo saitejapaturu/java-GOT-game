@@ -1,12 +1,10 @@
 package Client;
 
-import Model.Board;
-import Model.ImmutableBoard;
+import Model.MutableBoard;
 import View.MainFrame;
 
 import javax.swing.*;
 
-import Controller.BoardHistory;
 import Controller.TurnController;
 
 public class GOTClient
@@ -17,8 +15,7 @@ public class GOTClient
 		
 		TurnController turnController = new TurnController();
 
-		Board board = new ImmutableBoard(0);
-		BoardHistory boardHistory = new BoardHistory(board);
+		MutableBoard board = new MutableBoard();
 		
 
 
@@ -27,7 +24,7 @@ public class GOTClient
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController, boardHistory);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController);
 
 			}
 		});

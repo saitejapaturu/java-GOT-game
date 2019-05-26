@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
 	private JPanel Board;
 	private final JPanel gui = new JPanel(new BorderLayout(3, 3));
 	private JButton[][] gridGUI;
-	private Board gameBoard;
+	private MutableBoard gameBoard;
 	private StatusBar statusBar;
 	private StatusBar turnTracker;
 	private ImageIcon DaenerysTargaryen, Unsullied, AryaStark, JonSnow, NightKing, Giant, General, Horde;
@@ -24,14 +24,12 @@ public class MainFrame extends JFrame {
 	static String p2Name;
 	private UndoButton undoButton;
 	private RedoButton redoButton;
-	private BoardHistory history;
 
-	public MainFrame(String title, Board board, TurnController turnController, BoardHistory history)
+	public MainFrame(String title, MutableBoard board, TurnController turnController)
 	{
 		super(title);
 		this.gameBoard = board;
 		this.turnController = turnController;
-		this.history = history;
 		this.undoButton = new UndoButton();
 		this.redoButton = new RedoButton();
 		Initialise();
@@ -100,9 +98,9 @@ public class MainFrame extends JFrame {
 	 
 	 private void Initialise()
 	 {
-		 undoButton.addActionListener(new UndoListener(history, this));
-		 redoButton.addActionListener(new RedoListener(history, gameBoard));
-		 int width = gameBoard.getWidth();
+		 undoButton.addActionListener(new UndoListener(gameBoard, this));
+		 redoButton.addActionListener(new RedoListener(gameBoard, this));
+		 int width = gameBoard.getSize();
 
 		 int max=10, mid=5, min=0;
 
@@ -230,17 +228,16 @@ public class MainFrame extends JFrame {
            button.setBorderPainted(true);
 	   }
 
-	   public void endOfTurn(Board gameBoard)
+	   public void endOfTurn()
 	   {
-	   		Board board = gameBoard;
-
-	   		history.moveMade(board);
-	   		updateComponents(gameBoard);
+//	   		Board board = gameBoard;
+//
+//	   		history.moveMade(board);
+	   		updateComponents();
 	   }
 	   //updates individual gui components according to board
-	   public void updateComponents(Board gameBoard)
+	   public void updateComponents()
 	   {
-	   	   this.gameBoard = gameBoard;
 		   statusBar.update();
 		   turnTracker.updateTurns();
 		   updateBoardIcon();
@@ -260,7 +257,7 @@ public class MainFrame extends JFrame {
 	 //checks for dead pieces and updates gui, also checks for character pieces when undo/redo
 	   public void updateBoardIcon()
 	   {
-		   int dim = gameBoard.getWidth();
+		   int dim = gameBoard.getSize();
 		   for(int i = 0;i<dim;i++)
 	        {
 	        	for (int j= 0; j<dim;j++)
@@ -308,9 +305,8 @@ public class MainFrame extends JFrame {
 	        }
 	   }
 
-	   public void undoRedo(Board board)
+	   public void undoRedo()
 	   {
-	   		this.gameBoard = board;
 		    updateBoardIcon();
 	   }
 	   private static void displayWin(int player)
@@ -344,7 +340,7 @@ public class MainFrame extends JFrame {
 	            	{
 	            		if(gameBoard.getSquare(i, j).getPiece()!=null)
 	            		{
-	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
+	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquare(i, j).getPiece().getPLAYER());
 	            		}
 	            	}
 	            	else

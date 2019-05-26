@@ -3,21 +3,24 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Model.Board;
+import Model.MutableBoard;
+import View.MainFrame;
 
 public class RedoListener implements ActionListener{
 
 	private BoardHistory history;
-	private Board board;
-	public RedoListener(BoardHistory history, Board board)
+	private MutableBoard board;
+	private MainFrame mainFrame;
+
+	public RedoListener(MutableBoard board, MainFrame mainFrame)
 	{
-		this.history = history;
+		this.mainFrame = mainFrame;
 		this.board = board;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		board = history.redo();
+		//board = history.redo();
 		
 	}
 }

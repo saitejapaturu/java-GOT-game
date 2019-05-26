@@ -3,25 +3,24 @@ package Controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Board;
+import Model.ImmutableBoard;
 
 public class BoardHistory
 {
 
-	private List <Board> history = new ArrayList<Board>();
+	private List <ImmutableBoard> history = new ArrayList<ImmutableBoard>();
 	private int currentTurn;		// Stores Which move we are currently at.
 	private int turnCounter;
 
-	public BoardHistory(Board board)
+	public BoardHistory(ImmutableBoard board)
 	{
 		this.currentTurn = 0;
 		history.add(currentTurn, board);
 		turnCounter = 0;
-		
 	}
 
 	// If undo is possible, returns the last turn.
-	public Board undo()
+	public ImmutableBoard undo()
 	{
 		if(currentTurn==0)
 		{
@@ -35,7 +34,7 @@ public class BoardHistory
 	}
 
 	// If a redo is possible, returns the turn made before calling undo.
-	public Board redo()
+	public ImmutableBoard redo()
 	{
 		if(currentTurn==turnCounter)
 		{
@@ -49,7 +48,7 @@ public class BoardHistory
 	}
 
 	// Adds the current board state to history
-	public void moveMade(Board board)
+	public void moveMade(ImmutableBoard board)
 	{
 		// move Made after undo
 		if(currentTurn<turnCounter)

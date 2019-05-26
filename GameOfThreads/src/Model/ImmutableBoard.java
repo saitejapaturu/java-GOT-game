@@ -2,15 +2,15 @@ package Model;
 
 public class ImmutableBoard implements Board
 {
-    final static int GRID_WIDTH = 11;   // Final board width
     private Square[][] grid;    // A 2-d array of squares
     final int turnCreated;
     
-    public ImmutableBoard(int turn)
+    public ImmutableBoard(int turnCreated, Square[][] grid)
     {
-        this.grid = new Square[GRID_WIDTH][GRID_WIDTH];
+        this.grid = grid;
+        this.turnCreated = turnCreated;
+
         initialiseBoard();
-        this.turnCreated = turn;
     }
     
     public ImmutableBoard getBoard() 
@@ -18,10 +18,15 @@ public class ImmutableBoard implements Board
     	return this;
     }
 
-    //getter setter methods
-    public int getWidth()
+    public Square[][] getGrid()
     {
-		return GRID_WIDTH;
+        return this.grid;
+    }
+
+    //getter setter methods
+    public int getSize()
+    {
+		return this.SIZE;
 	}
     
     public Square getSquare(int x, int y)
@@ -330,9 +335,9 @@ public class ImmutableBoard implements Board
         boolean allPlayer2CharactersDied = true;
 
         //This for loops checks all squares of the grid for players and check's what team the players belong to.
-        for(int i=0; i<GRID_WIDTH; i++)
+        for(int i=0; i<SIZE; i++)
         {
-            for(int j=0; j<GRID_WIDTH; j++)
+            for(int j=0; j<SIZE; j++)
             {
                 //Check if the square isn't null;
                 if(grid[i][j] != null)
@@ -380,10 +385,11 @@ public class ImmutableBoard implements Board
     //Activates special of all pieces if thir special turn is the same as the one given
     public void activateSpecial(int specialTurn)
     {
+        System.out.println("\nSpecial Moves Activated: ");
         //This for loops checks all squares of the grid for pieces and activate appropriate specials.
-        for(int i=0; i<GRID_WIDTH; i++)
+        for(int i=0; i<SIZE; i++)
         {
-            for(int j=0; j<GRID_WIDTH; j++)
+            for(int j=0; j<SIZE; j++)
             {
                 //Check if the square isn't null;
                 if(grid[i][j] != null)
@@ -405,10 +411,11 @@ public class ImmutableBoard implements Board
     //deactivates special of all pieces on board.
     public void deactivateSpecial()
     {
+        System.out.println("\nSpecial Moves De-activated: ");
         //This for loops checks all squares of the grid for pieces and activate appropriate specials.
-        for(int i=0; i<GRID_WIDTH; i++)
+        for(int i=0; i<SIZE; i++)
         {
-            for(int j=0; j<GRID_WIDTH; j++)
+            for(int j=0; j<SIZE; j++)
             {
                 //Check if the square isn't null;
                 if(grid[i][j] != null)
@@ -425,8 +432,6 @@ public class ImmutableBoard implements Board
                 }
             }
         }
-
+        System.out.println("\n");
     }
-
-
 }
