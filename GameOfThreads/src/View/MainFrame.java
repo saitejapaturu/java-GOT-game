@@ -31,6 +31,7 @@ public class MainFrame extends JFrame {
 		this.gameBoard = board;
 		this.turnController = turnController;
 		this.history = history;
+		this.undoButton = new UndoButton();
 		Initialise();
 		setIcons();
 		add(gui);
@@ -42,9 +43,10 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
 		this.turnTracker = new StatusBar(turnController, null, null);
-		this.undoButton = new UndoButton();
 		getContentPane().add(turnTracker, java.awt.BorderLayout.NORTH);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
+		getContentPane().add(undoButton, java.awt.BorderLayout.EAST);
+		
 		statusBar.update();
 	}
 
@@ -120,7 +122,7 @@ public class MainFrame extends JFrame {
 	 
 	 private void Initialise()
 	 {
-		// undoButton.addActionListener(new UndoListener(history, gameBoard));
+		 undoButton.addActionListener(new UndoListener(history, gameBoard));
 		 int width = gameBoard.getWidth();
 
 		 int max=10, mid=5, min=0;
