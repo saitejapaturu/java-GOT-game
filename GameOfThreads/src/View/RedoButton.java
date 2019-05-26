@@ -4,7 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.JButton;
 
-public class RedoButton extends JButton{
+public class RedoButton extends JButton
+{
 
 	public RedoButton()
 	{

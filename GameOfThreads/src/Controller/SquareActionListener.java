@@ -135,7 +135,7 @@ public class SquareActionListener implements ActionListener
 		turnController.switchTurn();
 		turnController.reset();
 		mainFrame.revalidate();
-		mainFrame.updateComponents();
+		mainFrame.endOfTurn(gameBoard);
 
 		specials();
 	}
