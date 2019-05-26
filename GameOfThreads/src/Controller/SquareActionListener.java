@@ -124,6 +124,7 @@ public class SquareActionListener implements ActionListener
 	}
 
 	//This method gets called at the end of the turn.
+	//move to turn controller based on patterns
 	private void endOfTurn()
 	{
 		if(gameBoard.checkWinConditions() != 0)
