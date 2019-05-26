@@ -1,31 +1,30 @@
 package Model;
 
-public class Soldier extends Piece{
-	public static final int MAXMOVE = 3;
-	public static final int HEALTH = 4;
-	public static final int RANGE = 3;
-	public static final int DAMAGE = 2;
+public class Soldier extends Piece
+{
+	private static final String ID = "Soldier";
+	private static final int SPECIALTURN = 2;
 
-	public Soldier( String id, int x, int y) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public void move(int newX, int newY) {
-		this.setX(newX);
-		this.setY(newY);
-	}
-
-	@Override
-	public void attack(int targetX, int targetY) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void Special()
+	public Soldier(int player)
 	{
-		//soldier is able to deal double damage for 1 turn
+		super(4, 2, 2, ID, player, SPECIALTURN);
 	}
 
+	public void special()
+	{
+		//soldier is able to deal double damage every 2nd turn
+        this.setDamage(4);
+        this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Soldier activated. Damage doubled for this turn.");
+    }
+
+    //Returns to original range
+    public void deactivateSpecial()
+    {
+        this.setDamage(2);
+        this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Soldier de-activated. Damage back to normal.");
+    }
 }

@@ -1,30 +1,36 @@
 package Model;
 
-public class Tank extends Piece{
-	public static final int MAXMOVE = 2;
-	public static final int HEALTH = 5;
-	public static final int RANGE = 2;
-	public static final int DAMAGE = 1;
+public class Tank extends Piece
+{
+	private static final String ID = "Tank";
+	private static final int SPECIALTURN = 3;
+	private int originalHealth;                 //As the special involves immunity. Stores the original health to return back to it next turn.
 
-	public Tank(String id, int x, int y) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
-	}
-
-	@Override
-	public void move(int newX, int newY) {
-		this.setX(newX);
-		this.setY(newY);
-	}
-
-	public void Special()
+	public Tank(int player)
 	{
-		//tank piece goes fortifies itself for 3 turns, unable to move or take damage
+		super(7, 2, 2, ID, player, SPECIALTURN);
 	}
 
-	@Override
-	public void attack(int targetX, int targetY) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void special()
+	{
+        System.out.println("Special for tank activated");
+
+		//tank piece goes fortifies itself every 3rd turn unable to move or take damage
+        this.setRange(0);
+        originalHealth = this.getHealth();
+        this.setHealth(10);
+        this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Tank activated. Immune to any attack and cannot move this turn.");
+    }
+
+    //Returns to original range
+    public void deactivateSpecial()
+    {
+        this.setHealth(originalHealth);
+        this.setRange(2);
+        this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Tank de-activated. Health and range back to normal.");
+    }
 }

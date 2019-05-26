@@ -1,29 +1,30 @@
 package Model;
 
-public class Scout extends Piece{
-	public static final int MAXMOVE = 4;
-	public static final int HEALTH = 3;
-	public static final int RANGE = 3;
-	public static final int DAMAGE = 1;
+public class Scout extends Piece
+{
+	private static final String ID = "Scout";
+	private static final int SPECIALTURN = 2;
 
-	public Scout(String id, int x, int y) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
-	}
-
-	@Override
-	public void move(int newX, int newY) {
-		this.setX(newX);
-		this.setY(newY);
-	}
-
-	@Override
-	public void attack(int targetX, int targetY) {
-		
-	}
-	
-	public void Special()
+	public Scout(int player)
 	{
-		//scout is able to move to any square on the map instantly
+		super(3, 4, 1, ID, player, SPECIALTURN);
 	}
 
+    public void special()
+    {
+        //scout is able to move to any square on the map instantly every 2nd turn
+        this.setRange(10);
+        this.setSpecial(true);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Scout activated. Can move or attack to any empty place on board this turn.");
+    }
+
+    //Returns to original range
+    public void deactivateSpecial()
+    {
+        this.setRange(4);
+        this.setSpecial(false);
+
+        System.out.println("Special for Player - " + this.getPLAYER() + " Scout de-activated. Range is back to normal.");
+    }
 }

@@ -1,18 +1,26 @@
 package Client;
 
 import Model.Board;
-import Model.GameEngine;
+import Model.ImmutableBoard;
 import View.MainFrame;
 
 import javax.swing.*;
+
+import Controller.BoardHistory;
+import Controller.TurnController;
 
 public class GOTClient {
 
 	public static void main(String[] args) {
 
-		Board board = new Board(11,11);
+		
 		//board.newBoard();
-		GameEngine gameEngine = new GameEngine(board);
+		
+		TurnController turnController = new TurnController();
+		BoardHistory boardHistory = new BoardHistory();
+		Board board = new ImmutableBoard(0);
+		boardHistory.push(board);
+		
 
 
 		SwingUtilities.invokeLater(new Runnable()
@@ -20,9 +28,8 @@ public class GOTClient {
 			@Override
 			public void run()
 			{
-				MainFrame mainFrame = new MainFrame("Game Of Threads", board, gameEngine);
+				MainFrame mainFrame = new MainFrame("Game Of Threads", board, turnController);
 
-				//mainFrame.Update("Welcome to the Game Of Threads", 0);
 			}
 		});
 	}

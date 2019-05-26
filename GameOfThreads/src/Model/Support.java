@@ -1,29 +1,28 @@
 package Model;
 
-public class Support extends Piece {
-	
-	public static final int MAXMOVE = 2;
-	public static final int HEALTH = 5;
-	public static final int RANGE = 2;
-	public static final int DAMAGE = 1;
-	
-	public Support(String id, int x, int y) {
-		super(HEALTH, MAXMOVE, RANGE, DAMAGE, id, x, y);
+public class Support extends Piece
+{
+	private static final String ID = "Support";
+	private static final int SPECIALTURN = 2;
+
+	public Support(int player)
+	{
+		super(4, 2, 1, ID, player, SPECIALTURN);
 	}
 
-	@Override
-	public void move(int newX, int newY) {
-		this.setX(newX);
-		this.setY(newY);
-		
-	}
-	
-	public void attack(int targetX, int targetY) {
-		
-	}
-	
-	public void special() {
-		//Heals itself and other in team pieces by adding 20% of total hp every 2nd turn
+	public void special()
+	{
+		//Heals itself by 25% of total hp every 2nd turn
+		this.setHealth((this.getHealth())+1);
+		this.setSpecial(true);
+
+		System.out.println("Special for Player - " + this.getPLAYER() + " Support activated. Health increased by 25%. Health is now: " + this.getHealth());
 	}
 
+	//Returns to original range
+	public void deactivateSpecial()
+	{
+		//Nothing to be done later, decide on what to do in A-2
+		this.setSpecial(false);
+	}
 }

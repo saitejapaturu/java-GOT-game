@@ -1,38 +1,34 @@
 package View;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import Controller.SquareActionListener;
-import Model.GameEngine;
-import Model.Square;
-import Model.Board;
-import Model.CornerSquare;
+import Controller.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class MainFrame extends JFrame {
 	
 	private JPanel Board;
 	private final JPanel gui = new JPanel(new BorderLayout(3, 3));
-	private GameEngine gameEngine;
-	private JButton[][] squares;
+	private JButton[][] gridGUI;
 	private Model.Board gameBoard;
-	 public ImageIcon Assasin, Mage, Scout, Soldier, Support, Tank;
+	private StatusBar statusBar;
+	private StatusBar turnTracker;
+	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
+	private TurnController turnController;
+	static String p1Name;
+	static String p2Name;
 
-	public MainFrame(String title, Model.Board board, GameEngine gameEngine)
+	public MainFrame(String title, Model.Board board, TurnController turnController)
 	{
 		super(title);
-		this.gameEngine = gameEngine;
 		this.gameBoard = board;
-		initialise();
+		this.turnController = turnController;
+		Initialise();
 		setIcons();
-		//createDiamond();
 		add(gui);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -40,138 +36,18 @@ public class MainFrame extends JFrame {
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
-		
+		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
+		this.turnTracker = new StatusBar(turnController, null, null);
+		getContentPane().add(turnTracker, java.awt.BorderLayout.NORTH);
+		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
+		statusBar.update();
 	}
 
-	public void initialise()
-	{
-		
-			int maxWidth = gameBoard.getWidth();
-	        int maxHeight = gameBoard.getHeight();
-
-	        int mid;
-
-	        if((maxHeight%2) == 0)
-	            mid = maxHeight/2;
-	        else
-	            mid = (maxHeight+1)/2;
-	     squares = new JButton[maxWidth][maxHeight];
-	       
-		gui.setBorder(new EmptyBorder(4,4,4,4));
-		JToolBar toolbar = new JToolBar();
-		JButton newGame = new JButton("New Game");
-		toolbar.setFloatable(false);
-		gui.add(toolbar, BorderLayout.PAGE_START);
-		
-		
-		 Board = new JPanel(new GridLayout(maxWidth, maxHeight));
-		    Board.setBorder(new LineBorder(Color.BLACK));
-		    gui.add(Board);
-		    
-		    //fills in the board panel with chess squares
-		    Insets buttonMargin = new Insets(0,0,0,0);
-		    ImageIcon icon = new ImageIcon(
-                    new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
-		    
-		    
-		    
-		    
-	        for (int i = 0; i < squares.length; i++) {
-	            for (int j = 0; j < squares[i].length; j++) {
-	                JButton b = new JButton();
-	                b.setMargin(buttonMargin);
-	                
-	                b.setIcon(icon);
-	                b.setOpaque(false);
-		    		b.setContentAreaFilled(false);
-		    		b.setBorderPainted(false);
-	                squares[j][i] = b;
-	                //adds action listener for square interaction
-	            //    squares[j][i].addActionListener(new SquareActionListener(gameBoard, j, i, gameEngine, this));
-	            }
-	            
-	        }
-	        
-	        //creating corner squares
-	        squares[mid-1][0] = new JButton();
-	        squares[mid-1][0].addActionListener(new SquareActionListener(gameBoard, mid - 1, 0, gameEngine, this));
-            squares[mid-1][0].setBackground(Color.GREEN);
-            
-            squares[mid-1][10] = new JButton();
-	        squares[mid-1][10].addActionListener(new SquareActionListener(gameBoard, mid - 1, 10, gameEngine, this));
-            squares[mid-1][10].setBackground(Color.GREEN);
-            
-            squares[0][mid-1] = new JButton();
-	        squares[0][mid-1].addActionListener(new SquareActionListener(gameBoard, 0, mid - 1, gameEngine, this));
-            squares[0][mid-1].setBackground(Color.GREEN);
-            
-            squares[10][mid-1] = new JButton();
-	        squares[10][mid-1].addActionListener(new SquareActionListener(gameBoard, 10, mid - 1, gameEngine, this));
-            squares[10][mid-1].setBackground(Color.GREEN);
-     
-	        // Initialise mid row first;
-	        for (int i=2; i < maxWidth; i++)
-	        {
-	            JButton b = new JButton();
-	            b.setMargin(buttonMargin);
-	            //uses a transparent icon to allow for a background to be used as colour
-                //set to same size as pieces
-	            
-               // b.setIcon(icon);
-                //adding squares to board and assigning action listener
-                squares[mid-1][i-1] = b;
-                squares[mid-1][i-1].addActionListener(new SquareActionListener(gameBoard, mid-1, i-1, gameEngine, this));
-                squares[mid-1][i-1].setBackground(Color.WHITE);
-	            //for simple testing
-	            System.out.println("The square added to gui is" + mid + ", " + i);
-	        }
-
-	        for(int a=(maxHeight-1); a>mid; a--)
-	        {
-	            int x = maxHeight - a;
-	            // for the rows 2 to 5
-	            int b = (x+1);
-
-
-	            for (int i = (mid-x); i < (mid+x + 1); i++)
-	            {
-	            	System.out.println("Squares created are : s1: " + (a-1) + ", " + (i-1) + " and s2: " + (b-1) + ", " + (i-1));
-	        	    squares[a-1][i-1].addActionListener(new SquareActionListener(gameBoard, (a-1), (i-1), gameEngine, this));
-	                squares[b-1][i-1].addActionListener(new SquareActionListener(gameBoard, (b-1), (i-1), gameEngine, this));
-	                
-	                squares[b-1][i-1].setBackground(Color.YELLOW);
-	                squares[a-1][i-1].setBackground(Color.BLUE);
-	                
-	                squares[b-1][i-1].setOpaque(true);
-	                squares[a-1][i-1].setOpaque(true);
-	                
-	                squares[b-1][i-1].setContentAreaFilled(true);
-	                squares[a-1][i-1].setContentAreaFilled(true);
-	                
-	                squares[b-1][i-1].setBorderPainted(true);
-	                squares[a-1][i-1].setBorderPainted(true);
-	                
-	                	    		
-	            }
-	            
-	        }
-	        for(int i =0;i<maxWidth;i++)
-	        {
-	        	for(int j =0;j<maxHeight;j++)
-	        	{
-	        		Board.add(squares[j][i]);
-	        	}
-	        }
-	}
-
-	//takes input of players and passes them to gameEngine for player object creation
+	
+	//takes input of players and passes them to gameEngine for status bar and win screen
 	private void setPlayers() {
-		String p1Name = JOptionPane.showInputDialog("Enter Player 1 Name:");
-		gameEngine.setPlayer(p1Name, 1);
-
-		String p2Name = JOptionPane.showInputDialog("Enter Player 2 Name:");
-		gameEngine.setPlayer(p2Name, 2);
-
+		p1Name = JOptionPane.showInputDialog("Enter Player 1 Name:");
+		p2Name = JOptionPane.showInputDialog("Enter Player 2 Name:");
 	}
 
 	//ensures app starts in the middle of the screen
@@ -185,36 +61,51 @@ public class MainFrame extends JFrame {
 	public void setIcons()
 	{
 		createImages();
-	   	for (int i = 0; i < squares.length; i++) {
-            for (int j = 0; j < squares[i].length; j++) {
-            	squares[i][j].setIcon(null);
+	   	for (int i = 0; i < gridGUI.length; i++)
+	   	{
+            for (int j = 0; j < gridGUI[i].length; j++)
+            {
+            	gridGUI[i][j].setIcon(null);
             }
-            }
-        squares[0][5].setIcon(Assasin);
-        squares[1][4].setIcon(Assasin);
-        squares[1][6].setIcon(Mage);
-        squares[2][3].setIcon(Mage);
-        squares[2][7].setIcon(Scout);
-        squares[3][2].setIcon(Scout);
-        
-        squares[10][5].setIcon(Soldier);
-        squares[9][4].setIcon(Soldier);
-        squares[9][6].setIcon(Support);
-        squares[8][3].setIcon(Support);
-        squares[8][7].setIcon(Tank);
-        squares[7][2].setIcon(Tank);
+	   	}
+	   	//Player 1
+        gridGUI[0][5].setIcon(Assasin1);
+        gridGUI[1][4].setIcon(Soldier1);
+        gridGUI[1][6].setIcon(Mage1);
+        gridGUI[2][3].setIcon(Support1);
+        gridGUI[2][7].setIcon(Scout1);
+        gridGUI[3][2].setIcon(Tank1);
+
+        //Player 2
+        gridGUI[10][5].setIcon(Assasin2);
+        gridGUI[9][4].setIcon(Soldier2);
+        gridGUI[9][6].setIcon(Mage2);
+        gridGUI[8][3].setIcon(Support2);
+        gridGUI[8][7].setIcon(Scout2);
+        gridGUI[7][2].setIcon(Tank2);
 	}
 	
-	private final void createImages() {
-	       Assasin = createImageIcon("images/Black_Rook.png","Assasin");
-	       Mage = createImageIcon("images/Black_Bishop.png","Mage");
-	       Scout = createImageIcon("images/Black_Knight.png","Scout");
-	       
-	       Soldier = createImageIcon("images/White_Rook.png","Soldier");
-	       Support = createImageIcon("images/White_Bishop.png","Support");
-	       Tank = createImageIcon("images/White_Knight.png","Tank");
-	    }
+	//simple method for making piece icons
+	private final void createImages()
+	{
+		//For Player 1
+		Assasin1 = createImageIcon("images/Assassin1.png","Assasin for player 1");
+		Mage1 = createImageIcon("images/Mage1.png","Mage for player 1");
+		Scout1 = createImageIcon("images/Scout1.png","Scout for player 1");
+		Soldier1 = createImageIcon("images/Soldier1.png","Soldier for player 1");
+		Support1 = createImageIcon("images/Support1.png","Support for player 1");
+		Tank1 = createImageIcon("images/Tank1.png","Tank for player 1");
+
+		//For player 2
+		Assasin2 = createImageIcon("images/Assassin2.png","Assasin for player 2");
+		Mage2 = createImageIcon("images/Mage2.png","Mage for player 2");
+		Scout2 = createImageIcon("images/Scout2.png","Scout for player 2");
+		Soldier2 = createImageIcon("images/Soldier2.png","Soldier for player 2");
+		Support2 = createImageIcon("images/Support2.png","Support for player 2");
+		Tank2 = createImageIcon("images/Tank2.png","Tank for player 2");
+	}
 	
+	//from java help docs
 	 protected ImageIcon createImageIcon(String path,String description)
 	   {
 		 	
@@ -229,5 +120,221 @@ public class MainFrame extends JFrame {
 		   }
 		   
 		
+	   }
+	 
+	 public void Initialise()
+	 {
+		 int width = gameBoard.getWidth();
+
+		 int max=10, mid=5, min=0;
+
+		 //Initialising GUI
+		 //Creating grid
+	        gridGUI = new JButton[width][width];
+			gui.setBorder(new EmptyBorder(4,4,4,4));
+			JToolBar toolbar = new JToolBar();
+			toolbar.setFloatable(false);
+			gui.add(toolbar, BorderLayout.PAGE_START);
+			
+			 Board = new JPanel(new GridLayout(width, width));
+			 Board.setBorder(new LineBorder(Color.BLACK));
+			 gui.add(Board);
+			    
+			    //fills in the board panel with chess gridGUI
+			    Insets buttonMargin = new Insets(0,0,0,0);
+			    ImageIcon icon = new ImageIcon(
+	                    new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+			    
+			    
+		        for (int y = 0; y < gridGUI.length; y++)
+		        {
+					for (int j = 0; j < gridGUI[y].length; j++) {
+						JButton b = new JButton();
+						b.setMargin(buttonMargin);
+
+						b.setIcon(icon);
+						b.setOpaque(false);
+						b.setContentAreaFilled(false);
+						b.setBorderPainted(false);
+						gridGUI[j][y] = b;
+						//adds action listener for square interaction
+					}
+				}
+
+
+
+    		/* Initialising normal squares of the diamond block.
+			 * upperRow initialises the rows 1 to 5
+			 * and lowerRow initialises 6 to 9
+			 *
+			 * The initialisation starts at row 1 and row 9
+			 * and creating squares at columns 4 to 6 in those rows.
+			 * After every loop, upperRow increments and lowerRow decrements by 1
+			 * and the column width increases on both sides by 1.
+			 * 
+			 * Jbuttons are created and given correct properties
+			 */
+    		for (int upperRow=1,lowerRow=9,low=4,high=6;upperRow<lowerRow;upperRow++,lowerRow--,low--,high++)
+    		{
+    			for(int i=low; i<=high;i++)
+    			{
+    				//For middle row
+					if (upperRow==(lowerRow-2))
+					{
+						JButton button = new JButton();
+						button.addActionListener(new SquareActionListener(gameBoard, upperRow+1, i, this, turnController));
+						button.setBackground(Color.DARK_GRAY);
+						setButtonProperties(button);
+
+						gridGUI[upperRow+1][i] = button;
+
+						//debug
+						System.out.println("line 226: GUI for Squares created for : s0: " + (upperRow+1) + ", " + i);
+					}
+
+					JButton button = new JButton();
+					button.addActionListener(new SquareActionListener(gameBoard, upperRow, i, this, turnController));
+					button.setBackground(Color.DARK_GRAY);
+					setButtonProperties(button);
+
+					gridGUI[upperRow][i] = button;
+
+
+					JButton button2 = new JButton();
+					button2.addActionListener(new SquareActionListener(gameBoard, lowerRow, i, this, turnController));
+					button2.setBackground(Color.DARK_GRAY);
+					setButtonProperties(button2);
+
+					gridGUI[lowerRow][i] = button2;
+
+					//debug
+					System.out.println("line 245: GUI for Squares created for : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
+    			}
+    		}
+    		
+    		//individually creating corner squares so they can be assigned different colour
+	        gridGUI[max][mid] = new JButton();
+	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, this, turnController));
+            gridGUI[max][mid].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[max][mid]);
+
+            gridGUI[min][mid] = new JButton();
+	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, this, turnController));
+            gridGUI[min][mid].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[min][mid]);
+
+            gridGUI[mid][min] = new JButton();
+	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, this, turnController));
+            gridGUI[mid][min].setBackground(Color.GREEN);
+    		setButtonProperties(gridGUI[mid][min]);
+            
+            gridGUI[mid][max] = new JButton();
+	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, this, turnController));
+            gridGUI[mid][max].setBackground(Color.GREEN);
+            setButtonProperties(gridGUI[mid][max]);
+				
+    		//adding buttons to view
+		        for(int i = 0;i<width;i++)
+		        {
+		        	for (int j= 0; j<width;j++)
+		        	{
+		        		Board.add(gridGUI[i][j]);
+		        	}
+		        }
+	 }
+	 
+	//reflects a move made on the board
+	   public void movePiece(int pieceX, int pieceY, int moveX, int moveY)
+	   {
+		   gridGUI[moveX][moveY].setIcon(gridGUI[pieceX][pieceY].getIcon());
+		   gridGUI[pieceX][pieceY].setIcon(null);
+	   }
+	 //simple helper method to set buttons not a part of board
+	   public void setButtonProperties(JButton button)
+	   {
+		   button.setOpaque(true);
+           button.setContentAreaFilled(true);
+           button.setBorderPainted(true);
+	   }
+	   
+	   //updates individual gui components according to board
+	   public void updateComponents()
+	   {
+		   statusBar.update();
+		   turnTracker.updateTurns();
+		   checkIcons();
+		   int playerWins = gameBoard.checkWinConditions();
+		   if(playerWins == 1)
+		   {
+			   statusBar.setMessage(p1Name + " Wins!");
+			   displayWin(playerWins);
+		   }
+		   else if(playerWins == 2)
+		   {
+			  statusBar.setMessage(p2Name + " Wins!");
+			  displayWin(playerWins);
+		   }
+	   }
+	   
+	 //checks for dead pieces and updates gui
+	   public void checkIcons()
+	   {
+		   int dim = gameBoard.getWidth();
+		   for(int i = 0;i<dim;i++)
+	        {
+	        	for (int j= 0; j<dim;j++)
+	        	{
+	        		if(gameBoard.getSquare(i, j)!=null)
+	        		{
+	        			if(gameBoard.getSquare(i, j).getPiece() == null)
+	        		{
+	        			gridGUI[i][j].setIcon(null);
+	        		}
+	        		}
+	        	}
+	        }
+		   
+	   }
+	   
+	   private static void displayWin(int player)
+	    {
+		   //creates a simple win alert and closes game
+		   String winningMessage = null;
+		   if(player == 1)
+		   {
+			   winningMessage = "Congratulations player " + p1Name + " you win!";
+		   }
+		   else if(player == 2)
+		   {
+			   winningMessage = "Congratulations player " + p2Name + " you win!";
+		   }
+		   int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
+	       if (close == 0)
+	       {
+	    	   System.exit(0);
+	       }
+	    }
+	   
+	   // a simple testing method for help when debugging, labels piece squares with their set position and
+	   // number of player they are associated with
+	   private void squarePlacementTest()
+	   {
+		   for (int i = 0; i < gridGUI.length-1; i++)
+			{
+	            for (int j = 0; j < gridGUI[i].length-1; j++)
+	            {
+	            	if(gameBoard.getSquare(i, j) != null)
+	            	{
+	            		if(gameBoard.getSquare(i, j).getPiece()!=null)
+	            		{
+	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
+	            		}
+	            	}
+	            	else
+	            	{
+	            		gridGUI[i][j].setText(i+ " " + j);
+	            	}
+	            }
+			}
 	   }
 }
