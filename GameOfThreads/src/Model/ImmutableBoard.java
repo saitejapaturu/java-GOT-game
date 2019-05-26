@@ -88,16 +88,10 @@ public class ImmutableBoard implements Board
                 if (upperRow==(lowerRow-2))
                 {
                     grid[upperRow+1][i] = new Square((upperRow+1), i, true);
-
-                    //debug
-                    System.out.println("line 88: Squares created are : s0: " + (upperRow+1) + ", " + i);
                 }
 
                 grid[upperRow][i] = new Square(upperRow, i, true);
                 grid[lowerRow][i] = new Square(lowerRow, i, true);
-
-                //debug
-               System.out.println("line 95: Squares created are : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
             }
         }
     }

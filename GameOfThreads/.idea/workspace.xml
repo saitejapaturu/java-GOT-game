@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Client/GOTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/GOTClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ImmutableBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ImmutableBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/AryaStark.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/AryaStark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/DaenerysTargaryen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/DaenerysTargaryen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/General.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/General.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Ghost.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Giant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Giant.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Horde.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Horde.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/JonSnow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/JonSnow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Jon_Ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Jon_Ghost.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/NightKing.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/NightKing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Unsullied.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Unsullied.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+            <state relative-caret-position="204">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
             </state>
           </provider>
         </entry>
@@ -60,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            <state relative-caret-position="465">
+              <caret line="196" column="51" selection-start-line="196" selection-start-column="51" selection-end-line="196" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -158,6 +149,7 @@
       <find>mons</find>
       <find>ImageIcon</find>
       <find>85</find>
+      <find>debug</find>
     </findStrings>
     <replaceStrings>
       <replace>ID</replace>
@@ -201,9 +193,9 @@
         <option value="$PROJECT_DIR$/src/Model/DragonQueen.java" />
         <option value="$PROJECT_DIR$/src/Model/NightKing.java" />
         <option value="$PROJECT_DIR$/src/Model/Archer.java" />
-        <option value="$PROJECT_DIR$/src/Model/ImmutableBoard.java" />
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
         <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/Model/ImmutableBoard.java" />
       </list>
     </option>
   </component>
@@ -276,7 +268,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558871931989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558872366985" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -357,12 +349,12 @@
       <workItem from="1555033232951" duration="604000" />
       <workItem from="1555155921522" duration="21000" />
       <workItem from="1555156071611" duration="14147000" />
-      <workItem from="1558854082959" duration="8197000" />
+      <workItem from="1558854082959" duration="8510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48323000" />
+    <option name="totallyTimeSpent" value="48636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -591,24 +583,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -624,8 +602,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="196" column="51" selection-start-line="196" selection-start-column="51" selection-end-line="196" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>

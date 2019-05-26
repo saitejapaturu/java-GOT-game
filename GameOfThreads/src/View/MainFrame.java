@@ -179,9 +179,6 @@ public class MainFrame extends JFrame {
 						setButtonProperties(button);
 
 						gridGUI[upperRow+1][i] = button;
-
-						//debug
-						System.out.println("line 226: GUI for Squares created for : s0: " + (upperRow+1) + ", " + i);
 					}
 
 					JButton button = new JButton();
@@ -198,9 +195,6 @@ public class MainFrame extends JFrame {
 					setButtonProperties(button2);
 
 					gridGUI[lowerRow][i] = button2;
-
-					//debug
-					System.out.println("line 245: GUI for Squares created for : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
     			}
     		}
     		
