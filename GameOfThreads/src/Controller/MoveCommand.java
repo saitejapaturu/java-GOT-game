@@ -21,6 +21,14 @@ public class MoveCommand implements Command {
 		{
 			//turnController.endTurn();
 		}
+		else
+			//if not a valid move
+		{
+			System.out.println("Not a Valid Attack");
+
+			tc.reset();
+			return;
+		}
 
 	}
 
