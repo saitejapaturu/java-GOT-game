@@ -23,6 +23,7 @@ public class MainFrame extends JFrame {
 	static String p1Name;
 	static String p2Name;
 	private UndoButton undoButton;
+	private RedoButton redoButton;
 	private BoardHistory history;
 
 	public MainFrame(String title, Model.Board board, TurnController turnController, BoardHistory history)
@@ -32,6 +33,7 @@ public class MainFrame extends JFrame {
 		this.turnController = turnController;
 		this.history = history;
 		this.undoButton = new UndoButton();
+		this.redoButton = new RedoButton();
 		Initialise();
 		setIcons();
 		add(gui);
@@ -45,7 +47,6 @@ public class MainFrame extends JFrame {
 		this.turnTracker = new StatusBar(turnController, null, null);
 		getContentPane().add(turnTracker, java.awt.BorderLayout.NORTH);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
-		getContentPane().add(undoButton, java.awt.BorderLayout.EAST);
 		
 		statusBar.update();
 	}
@@ -123,6 +124,7 @@ public class MainFrame extends JFrame {
 	 private void Initialise()
 	 {
 		 undoButton.addActionListener(new UndoListener(history, gameBoard));
+		 redoButton.addActionListener(new RedoListener(history, gameBoard));
 		 int width = gameBoard.getWidth();
 
 		 int max=10, mid=5, min=0;
@@ -159,8 +161,8 @@ public class MainFrame extends JFrame {
 						//adds action listener for square interaction
 					}
 				}
-
-
+		        gridGUI[gridGUI.length - 1][gridGUI.length - 1] = undoButton;
+		        gridGUI[gridGUI.length - 1][gridGUI.length - 2] = redoButton;
 
     		/* Initialising normal squares of the diamond block.
 			 * upperRow initialises the rows 1 to 5
