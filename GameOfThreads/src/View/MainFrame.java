@@ -15,21 +15,26 @@ public class MainFrame extends JFrame {
 	private JPanel Board;
 	private final JPanel gui = new JPanel(new BorderLayout(3, 3));
 	private JButton[][] gridGUI;
-	private Model.Board gameBoard;
+	private MutableBoard gameBoard;
 	private StatusBar statusBar;
 	private StatusBar turnTracker;
 	private ImageIcon DaenerysTargaryen, Unsullied, AryaStark, JonSnow, NightKing, Giant, General, Horde;
 	private TurnController turnController;
 	static String p1Name;
 	static String p2Name;
+	private UndoButton undoButton;
+	private RedoButton redoButton;
 
-	public MainFrame(String title, Model.Board board, TurnController turnController)
+	public MainFrame(String title, MutableBoard board, TurnController turnController)
 	{
 		super(title);
 		this.gameBoard = board;
 		this.turnController = turnController;
+		this.undoButton = new UndoButton();
+		this.redoButton = new RedoButton();
 		Initialise();
-		setIcons();
+		createImages();
+		updateBoardIcon();
 		add(gui);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -41,6 +46,7 @@ public class MainFrame extends JFrame {
 		this.turnTracker = new StatusBar(turnController, null, null);
 		getContentPane().add(turnTracker, java.awt.BorderLayout.NORTH);
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
+		
 		statusBar.update();
 	}
 
@@ -59,32 +65,8 @@ public class MainFrame extends JFrame {
 		mainFrame.setLocation(x, y);
 	}
 	
-	public void setIcons()
-	{
-		createImages();
-	   	for (int i = 0; i < gridGUI.length; i++)
-	   	{
-            for (int j = 0; j < gridGUI[i].length; j++)
-            {
-            	gridGUI[i][j].setIcon(null);
-            }
-	   	}
-
-		//Player 1 pieces
-		gridGUI[0][5].setIcon(DaenerysTargaryen);
-		gridGUI[1][4].setIcon(AryaStark);
-		gridGUI[1][5].setIcon(JonSnow);
-		gridGUI[1][6].setIcon(Unsullied);
-
-		//Player 2 pieces
-		gridGUI[10][5].setIcon(NightKing);
-		gridGUI[9][4].setIcon(Giant);
-		gridGUI[9][5].setIcon(General);
-		gridGUI[9][6].setIcon(Horde);
-	}
-	
 	//simple method for making piece icons
-	private final void createImages()
+	private void createImages()
 	{
 		//For Player 1
 		DaenerysTargaryen = createImageIcon("images/DaenerysTargaryen.png","Image of Daenerys Targaryen");
@@ -100,7 +82,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	//from java help docs
-	 protected ImageIcon createImageIcon(String path,String description)
+	 private ImageIcon createImageIcon(String path,String description)
 	   {
 		 	
 		   java.net.URL imgURL = getClass().getResource(path);
@@ -116,7 +98,9 @@ public class MainFrame extends JFrame {
 	 
 	 private void Initialise()
 	 {
-		 int width = gameBoard.getWidth();
+		 undoButton.addActionListener(new UndoListener(gameBoard, this));
+		 redoButton.addActionListener(new RedoListener(gameBoard, this));
+		 int width = gameBoard.getSize();
 
 		 int max=10, mid=5, min=0;
 
@@ -152,8 +136,8 @@ public class MainFrame extends JFrame {
 						//adds action listener for square interaction
 					}
 				}
-
-
+		        gridGUI[gridGUI.length - 1][gridGUI.length - 1] = undoButton;
+		        gridGUI[gridGUI.length - 1][gridGUI.length - 2] = redoButton;
 
     		/* Initialising normal squares of the diamond block.
 			 * upperRow initialises the rows 1 to 5
@@ -179,9 +163,6 @@ public class MainFrame extends JFrame {
 						setButtonProperties(button);
 
 						gridGUI[upperRow+1][i] = button;
-
-						//debug
-						System.out.println("line 226: GUI for Squares created for : s0: " + (upperRow+1) + ", " + i);
 					}
 
 					JButton button = new JButton();
@@ -198,9 +179,6 @@ public class MainFrame extends JFrame {
 					setButtonProperties(button2);
 
 					gridGUI[lowerRow][i] = button2;
-
-					//debug
-					System.out.println("line 245: GUI for Squares created for : s1: " + upperRow + ", " + i + " and s2: " + lowerRow + ", " + i);
     			}
     		}
     		
@@ -233,28 +211,36 @@ public class MainFrame extends JFrame {
 		        		Board.add(gridGUI[i][j]);
 		        	}
 		        }
+
 	 }
 	 
-	//reflects a move made on the board
-	   public void movePiece(int pieceX, int pieceY, int moveX, int moveY)
+	  //reflects a move made on the board
+	  public void movePiece(int pieceX, int pieceY, int moveX, int moveY)
 	   {
 		   gridGUI[moveX][moveY].setIcon(gridGUI[pieceX][pieceY].getIcon());
 		   gridGUI[pieceX][pieceY].setIcon(null);
 	   }
-	 //simple helper method to set buttons not a part of board
-	   public void setButtonProperties(JButton button)
+	  //simple helper method to set buttons not a part of board
+	  public void setButtonProperties(JButton button)
 	   {
 		   button.setOpaque(true);
            button.setContentAreaFilled(true);
            button.setBorderPainted(true);
 	   }
-	   
+
+	   public void endOfTurn()
+	   {
+//	   		Board board = gameBoard;
+//
+//	   		history.moveMade(board);
+	   		updateComponents();
+	   }
 	   //updates individual gui components according to board
 	   public void updateComponents()
 	   {
 		   statusBar.update();
 		   turnTracker.updateTurns();
-		   checkIcons();
+		   updateBoardIcon();
 		   int playerWins = gameBoard.checkWinConditions();
 		   if(playerWins == 1)
 		   {
@@ -268,10 +254,10 @@ public class MainFrame extends JFrame {
 		   }
 	   }
 	   
-	 //checks for dead pieces and updates gui
-	   public void checkIcons()
+	 //checks for dead pieces and updates gui, also checks for character pieces when undo/redo
+	   public void updateBoardIcon()
 	   {
-		   int dim = gameBoard.getWidth();
+		   int dim = gameBoard.getSize();
 		   for(int i = 0;i<dim;i++)
 	        {
 	        	for (int j= 0; j<dim;j++)
@@ -279,15 +265,50 @@ public class MainFrame extends JFrame {
 	        		if(gameBoard.getSquare(i, j)!=null)
 	        		{
 	        			if(gameBoard.getSquare(i, j).getPiece() == null)
-	        		{
-	        			gridGUI[i][j].setIcon(null);
-	        		}
+	        			{
+	        				gridGUI[i][j].setIcon(null);
+	        			}
+	        			else if (gameBoard.getSquare(i,j).getPiece() instanceof DaenerysTargaryen)
+	        			{
+							gridGUI[i][j].setIcon(DaenerysTargaryen);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof AryaStark)
+						{
+							gridGUI[i][j].setIcon(AryaStark);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof JonSnow)
+						{
+							gridGUI[i][j].setIcon(JonSnow);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof Unsullied)
+						{
+							gridGUI[i][j].setIcon(Unsullied);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof NightKing)
+						{
+							gridGUI[i][j].setIcon(NightKing);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof Giant)
+						{
+							gridGUI[i][j].setIcon(Giant);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof General)
+						{
+							gridGUI[i][j].setIcon(General);
+						}
+						else if (gameBoard.getSquare(i,j).getPiece() instanceof Horde)
+						{
+							gridGUI[i][j].setIcon(Horde);
+						}
 	        		}
 	        	}
 	        }
-		   
 	   }
-	   
+
+	   public void undoRedo()
+	   {
+		    updateBoardIcon();
+	   }
 	   private static void displayWin(int player)
 	    {
 		   //creates a simple win alert and closes game
@@ -319,7 +340,7 @@ public class MainFrame extends JFrame {
 	            	{
 	            		if(gameBoard.getSquare(i, j).getPiece()!=null)
 	            		{
-	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquarePiece(i, j).getPLAYER());
+	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquare(i, j).getPiece().getPLAYER());
 	            		}
 	            	}
 	            	else
