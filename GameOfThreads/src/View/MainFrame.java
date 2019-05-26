@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
 		add(gui);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		setSize(750, 700);
+		setSize(1100, 1100);
 		centreWindow(this);
 		setPlayers();
 		setVisible(true);
@@ -135,7 +135,7 @@ public class MainFrame extends JFrame {
 			    //fills in the board panel with chess gridGUI
 			    Insets buttonMargin = new Insets(0,0,0,0);
 			    ImageIcon icon = new ImageIcon(
-	                    new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB));
+	                    new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB));
 			    
 			    
 		        for (int y = 0; y < gridGUI.length; y++)
