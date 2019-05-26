@@ -1,15 +1,19 @@
 package Model;
 
-public class Mage extends Piece
+public class Horde extends DeadPiece
 {
-	private static final String ID = "Mage";
-	private static final int SPECIALTURN = 3;
+	private static final String ID = "Horde";
+	private static final int SPECIALTURN = 2;
 
 	private int originalHealth; //As the special involves immunity. Stores the original health to return back to it next turn.
 
-	public Mage (int player)
+	private static final String SPECIAL_ACTIVE_MESSAGE = "Immune to attacks for this turn.";
+	private static final String SPECIAL_DEACTIVATE_MESSAGE= "Health back to normal.";
+
+
+	public Horde()
 	{
-		super(5,4, 2, ID, player, SPECIALTURN);
+		super(3,1, 3, ID, SPECIALTURN, SPECIAL_ACTIVE_MESSAGE, SPECIAL_DEACTIVATE_MESSAGE);
 	}
 	
 	public void special()
@@ -20,7 +24,7 @@ public class Mage extends Piece
         this.setHealth(10);
         this.setSpecial(true);
 
-		System.out.println("Special for Player - " + this.getPLAYER() + " Mage activated. Immune for this turn.");
+		announceSpecialActivation();
 	}
 
     //Returns to original range
@@ -29,6 +33,6 @@ public class Mage extends Piece
         this.setRange(originalHealth);
         this.setSpecial(false);
 
-		System.out.println("Special for Player - " + this.getPLAYER() + " Mage de-activated. Health back to normal.");
+		announceSpecialDeactivation();
     }
 }

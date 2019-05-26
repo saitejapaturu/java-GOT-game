@@ -107,20 +107,16 @@ public class ImmutableBoard implements Board
     {
 
         //Placing Player 1 pieces
-        grid[0][5].setPiece(new Assassin(1));
-        grid[1][4].setPiece(new Soldier(1));
-        grid[1][6].setPiece(new Mage(1));
-        grid[2][3].setPiece(new Support(1));
-        grid[2][7].setPiece(new Scout(1));
-        grid[3][2].setPiece(new Tank(1));
+        grid[0][5].setPiece(new DaenerysTargaryen());
+        grid[1][4].setPiece(new AryaStark());
+        grid[1][5].setPiece(new JonSnow());
+        grid[1][6].setPiece(new Unsullied());
 
         //Placing player 2 pieces
-        grid[10][5].setPiece(new Assassin(2));
-        grid[9][4].setPiece(new Soldier(2));
-        grid[9][6].setPiece(new Mage(2));
-        grid[8][3].setPiece(new Support(2));
-        grid[8][7].setPiece(new Scout(2));
-        grid[7][2].setPiece(new Tank(2));
+        grid[10][5].setPiece(new NightKing());
+        grid[9][4].setPiece(new Giant());
+        grid[9][5].setPiece(new General());
+        grid[9][6].setPiece(new Horde());
 
         //Player 1 and 2 already occupy 1 corner square
 

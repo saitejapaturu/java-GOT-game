@@ -11,8 +11,12 @@ public abstract class Piece
     private final int PLAYER;
     private final int SPECIALTURN;
 
+    private final String SPECIAL_ACTIVE_MESSAGE;        // Message to describe what attributes increased by special
+    private final String SPECIAL_DEACTIVATE_MESSAGE;    // Message to describe what attributes decreased by special
+
     // Initially, i.e turn 1, specials are turned off.
-    public Piece(int health, int range, int damage, String ID, int PLAYER, int SPECIALTURN)
+    public Piece(int health, int range, int damage, String ID, int PLAYER, int SPECIALTURN,
+                 String SPECIAL_ACTIVE_MESSAGE, String SPECIAL_DEACTIVATE_MESSAGE)
     {
     	this.health = health;
         this.range = range;
@@ -21,6 +25,9 @@ public abstract class Piece
        
         this.PLAYER = PLAYER;
         this.SPECIALTURN = SPECIALTURN;
+
+        this.SPECIAL_ACTIVE_MESSAGE = SPECIAL_ACTIVE_MESSAGE;
+        this.SPECIAL_DEACTIVATE_MESSAGE = SPECIAL_DEACTIVATE_MESSAGE;
 
         this.special = false;
     }
@@ -92,4 +99,16 @@ public abstract class Piece
 
     //The special attribute is deactivated.
     public abstract void deactivateSpecial();
+
+    // method to announce special for this piece has been activated.
+    public void announceSpecialActivation()
+    {
+        System.out.println("Special for " + this.getID() + " activated. " + this.SPECIAL_ACTIVE_MESSAGE);
+    }
+
+    // method to announce special for this piece has been deactivated.
+    public void announceSpecialDeactivation()
+    {
+        System.out.println("Special for " + this.getID() + " de-activated. " + this.SPECIAL_DEACTIVATE_MESSAGE);
+    }
 }
