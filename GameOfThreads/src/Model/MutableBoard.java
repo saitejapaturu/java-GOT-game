@@ -1,6 +1,7 @@
 package Model;
 
-public class MutableBoard implements Board {
+public class MutableBoard implements Board
+{
 
 	@Override
 	public int getWidth() {
