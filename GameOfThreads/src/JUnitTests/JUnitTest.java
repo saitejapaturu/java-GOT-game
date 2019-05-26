@@ -31,12 +31,12 @@
 //		sq = new Square(2,1, true);
 //		cS = new CornerSquare(x, y);
 //
-//		mg = new Mage("1", x,y);
-//		sc = new Mage("1", x,y);
-//		sld = new Mage("1", x,y);
-//		sup = new Mage("1", x,y);
-//		tank = new Mage("1", x,y);
-//		as = new Mage("1", x,y);
+//		mg = new Horde("1", x,y);
+//		sc = new Horde("1", x,y);
+//		sld = new Horde("1", x,y);
+//		sup = new Horde("1", x,y);
+//		tank = new Horde("1", x,y);
+//		as = new Horde("1", x,y);
 //
 //	}
 //

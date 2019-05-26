@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Controller.*;
+import Model.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -17,7 +18,7 @@ public class MainFrame extends JFrame {
 	private Model.Board gameBoard;
 	private StatusBar statusBar;
 	private StatusBar turnTracker;
-	private ImageIcon Assasin1, Assasin2, Mage1, Mage2, Scout1, Scout2, Soldier1, Soldier2, Support1, Support2, Tank1, Tank2;
+	private ImageIcon DaenerysTargaryen, Unsullied, AryaStark, JonSnow, NightKing, Giant, General, Horde;
 	private TurnController turnController;
 	static String p1Name;
 	static String p2Name;
@@ -68,41 +69,34 @@ public class MainFrame extends JFrame {
             	gridGUI[i][j].setIcon(null);
             }
 	   	}
-	   	//Player 1
-        gridGUI[0][5].setIcon(Assasin1);
-        gridGUI[1][4].setIcon(Soldier1);
-        gridGUI[1][6].setIcon(Mage1);
-        gridGUI[2][3].setIcon(Support1);
-        gridGUI[2][7].setIcon(Scout1);
-        gridGUI[3][2].setIcon(Tank1);
 
-        //Player 2
-        gridGUI[10][5].setIcon(Assasin2);
-        gridGUI[9][4].setIcon(Soldier2);
-        gridGUI[9][6].setIcon(Mage2);
-        gridGUI[8][3].setIcon(Support2);
-        gridGUI[8][7].setIcon(Scout2);
-        gridGUI[7][2].setIcon(Tank2);
+		//Player 1 pieces
+		gridGUI[0][5].setIcon(DaenerysTargaryen);
+		gridGUI[1][4].setIcon(AryaStark);
+		gridGUI[1][5].setIcon(JonSnow);
+		gridGUI[1][6].setIcon(Unsullied);
+
+		//Player 2 pieces
+		gridGUI[10][5].setIcon(NightKing);
+		gridGUI[9][4].setIcon(Giant);
+		gridGUI[9][5].setIcon(General);
+		gridGUI[9][6].setIcon(Horde);
 	}
 	
 	//simple method for making piece icons
 	private final void createImages()
 	{
 		//For Player 1
-		Assasin1 = createImageIcon("images/Assassin1.png","Assasin for player 1");
-		Mage1 = createImageIcon("images/Mage1.png","Mage for player 1");
-		Scout1 = createImageIcon("images/Scout1.png","Scout for player 1");
-		Soldier1 = createImageIcon("images/Soldier1.png","Soldier for player 1");
-		Support1 = createImageIcon("images/Support1.png","Support for player 1");
-		Tank1 = createImageIcon("images/Tank1.png","Tank for player 1");
+		DaenerysTargaryen = createImageIcon("images/DaenerysTargaryen.png","Image of Daenerys Targaryen");
+		Unsullied = createImageIcon("images/Unsullied.png","Image of Unsullied");
+		AryaStark = createImageIcon("images/AryaStark.png","Image of Arya Stark");
+		JonSnow = createImageIcon("images/JonSnow.png","Image of Jon Snow");
 
 		//For player 2
-		Assasin2 = createImageIcon("images/Assassin2.png","Assasin for player 2");
-		Mage2 = createImageIcon("images/Mage2.png","Mage for player 2");
-		Scout2 = createImageIcon("images/Scout2.png","Scout for player 2");
-		Soldier2 = createImageIcon("images/Soldier2.png","Soldier for player 2");
-		Support2 = createImageIcon("images/Support2.png","Support for player 2");
-		Tank2 = createImageIcon("images/Tank2.png","Tank for player 2");
+		NightKing = createImageIcon("images/NightKing.png","Image of Nigght King");
+		Giant = createImageIcon("images/Giant.png","Image of Giant");
+		Horde = createImageIcon("images/Horde.png","Image of Horde");
+		General = createImageIcon("images/General.png","Image of General");
 	}
 	
 	//from java help docs
@@ -118,11 +112,9 @@ public class MainFrame extends JFrame {
 			   System.err.println("Couldn't find file: " + path);
 			   return null;
 		   }
-		   
-		
 	   }
 	 
-	 public void Initialise()
+	 private void Initialise()
 	 {
 		 int width = gameBoard.getWidth();
 
