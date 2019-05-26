@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/AlivePiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/AryaStark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/DaenerysTargaryen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/DeadPiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/JonSnow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/NightKing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Unsullied.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Assassin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ImmutableBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ImmutableBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Horde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Scout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Soldier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Support.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/General.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Giant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/GOTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/GOTClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Assassin1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Assassin2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Mage1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Mage2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Scout1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Scout2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Soldier1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Soldier2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Support1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Support2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Tank1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/images/Tank2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/AryaStark.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/AryaStark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/DaenerysTargaryen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/DaenerysTargaryen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/General.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/General.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/Ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Ghost.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/Giant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Giant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/Horde.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Horde.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/JonSnow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/JonSnow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/Jon_Ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Jon_Ghost.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/NightKing.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/NightKing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/images/Unsullied.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/images/Unsullied.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,142 +23,120 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="548">
-                  <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" selection-start-line="3" selection-end-line="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="449">
-                  <caret line="90" column="78" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Unsullied.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-                  <folding>
-                    <element signature="e#177#178#0" expanded="true" />
-                    <element signature="e#223#224#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/JonSnow.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#352#353#0" expanded="true" />
-                    <element signature="e#450#451#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/General.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-                  <folding>
-                    <element signature="e#171#172#0" expanded="true" />
-                    <element signature="e#217#218#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Horde.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-                  <folding>
-                    <element signature="e#290#291#0" expanded="true" />
-                    <element signature="e#335#336#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/DaenerysTargaryen.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#337#338#0" expanded="true" />
-                    <element signature="e#427#428#0" expanded="true" />
-                    <element signature="e#830#831#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/NightKing.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#376#377#0" expanded="true" />
-                    <element signature="e#476#477#0" expanded="true" />
-                    <element signature="e#709#710#0" expanded="true" />
-                    <element signature="e#746#747#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Unsullied.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
+              <folding>
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#223#224#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Horde.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <folding>
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/DaenerysTargaryen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#427#428#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/NightKing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <folding>
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#476#477#0" expanded="true" />
+                <element signature="e#709#710#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -197,6 +157,7 @@
       <find>click = 0</find>
       <find>mons</find>
       <find>ImageIcon</find>
+      <find>85</find>
     </findStrings>
     <replaceStrings>
       <replace>ID</replace>
@@ -215,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/JUnitTests/JUnitTest.java" />
         <option value="$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
         <option value="$PROJECT_DIR$/src/View/StatusBar.java" />
-        <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
         <option value="$PROJECT_DIR$/src/Model/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Model/Support.java" />
         <option value="$PROJECT_DIR$/src/Model/Scout.java" />
@@ -241,14 +201,16 @@
         <option value="$PROJECT_DIR$/src/Model/DragonQueen.java" />
         <option value="$PROJECT_DIR$/src/Model/NightKing.java" />
         <option value="$PROJECT_DIR$/src/Model/Archer.java" />
-        <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/Model/ImmutableBoard.java" />
+        <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
+        <option value="$PROJECT_DIR$/src/View/MainFrame.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="620" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="995" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -314,7 +276,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558870241930" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558871931989" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -395,15 +357,15 @@
       <workItem from="1555033232951" duration="604000" />
       <workItem from="1555155921522" duration="21000" />
       <workItem from="1555156071611" duration="14147000" />
-      <workItem from="1558854082959" duration="6964000" />
+      <workItem from="1558854082959" duration="8197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47090000" />
+    <option name="totallyTimeSpent" value="48323000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15628816" />
@@ -416,7 +378,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18930481" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19786096" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32513368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -427,7 +389,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32857144" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -453,23 +415,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/GameEngine.java" />
     <entry file="file://$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
-    <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ToolBar.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -653,17 +598,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/GOTClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+        <state relative-caret-position="225">
+          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StatusBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state relative-caret-position="368">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
         </state>
       </provider>
     </entry>
