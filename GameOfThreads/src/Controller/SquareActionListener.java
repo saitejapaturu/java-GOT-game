@@ -3,19 +3,19 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Model.Board;
+import Model.MutableBoard;
 import View.MainFrame;
 
 public class SquareActionListener implements ActionListener
 {
-	private Board gameBoard;
+	private MutableBoard gameBoard;
 	private int currentX;		// X coordinate of the currently selected square
 	private int currentY;		// Y coordinate of the currently selected square
 
 	private MainFrame mainFrame;
 	private TurnController turnController;
 
-	public SquareActionListener(Board gameBoard, int currentX, int currentY,
+	public SquareActionListener(MutableBoard gameBoard, int currentX, int currentY,
 								MainFrame mainFrame, TurnController turnController)
 	{
 		this.gameBoard = gameBoard;
@@ -37,10 +37,10 @@ public class SquareActionListener implements ActionListener
 			//checks piece belongs to player whose turn it is
 			
 			//Check if the square selected has a piece to perform action.
-			if (gameBoard.getSquarePiece(currentX, currentY) != null)
+			if (gameBoard.getSquare(currentX, currentY).getPiece() != null)
 			{
 				turnController.validFirstClick(currentX,currentY);
-				if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() != turnController.getPlayerTurn())
+				if(gameBoard.getSquare(currentX,currentY).getPiece().getPLAYER() != turnController.getPlayerTurn())
 				{
 				System.err.println("This piece belongs to enemy!");
 					turnController.reset();
@@ -61,10 +61,10 @@ public class SquareActionListener implements ActionListener
 		else if (turnController.getclick() == 1)
 		{
 			//Make sure the first square selected has a piece.
-			 if (gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()) != null)
+			 if (gameBoard.getSquare(turnController.getFirstX(), turnController.getFirstY()).getPiece() != null)
 			{
 				//if the second square selected is empty, the piece moves.
-				if (gameBoard.getSquarePiece(currentX,currentY) == null)
+				if (gameBoard.getSquare(currentX,currentY).getPiece() == null)
 				{
 					//if move is valid
 					if (gameBoard.movePiece(turnController.getFirstX(), turnController.getFirstY(), currentX, currentY))
@@ -90,10 +90,10 @@ public class SquareActionListener implements ActionListener
 				}
 
 				//if the square the piece wants to move to has an piece
-				else if (gameBoard.getSquarePiece(currentX,currentY) != null)
+				else if (gameBoard.getSquare(currentX,currentY).getPiece() != null)
 				{
 					//Check if the piece is oon our team, if so method ends.
-					if(gameBoard.getSquarePiece(currentX,currentY).getPLAYER() == gameBoard.getSquarePiece(turnController.getFirstX(), turnController.getFirstY()).getPLAYER())
+					if(gameBoard.getSquare(currentX,currentY).getPiece().getPLAYER() == gameBoard.getSquare(turnController.getFirstX(), turnController.getFirstY()).getPiece().getPLAYER())
 					{
 						System.err.println("Cannot move onto already occupied square!");
 					}
@@ -135,7 +135,8 @@ public class SquareActionListener implements ActionListener
 		turnController.switchTurn();
 		turnController.reset();
 		mainFrame.revalidate();
-		mainFrame.updateComponents();
+		//debug
+		mainFrame.endOfTurn();
 
 		specials();
 	}

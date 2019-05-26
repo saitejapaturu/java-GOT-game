@@ -1,14 +1,14 @@
 package Controller;
 
-import Model.Board;
+import Model.MutableBoard;
 
 public class MoveCommand implements Command {
-	private Board gameBoard;
+	private MutableBoard gameBoard;
 	private TurnController tc;
 	int currentX;
 	int currentY;
 
-	public MoveCommand(Board board, TurnController tc, int currentX, int currentY)
+	public MoveCommand(MutableBoard board, TurnController tc, int currentX, int currentY)
 	{
 		this.gameBoard = board;
 		this.tc = tc;

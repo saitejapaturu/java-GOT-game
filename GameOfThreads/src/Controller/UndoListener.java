@@ -3,21 +3,34 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Model.Board;
+import Model.MutableBoard;
+import View.MainFrame;
 
-public class UndoListener implements ActionListener{
+public class UndoListener implements ActionListener
+{
 
-	private BoardHistory history;
-	private Board board;
-	public UndoListener(BoardHistory history, Board board)
+	private MutableBoard board;
+	private MainFrame mainFrame;
+
+
+	public UndoListener(MutableBoard board, MainFrame mainFrame)
 	{
-		this.history = history;
 		this.board = board;
+		this.mainFrame = mainFrame;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		board = history.undo();
-		
+	public void actionPerformed(ActionEvent arg0)
+	{
+		if(board.undo())
+		{
+			this.mainFrame.undoRedo();
+		}
+		else
+		{
+			System.err.println("Undo can't be performed.");
+		}
 	}
+
+
 }

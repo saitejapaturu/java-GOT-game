@@ -1,14 +1,14 @@
 package Controller;
 
-import Model.Board;
+import Model.MutableBoard;
 
 public class AttackCommand implements Command{
-	private Board gameBoard;
+	private MutableBoard gameBoard;
 	private TurnController tc;
 	private int currentX;
 	private int currentY;
 
-	public AttackCommand(Board board, TurnController tc, int currentX, int currentY)
+	public AttackCommand(MutableBoard board, TurnController tc, int currentX, int currentY)
 	{
 		this.gameBoard = board;
 		this.tc = tc;
