@@ -1,10 +1,12 @@
 package Client;
 
 import Model.Board;
+import Model.ImmutableBoard;
 import View.MainFrame;
 
 import javax.swing.*;
 
+import Controller.BoardHistory;
 import Controller.TurnController;
 
 public class GOTClient {
@@ -15,7 +17,10 @@ public class GOTClient {
 		//board.newBoard();
 		
 		TurnController turnController = new TurnController();
-		Board board = new Board();
+		BoardHistory boardHistory = new BoardHistory();
+		Board board = new ImmutableBoard(0);
+		boardHistory.push(board);
+		
 
 
 		SwingUtilities.invokeLater(new Runnable()
