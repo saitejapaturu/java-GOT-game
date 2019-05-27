@@ -89,6 +89,11 @@ public class MutableBoard implements Board
 		((CornerSquare)this.currentGrid[10][5]).capture(2);
 	}
 
+	public int getTurn()
+	{
+		return this.turn;
+	}
+
 	public int getSize()
 	{
 		return this.SIZE;
