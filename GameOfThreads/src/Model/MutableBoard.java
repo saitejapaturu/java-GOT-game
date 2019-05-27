@@ -28,20 +28,20 @@ public class MutableBoard implements Board
 	{
 		System.out.println("Initialising board");
 
-		initialiseSquares();
+		initialiseSquares(this.currentGrid);
 		initialiseGridPieces();
 	}
 
 	// Sets up the pre destined squares
-	private void initialiseSquares()
+	private void initialiseSquares(Square[][] grid)
 	{
 		int max=10, mid=5, min=0;
 
 		//Initialising corner squares;
-		this.currentGrid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
-		this.currentGrid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
-		this.currentGrid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
-		this.currentGrid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
+		grid[max][mid] = new CornerSquare(max, mid);    // Corner Square 10,5
+		grid[min][mid] = new CornerSquare(min, mid);    // Corner Square 0,5
+		grid[mid][min] = new CornerSquare(mid, min);    // Corner Square 5,0
+		grid[mid][max] = new CornerSquare(mid, max);    // Corner Square 5,10
 
 		/* Initialising normal squares of the diamond block.
 		 * upperRow initialises the rows 1 to 5
@@ -59,11 +59,11 @@ public class MutableBoard implements Board
 				//For middle row
 				if (upperRow==(lowerRow-2))
 				{
-					this.currentGrid[upperRow+1][i] = new Square((upperRow+1), i, true);
+					grid[upperRow+1][i] = new Square((upperRow+1), i, true);
 				}
 
-				this.currentGrid[upperRow][i] = new Square(upperRow, i, true);
-				this.currentGrid[lowerRow][i] = new Square(lowerRow, i, true);
+				grid[upperRow][i] = new Square(upperRow, i, true);
+				grid[lowerRow][i] = new Square(lowerRow, i, true);
 			}
 		}
 	}
@@ -181,7 +181,7 @@ public class MutableBoard implements Board
 
 	private void addToHistory()
 	{
-		Square[][] gridClone = currentGrid.clone();
+		Square[][] gridClone = cloneGrid();
 
 		// If initialising
 		if(this.turn == 0)
@@ -193,6 +193,95 @@ public class MutableBoard implements Board
 			this.history.moveMade(new ImmutableBoard(this.turn, gridClone));
 		}
 		turn++;
+	}
+
+	private Square[][] cloneGrid()
+	{
+		Square[][] cloneGrid = new Square[this.SIZE][this.SIZE];
+		initialiseSquares(cloneGrid);
+
+
+		for(int i = 0; i < this.SIZE; i++)
+		{
+			for (int j = 0; j < this.SIZE; j++)
+			{
+				if(this.currentBoard.getSquare(i, j)!=null)
+				{
+					if(this.currentBoard.getSquare(i, j).getPiece() == null)
+					{
+						cloneGrid[i][j].setPiece(null);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof DaenerysTargaryen)
+					{
+						DaenerysTargaryen cloneDanaenerysTargaryen = new DaenerysTargaryen();
+						cloneDanaenerysTargaryen = (DaenerysTargaryen) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneDanaenerysTargaryen);
+
+						cloneGrid[i][j].setPiece(cloneDanaenerysTargaryen);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof AryaStark)
+					{
+						AryaStark cloneAryaStark = new AryaStark();
+						cloneAryaStark = (AryaStark) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneAryaStark);
+
+						cloneGrid[i][j].setPiece(cloneAryaStark);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof JonSnow)
+					{
+						JonSnow cloneJonSnow = new JonSnow();
+						cloneJonSnow = (JonSnow) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneJonSnow);
+
+						cloneGrid[i][j].setPiece(cloneJonSnow);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof Unsullied)
+					{
+						Unsullied cloneUnsullied = new Unsullied();
+						cloneUnsullied = (Unsullied) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneUnsullied);
+
+						cloneGrid[i][j].setPiece(cloneUnsullied);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof NightKing)
+					{
+						NightKing cloneNightKing = new NightKing();
+						cloneNightKing = (NightKing) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneNightKing);
+
+						cloneGrid[i][j].setPiece(cloneNightKing);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof Giant)
+					{
+						Giant cloneGiant = new Giant();
+						cloneGiant = (Giant) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneGiant);
+
+						cloneGrid[i][j].setPiece(cloneGiant);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof General)
+					{
+						General cloneGeneral = new General();
+						cloneGeneral = (General) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneGeneral);
+
+						cloneGrid[i][j].setPiece(cloneGeneral);
+					}
+					else if (this.currentBoard.getSquare(i,j).getPiece() instanceof Horde)
+					{
+						Horde cloneHorde = new Horde();
+						cloneHorde = (Horde) clonePiece(this.currentBoard.getSquare(i,j).getPiece(), cloneHorde);
+
+						cloneGrid[i][j].setPiece(cloneHorde);
+					}
+				}
+			}
+		}
+
+		return cloneGrid;
+	}
+
+	private Piece clonePiece(Piece originalPiece, Piece clonePiece)
+	{
+		clonePiece.setHealth(originalPiece.getHealth());
+		clonePiece.setSpecial(originalPiece.getSpecial());
+		clonePiece.setDamage(originalPiece.getDamage());
+		clonePiece.setRange(originalPiece.getRange());
+
+		return clonePiece;
 	}
 
 
