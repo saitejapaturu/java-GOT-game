@@ -16,8 +16,7 @@ public class DaenerysTargaryen extends AlivePiece
 
     public void special()
     {
-        //All enemies with the range of 4 got -2
-        //Idea for A-2 cancels any special abilities of enemy pieces for 2nd turn
+        //All enemies with the range of 4 get -2
 
         announceSpecialActivation();
 
