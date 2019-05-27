@@ -307,7 +307,8 @@ public class MainFrame extends JFrame {
 
 	   public void undoRedo()
 	   {
-		    updateBoardIcon();
+	   		turnController.updateTurn(this.gameBoard.getTurn());
+		    endOfTurn();
 	   }
 	   private static void displayWin(int player)
 	    {
