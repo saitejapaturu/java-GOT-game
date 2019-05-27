@@ -102,6 +102,8 @@ public class TurnController
     public void updateTurn(int turn)
     {
         reset();
-        this.turn = turn;
+        this.chanceTracker = turn;
+        chanceTracker--;
+        switchTurn();
     }
 }
