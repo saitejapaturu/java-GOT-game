@@ -13,7 +13,7 @@ public class Horde extends DeadPiece
 
 	public Horde()
 	{
-		super(3,1, 3, ID, SPECIALTURN, SPECIAL_ACTIVE_MESSAGE, SPECIAL_DEACTIVATE_MESSAGE);
+		super(3,2, 1, ID, SPECIALTURN, SPECIAL_ACTIVE_MESSAGE, SPECIAL_DEACTIVATE_MESSAGE);
 	}
 	
 	public void special()

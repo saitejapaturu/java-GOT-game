@@ -3,7 +3,7 @@ package Model;
 public class AryaStark extends AlivePiece
 {
 	private static final String ID = "No One";
-	private static final int SPECIALTURN = 2;
+	private static final int SPECIALTURN = 3;
 
     private static final String SPECIAL_ACTIVE_MESSAGE = "Can move or attack to any empty place on board this turn.";
     private static final String SPECIAL_DEACTIVATE_MESSAGE= "Range is back to normal.";
