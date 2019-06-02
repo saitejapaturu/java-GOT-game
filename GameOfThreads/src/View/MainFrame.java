@@ -38,6 +38,11 @@ public class MainFrame extends JFrame {
 		this.redoButton = new RedoButton();
 		this.saveButton = new SaveButton();
 		this.defendButton = new DefendButton();
+
+		// Creating endOfturnDecorater for actionlisteners
+		this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
+				this.turnController, this);
+
 		Initialise();
 		createImages();
 		updateBoardIcon();
@@ -65,7 +70,8 @@ public class MainFrame extends JFrame {
 	}
 
 	//ensures app starts in the middle of the screen
-	public static void centreWindow(Window mainFrame) {
+	public static void centreWindow(Window mainFrame)
+	{
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int x = (int) ((dimension.getWidth() - mainFrame.getWidth()) / 2);
 		int y = (int) ((dimension.getHeight() - mainFrame.getHeight()) / 2);
@@ -109,11 +115,7 @@ public class MainFrame extends JFrame {
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
 		 saveButton.addActionListener(new SaveListener());
 
-		 // Creating endOfturnDecorater for actionlisteners
-		 this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
-				 this.turnController, this);
-
-		 defendButton.addActionListener(new DefendListener(gameBoard, endOfTurnActionListenerDecorator));
+		 defendButton.addActionListener(new DefendListener(gameBoard, turnController,  endOfTurnActionListenerDecorator));
 		 int width = gameBoard.getSize();
 
 		 int max=10, mid=5, min=0;
@@ -138,7 +140,8 @@ public class MainFrame extends JFrame {
 			    
 		        for (int y = 0; y < gridGUI.length; y++)
 		        {
-					for (int j = 0; j < gridGUI[y].length; j++) {
+					for (int j = 0; j < gridGUI[y].length; j++)
+					{
 						JButton b = new JButton();
 						b.setMargin(buttonMargin);
 
@@ -301,45 +304,23 @@ public class MainFrame extends JFrame {
 	   		turnController.updateTurn(this.gameBoard.getTurn());
 		    endOfTurn();
 	   }
+
 	   private static void displayWin(int player)
-	    {
-		   //creates a simple win alert and closes game
-		   String winningMessage = null;
-		   if(player == 1)
-		   {
-			   winningMessage = "Congratulations player " + p1Name + " you win!";
-		   }
-		   else if(player == 2)
-		   {
-			   winningMessage = "Congratulations player " + p2Name + " you win!";
-		   }
-		   int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
-	       if (close == 0)
-	       {
-	    	   System.exit(0);
-	       }
-	    }
-	   
-	   // a simple testing method for help when debugging, labels piece squares with their set position and
-	   // number of player they are associated with
-	   private void squarePlacementTest()
 	   {
-		   for (int i = 0; i < gridGUI.length-1; i++)
-			{
-	            for (int j = 0; j < gridGUI[i].length-1; j++)
-	            {
-	            	if(gameBoard.getSquare(i, j) != null)
-	            	{
-	            		if(gameBoard.getSquare(i, j).getPiece()!=null)
-	            		{
-	            			gridGUI[i][j].setText(i+ " " + j +" " + gameBoard.getSquare(i, j).getPiece().getPLAYER());
-	            		}
-	            	}
-	            	else
-	            	{
-	            		gridGUI[i][j].setText(i+ " " + j);
-	            	}
-	            }
-			}
+	   //creates a simple win alert and closes game
+		  String winningMessage = null;
+		  if(player == 1)
+		  {
+		  		winningMessage = "Congratulations player " + p1Name + " you win!";
+		  }
+		  else if(player == 2)
+		  {
+		  		winningMessage = "Congratulations player " + p2Name + " you win!";
+		  }
+		  int close = JOptionPane.showConfirmDialog(null, winningMessage, "Game Over", JOptionPane.DEFAULT_OPTION);
+		  if (close == 0)
+		  {
+	    	   System.exit(0);
+		  }
 	   }
 }
