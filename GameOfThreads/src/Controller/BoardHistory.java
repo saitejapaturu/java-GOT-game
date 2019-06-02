@@ -3,6 +3,7 @@ package Controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import Model.Board;
 import Model.ImmutableBoard;
 
 public class BoardHistory
@@ -73,11 +74,15 @@ public class BoardHistory
 		}
 	}
 
-//	public Board getBoardAtTurn(int turn)
-//	{
-//		return history.get(turn);
-//	}
+	public Board getBoardAtTurn(int turn)
+	{
+		return history.get(turn);
+	}
 	
+	public int getCurrentTurn()
+	{
+		return this.currentTurn;
+	}
 //	public void push(Board board)
 //	{
 //		history.add(board);
