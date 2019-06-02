@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/AbstractPieceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PieceFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MutableBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MutableBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PieceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PieceFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +20,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="486">
-                  <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+                <state relative-caret-position="452">
+                  <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
                   <folding>
                     <element signature="e#2735#2736#0" expanded="true" />
                     <element signature="e#2760#2761#0" expanded="true" />
@@ -82,8 +82,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Model/PieceFactory.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="14" selection-start-column="14" selection-end-column="14" />
+                <state relative-caret-position="390">
+                  <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -275,7 +275,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559472487133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559473002791" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -357,12 +357,12 @@
       <workItem from="1555155921522" duration="21000" />
       <workItem from="1555156071611" duration="14147000" />
       <workItem from="1558854082959" duration="8510000" />
-      <workItem from="1559461747235" duration="1745000" />
+      <workItem from="1559461747235" duration="2183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74509000" />
+    <option name="totallyTimeSpent" value="74947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -818,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+        <state relative-caret-position="452">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
           <folding>
             <element signature="e#2735#2736#0" expanded="true" />
             <element signature="e#2760#2761#0" expanded="true" />
@@ -829,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/PieceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="390">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>

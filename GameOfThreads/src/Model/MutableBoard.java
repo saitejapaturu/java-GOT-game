@@ -71,9 +71,9 @@ public class MutableBoard implements Board
 	// Sets up the pre destined pieces
 	private void initialiseGridPieces()
 	{
-		PieceFactory pieceFactory = new PieceFactory(this);
+		PieceFactory pieceFactory = new PieceFactory();
 
-		this.currentBoard = pieceFactory.createPiece();
+		pieceFactory.createPiece(this);
 
 		//Player 1 and 2 already occupy 1 corner square
 
