@@ -25,23 +25,7 @@ public class GOTClient
 		
 		TurnController turnController = new TurnController();
 
-		FileInputStream filein;
-		try {
-			filein = new FileInputStream(new File("saved.txt"));
-			ObjectInputStream objectin = new ObjectInputStream(filein);
-			MutableBoard board = (MutableBoard) objectin.readObject();
-			
-			filein.close();
-			objectin.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("No saved history");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		MutableBoard board = new MutableBoard();
 		
 		
 		SwingUtilities.invokeLater(new Runnable()

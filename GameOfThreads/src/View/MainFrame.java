@@ -9,6 +9,11 @@ import Model.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class MainFrame extends JFrame {
 	
@@ -51,7 +56,14 @@ public class MainFrame extends JFrame {
 		setLocationRelativeTo(null);
 		setSize(1100, 1100);
 		centreWindow(this);
+		if(checkBoard() != null)
+		{
+			this.gameBoard = checkBoard();
+		}
+		else
+		{
 		setPlayers();
+		}
 		setVisible(true);
 		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
 		this.turnTracker = new StatusBar(turnController, null, null);
@@ -67,6 +79,39 @@ public class MainFrame extends JFrame {
 	private void setPlayers() {
 		p1Name = JOptionPane.showInputDialog("Enter Player 1 Name:");
 		p2Name = JOptionPane.showInputDialog("Enter Player 2 Name:");
+	}
+	
+	
+	private MutableBoard checkBoard()
+	{
+		int load = JOptionPane.showConfirmDialog(this, "Load Previous Game?");
+		FileInputStream filein;
+		if(load == 0)
+		{
+		try {
+			filein = new FileInputStream(new File("saved.txt"));
+			ObjectInputStream objectin = new ObjectInputStream(filein);
+			MutableBoard board = (MutableBoard) objectin.readObject();
+			
+			
+			filein.close();
+			objectin.close();
+			return board;
+		} catch (FileNotFoundException e) {
+			System.out.println("No saved history");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		else if(load == 2)
+		{
+			System.exit(0);
+		}
+		return null;
 	}
 
 	//ensures app starts in the middle of the screen
@@ -113,7 +158,7 @@ public class MainFrame extends JFrame {
 	 {
 		 undoButton.addActionListener(new UndoListener(gameBoard, this));
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
-		 saveButton.addActionListener(new SaveListener(gameBoard.getHistory()));
+		 saveButton.addActionListener(new SaveListener(gameBoard));
 
 		 defendButton.addActionListener(new DefendListener(gameBoard, turnController,  endOfTurnActionListenerDecorator));
 		 int width = gameBoard.getSize();
