@@ -157,69 +157,42 @@ public class MainFrame extends JFrame {
     				//For middle row
 					if (upperRow==(lowerRow-2))
 					{
-						JButton button = new JButton();
-						button.addActionListener(new SquareActionListener(gameBoard, upperRow+1, i, this, turnController));
-						button.setBackground(Color.DARK_GRAY);
-						setButtonProperties(button);
-
-						gridGUI[upperRow+1][i] = button;
+						createJButton(upperRow+1, i, Color.DARK_GRAY);
 					}
 
-					JButton button = new JButton();
-					button.addActionListener(new SquareActionListener(gameBoard, upperRow, i, this, turnController));
-					button.setBackground(Color.DARK_GRAY);
-					setButtonProperties(button);
+					createJButton(upperRow, i, Color.DARK_GRAY);
 
-					gridGUI[upperRow][i] = button;
-
-
-					JButton button2 = new JButton();
-					button2.addActionListener(new SquareActionListener(gameBoard, lowerRow, i, this, turnController));
-					button2.setBackground(Color.DARK_GRAY);
-					setButtonProperties(button2);
-
-					gridGUI[lowerRow][i] = button2;
+					createJButton(lowerRow, i, Color.DARK_GRAY);
     			}
     		}
     		
     		//individually creating corner squares so they can be assigned different colour
-	        gridGUI[max][mid] = new JButton();
-	        gridGUI[max][mid].addActionListener(new SquareActionListener(gameBoard, max, mid, this, turnController));
-            gridGUI[max][mid].setBackground(Color.GREEN);
-            setButtonProperties(gridGUI[max][mid]);
 
-            gridGUI[min][mid] = new JButton();
-	        gridGUI[min][mid].addActionListener(new SquareActionListener(gameBoard, min, mid, this, turnController));
-            gridGUI[min][mid].setBackground(Color.GREEN);
-            setButtonProperties(gridGUI[min][mid]);
 
-            gridGUI[mid][min] = new JButton();
-	        gridGUI[mid][min].addActionListener(new SquareActionListener(gameBoard, mid, min, this, turnController));
-            gridGUI[mid][min].setBackground(Color.GREEN);
-    		setButtonProperties(gridGUI[mid][min]);
-            
-            gridGUI[mid][max] = new JButton();
-	        gridGUI[mid][max].addActionListener(new SquareActionListener(gameBoard, mid, max, this, turnController));
-            gridGUI[mid][max].setBackground(Color.GREEN);
-            setButtonProperties(gridGUI[mid][max]);
+		 createJButton(max, mid, Color.GREEN);
+		 createJButton(min, mid, Color.GREEN);
+		 createJButton(mid, min, Color.GREEN);
+		 createJButton(mid, max, Color.GREEN);
 				
-    		//adding buttons to view
-		        for(int i = 0;i<width;i++)
-		        {
-		        	for (int j= 0; j<width;j++)
-		        	{
-		        		Board.add(gridGUI[i][j]);
-		        	}
-		        }
+		 //adding buttons to view
+		 for(int i = 0;i<width;i++)
+		 {
+		 	for (int j= 0; j<width;j++)
+		 	{
+		 		Board.add(gridGUI[i][j]);
+		 	}
+		 }
 
 	 }
-	 
-	  //reflects a move made on the board
-	  public void movePiece(int pieceX, int pieceY, int moveX, int moveY)
-	   {
-		   gridGUI[moveX][moveY].setIcon(gridGUI[pieceX][pieceY].getIcon());
-		   gridGUI[pieceX][pieceY].setIcon(null);
-	   }
+
+	 private void createJButton(int x, int y, Color color)
+	 {
+		gridGUI[x][y] = new JButton();
+		gridGUI[x][y].addActionListener(new SquareActionListener(gameBoard, x, y, this, turnController));
+		gridGUI[x][y].setBackground(color);
+		setButtonProperties(gridGUI[x][y]);
+	 }
+
 	  //simple helper method to set buttons not a part of board
 	  public void setButtonProperties(JButton button)
 	   {
