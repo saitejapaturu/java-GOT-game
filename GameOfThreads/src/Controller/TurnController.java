@@ -100,6 +100,7 @@ public class TurnController
         this.setFirstY(firstY);
         this.setClick(1);
     }
+
     public void updateTurn(int turn)
     {
         reset();
