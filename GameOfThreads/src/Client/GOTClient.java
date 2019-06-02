@@ -24,19 +24,17 @@ public class GOTClient
 		//board.newBoard();
 		
 		TurnController turnController = new TurnController();
-		BoardHistory history = null;
 
-		MutableBoard board = new MutableBoard();
 		FileInputStream filein;
 		try {
 			filein = new FileInputStream(new File("saved.txt"));
 			ObjectInputStream objectin = new ObjectInputStream(filein);
-			history = (BoardHistory) objectin.readObject();
+			MutableBoard board = (MutableBoard) objectin.readObject();
 			
 			filein.close();
 			objectin.close();
 		} catch (FileNotFoundException e) {
-			
+			System.out.println("No saved history");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
