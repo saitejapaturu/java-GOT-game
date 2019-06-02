@@ -37,10 +37,19 @@ public class SquareActionListener implements ActionListener
 		SquareContext context = new SquareContext(info);
 		SelectExpression select = new SelectExpression(turnController, gameBoard); 
 		Command command = select.interperet(context);
+		if(command != null)
+		{
 		command.execute(gameBoard);
 		if(command.getClass() == AttackCommand.class || command.getClass() == MoveCommand.class)
 		{
 		endOfTurn();
+		}
+		}
+		
+		else
+		{
+			
+			turnController.setClick(0);
 		}
 		//if it is the first click.
 	}

@@ -66,9 +66,18 @@ public class SelectExpression extends Expression
 				//if the second square selected is empty, the piece moves.
 				if (gameBoard.getSquare(currentX,currentY).getPiece() == null)
 				{
+					if(gameBoard.validateMove(firstX, firstY, currentX, currentY))
+					{
 					//if move is valid
 					MoveExpression move = new MoveExpression();
 					return move.interperet(context);
+					}
+					else
+					{
+						InvalidExpression invalid = new InvalidExpression();
+						
+						return invalid.interperet(context);
+					}
 				}
 				//if the square the piece wants to move to has an piece
 				else if (gameBoard.getSquare(currentX,currentY).getPiece() != null)
