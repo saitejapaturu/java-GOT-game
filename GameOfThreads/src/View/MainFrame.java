@@ -113,7 +113,7 @@ public class MainFrame extends JFrame {
 	 {
 		 undoButton.addActionListener(new UndoListener(gameBoard, this));
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
-		 saveButton.addActionListener(new SaveListener());
+		 saveButton.addActionListener(new SaveListener(gameBoard.getHistory()));
 
 		 defendButton.addActionListener(new DefendListener(gameBoard, turnController,  endOfTurnActionListenerDecorator));
 		 int width = gameBoard.getSize();

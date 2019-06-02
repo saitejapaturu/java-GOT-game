@@ -117,6 +117,11 @@ public class MutableBoard implements Board
 		this.currentBoard.deactivateSpecial();
 	}
 
+	public BoardHistory getHistory()
+	{
+		return  this.history;
+	}
+
 	public void defenceStance(int player)
 	{
 		this.currentBoard.defenceStance(player);

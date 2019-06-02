@@ -14,27 +14,31 @@ public class SaveListener implements ActionListener {
 	
 	BoardHistory history;
 	
-	public SaveListener(BoardHistory History)
+	public SaveListener(BoardHistory history)
 	{
 		this.history = history;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent arg0)
+	{
 		try {
 			FileOutputStream f = new FileOutputStream(new File("saved.txt"));
 			ObjectOutputStream o = new ObjectOutputStream(f);
 
 			// Write objects to file
 			o.writeObject(history);
-			
 
 			o.close();
 			f.close();
 
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e)
+		{
 			System.out.println("File not found");
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			System.out.println("Error initializing stream");
 		}
 		
