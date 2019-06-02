@@ -31,6 +31,7 @@ public class MainFrame extends JFrame {
 	public MainFrame(String title, MutableBoard board, TurnController turnController)
 	{
 		super(title);
+
 		this.gameBoard = board;
 		this.turnController = turnController;
 		this.undoButton = new UndoButton();
@@ -53,10 +54,6 @@ public class MainFrame extends JFrame {
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
 		
 		statusBar.update();
-
-		// Creating endOfturnDecorater for actionlisteners
-		this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
-																				this.turnController, this);
 
 	}
 
@@ -111,6 +108,11 @@ public class MainFrame extends JFrame {
 		 undoButton.addActionListener(new UndoListener(gameBoard, this));
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
 		 saveButton.addActionListener(new SaveListener());
+
+		 // Creating endOfturnDecorater for actionlisteners
+		 this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
+				 this.turnController, this);
+
 		 defendButton.addActionListener(new DefendListener(gameBoard, endOfTurnActionListenerDecorator));
 		 int width = gameBoard.getSize();
 
