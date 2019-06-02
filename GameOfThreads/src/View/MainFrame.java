@@ -37,6 +37,9 @@ public class MainFrame extends JFrame {
 		this.redoButton = new RedoButton();
 		this.saveButton = new SaveButton();
 		this.defendButton = new DefendButton();
+		// Creating endOfturnDecorater for actionlisteners
+		this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
+																				this.turnController, this);
 		Initialise();
 		createImages();
 		updateBoardIcon();
@@ -54,9 +57,7 @@ public class MainFrame extends JFrame {
 		
 		statusBar.update();
 
-		// Creating endOfturnDecorater for actionlisteners
-		this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
-																				this.turnController, this);
+	
 
 	}
 
