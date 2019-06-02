@@ -30,6 +30,14 @@ public class SquareActionListener implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
+		//basic outlook on how interpreter and design patterns are implemented
+		String info = Integer.toString(currentX) + "-" + Integer.toString(currentY) +
+				"-" + Integer.toString(turnController.getFirstX()) + "-" + Integer.toString(turnController.getFirstY()) + "-" +
+				 Integer.toString(turnController.getclick());
+		SquareContext context = new SquareContext(info);
+		SelectExpression select = new SelectExpression(turnController, gameBoard); 
+		Command command = select.interperet(context);
+		command.execute();
 
 		//if it is the first click.
 		if (turnController.getclick() == 0)

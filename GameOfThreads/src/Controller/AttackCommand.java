@@ -18,6 +18,7 @@ public class AttackCommand implements Command{
 	@Override
 	public void execute() {
 
+		// this functionality will be moved to expressions, only needs to call gameBoard.attackpiece
 		if(gameBoard.attackPiece(tc.getFirstX(), tc.getFirstY(),currentX,currentY))
 		{
 			//turnController.endTurn();
