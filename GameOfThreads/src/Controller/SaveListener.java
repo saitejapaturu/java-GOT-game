@@ -14,7 +14,7 @@ import Model.MutableBoard;
 
 public class SaveListener implements ActionListener {
 	
-	MutableBoard board;
+	private MutableBoard board;
 	
 	public SaveListener(MutableBoard board)
 	{
@@ -25,23 +25,26 @@ public class SaveListener implements ActionListener {
 	public void actionPerformed(ActionEvent arg0)
 	{
 		try {
-			FileOutputStream f = new FileOutputStream(new File("saved.txt"));
-			ObjectOutputStream o = new ObjectOutputStream(f);
+			FileOutputStream fileOutputStream = new FileOutputStream(new File("saved.txt"));
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
 			// Write objects to file
-			o.writeObject(board);
-			
+			objectOutputStream.writeObject(board);
 
-			o.close();
-			f.close();
+
+			objectOutputStream.close();
+			objectOutputStream.flush();
+			fileOutputStream.close();
 			System.exit(0);
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e)
+		{
 			System.out.println("File not found");
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			e.printStackTrace();
 			System.out.println("Error initializing stream");
 		}
-		
 	}
-
 }

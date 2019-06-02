@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import Controller.BoardHistory;
 
-public class MutableBoard implements Serializable, Board
+import java.io.Serializable;
+
+public class MutableBoard implements Board, Serializable
 {
 	/**
 	 * 
