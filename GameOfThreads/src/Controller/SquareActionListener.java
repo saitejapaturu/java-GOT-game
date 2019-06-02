@@ -64,7 +64,6 @@ public class SquareActionListener implements ActionListener
 		}
 
 		turnController.switchTurn();
-		turnController.reset();
 		mainFrame.revalidate();
 		//debug
 		mainFrame.endOfTurn();
@@ -95,8 +94,6 @@ public class SquareActionListener implements ActionListener
 			gameBoard.activateSpecial(3);
 		}
 	}
-
-
 
 }
 

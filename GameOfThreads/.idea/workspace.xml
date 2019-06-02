@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9edce431-63ca-4d53-8c6f-59a72f8b343c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AttackListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AttackListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefendListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefendListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SquareActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TurnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TurnController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MutableBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MutableBoard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -15,24 +20,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="467">
-                  <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#2735#2736#0" expanded="true" />
-                    <element signature="e#2760#2761#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="343">
-                  <caret line="163" selection-start-line="163" selection-end-line="163" />
+                  <caret line="176" selection-start-line="176" selection-end-line="176" />
                 </state>
               </provider>
             </entry>
@@ -56,37 +48,82 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2670">
+                  <caret line="310" column="37" lean-forward="true" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
+                  <folding>
+                    <element signature="method#movePiece#0;class#ImmutableBoard#0" />
+                    <element signature="method#validateMove#0;class#ImmutableBoard#0" />
+                    <element signature="method#countMoveLength#0;class#ImmutableBoard#0" />
+                    <element signature="method#checkWinConditions#0;class#ImmutableBoard#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="885">
-                  <caret line="95" selection-start-line="95" selection-end-line="95" />
+                <state relative-caret-position="103">
+                  <caret line="7" column="103" selection-start-line="7" selection-start-column="103" selection-end-line="7" selection-end-column="103" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="524">
+                  <caret line="104" column="16" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#1209#1210#0" expanded="true" />
+                    <element signature="e#1245#1246#0" expanded="true" />
+                    <element signature="e#1283#1284#0" expanded="true" />
+                    <element signature="e#1317#1318#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
+            <entry file="file://$PROJECT_DIR$/src/Controller/SquareContext.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Square.java">
+            <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+                <state relative-caret-position="375">
+                  <caret line="25" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/Unsullied.java">
+            <entry file="file://$PROJECT_DIR$/src/Controller/DefendListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Controller/AttackExpression.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
                 </state>
               </provider>
             </entry>
@@ -95,20 +132,32 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Model/PieceFactory.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+                <state relative-caret-position="-20">
+                  <caret line="291" selection-start-line="291" selection-end-line="291" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Model/CornerSquare.java">
+            <entry file="file://$PROJECT_DIR$/src/Controller/AttackListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+                <state relative-caret-position="75">
+                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="564">
+                  <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -155,6 +204,7 @@
       <find>Special Moves De-activated</find>
       <find>activateSpecial</find>
       <find>this</find>
+      <find>reset</find>
     </findStrings>
     <replaceStrings>
       <replace>ID</replace>
@@ -170,8 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/TurnControllerBackUp.java" />
-        <option value="$PROJECT_DIR$/src/Model/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Model/Support.java" />
         <option value="$PROJECT_DIR$/src/Model/Scout.java" />
         <option value="$PROJECT_DIR$/src/Model/Tank.java" />
@@ -190,10 +238,8 @@
         <option value="$PROJECT_DIR$/src/Model/NightKing.java" />
         <option value="$PROJECT_DIR$/src/Model/Archer.java" />
         <option value="$PROJECT_DIR$/src/Model/Board.java" />
-        <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
         <option value="$PROJECT_DIR$/src/Controller/BoardHistory.java" />
         <option value="$PROJECT_DIR$/src/Client/GOTClient.java" />
-        <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
         <option value="$PROJECT_DIR$/src/Model/DaenerysTargaryen.java" />
         <option value="$PROJECT_DIR$/src/Model/Unsullied.java" />
         <option value="$PROJECT_DIR$/src/Model/AryaStark.java" />
@@ -220,13 +266,18 @@
         <option value="$PROJECT_DIR$/src/Model/PieceFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/DeadPieceFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/AlivePieceFactory.java" />
+        <option value="$PROJECT_DIR$/src/Controller/AttackListener.java" />
         <option value="$PROJECT_DIR$/src/Model/MutableBoard.java" />
+        <option value="$PROJECT_DIR$/src/Controller/TurnController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/DefendListener.java" />
+        <option value="$PROJECT_DIR$/src/Controller/SquareActionListener.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="834" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -292,7 +343,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559474273845" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559476467540" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -379,10 +430,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76205000" />
+    <option name="totallyTimeSpent" value="76815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17338218" />
@@ -395,7 +446,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32834226" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18775511" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19679144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32513368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,13 +502,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>69</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controller/SquareActionListener.java</url>
-          <line>74</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -557,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AttackExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Expression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -584,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AttackCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -656,30 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SquareContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -773,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="103">
+          <caret line="7" column="103" selection-start-line="7" selection-start-column="103" selection-end-line="7" selection-end-column="103" />
         </state>
       </provider>
     </entry>
@@ -799,19 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="310" column="37" lean-forward="true" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
-          <folding>
-            <element signature="method#movePiece#0;class#ImmutableBoard#0" />
-            <element signature="method#validateMove#0;class#ImmutableBoard#0" />
-            <element signature="method#countMoveLength#0;class#ImmutableBoard#0" />
-            <element signature="method#checkWinConditions#0;class#ImmutableBoard#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/UndoButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -829,7 +836,7 @@
     <entry file="file://$PROJECT_DIR$/src/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
         </state>
       </provider>
     </entry>
@@ -854,13 +861,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ImmutableBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="310" column="37" lean-forward="true" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
+          <folding>
+            <element signature="method#movePiece#0;class#ImmutableBoard#0" />
+            <element signature="method#validateMove#0;class#ImmutableBoard#0" />
+            <element signature="method#countMoveLength#0;class#ImmutableBoard#0" />
+            <element signature="method#checkWinConditions#0;class#ImmutableBoard#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AttackExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SquareContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefendListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/MutableBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="-20">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AttackListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SquareActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#2735#2736#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TurnController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="104" column="16" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+          <folding>
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
           </folding>
         </state>
       </provider>
