@@ -3,12 +3,10 @@ package Controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Board;
 import Model.ImmutableBoard;
 
 public class BoardHistory
 {
-
 	private List <ImmutableBoard> history = new ArrayList<ImmutableBoard>();
 	private int currentTurn;		// Stores Which move we are currently at.
 	private int turnCounter;
@@ -73,23 +71,4 @@ public class BoardHistory
 			turnCounter--;
 		}
 	}
-
-	public Board getBoardAtTurn(int turn)
-	{
-		return history.get(turn);
-	}
-	
-	public int getCurrentTurn()
-	{
-		return this.currentTurn;
-	}
-//	public void push(Board board)
-//	{
-//		history.add(board);
-//	}
-	
-//	public void pop()
-//	{
-//		history.remove(history.size()-1);
-//	}
 }

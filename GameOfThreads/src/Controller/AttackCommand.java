@@ -2,6 +2,7 @@ package Controller;
 
 import Model.MutableBoard;
 
+// When a player decides to attack an enemy piece this command gets executed.
 public class AttackCommand implements Command
 {
 	private MutableBoard gameBoard;
@@ -25,8 +26,5 @@ public class AttackCommand implements Command
 		this.gameBoard = board;
 		// this functionality will be moved to expressions, only needs to call gameBoard.attackpiece
 		gameBoard.attackPiece(firstX, firstY,currentX,currentY);
-		
-			//turnController.endTurn();
 	}
-
 }

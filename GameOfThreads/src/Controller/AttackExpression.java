@@ -2,8 +2,7 @@ package Controller;
 
 public class AttackExpression extends Expression
 {
-	//terminal expression
-
+	//Terminal expression For attack command
 	@Override
 	public AttackCommand interperet(SquareContext context)
 	{
