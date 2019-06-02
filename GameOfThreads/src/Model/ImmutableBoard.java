@@ -301,7 +301,7 @@ public class ImmutableBoard implements Board
         return 0;
     }
 
-    //Activates special of all pieces if thir special turn is the same as the one given
+    //Activates special of all pieces if their special turn is the same as the one given
     public void activateSpecial(int specialTurn)
     {
         System.out.println("\nSpecial Moves Activated: ");

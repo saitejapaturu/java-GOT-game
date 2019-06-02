@@ -71,17 +71,9 @@ public class MutableBoard implements Board
 	// Sets up the pre destined pieces
 	private void initialiseGridPieces()
 	{
-		//Placing Player 1 pieces
-		this.currentGrid[0][5].setPiece(new DaenerysTargaryen());
-		this.currentGrid[1][4].setPiece(new AryaStark());
-		this.currentGrid[1][5].setPiece(new JonSnow());
-		this.currentGrid[1][6].setPiece(new Unsullied());
+		PieceFactory pieceFactory = new PieceFactory(this);
 
-		//Placing player 2 pieces
-		this.currentGrid[10][5].setPiece(new NightKing());
-		this.currentGrid[9][4].setPiece(new Giant());
-		this.currentGrid[9][5].setPiece(new General());
-		this.currentGrid[9][6].setPiece(new Horde());
+		this.currentBoard = pieceFactory.createPiece();
 
 		//Player 1 and 2 already occupy 1 corner square
 
@@ -89,6 +81,10 @@ public class MutableBoard implements Board
 		((CornerSquare)this.currentGrid[10][5]).capture(2);
 	}
 
+	public void setPiece(int x, int y, Piece piece)
+	{
+		this.currentGrid[x][y].setPiece(piece);
+	}
 	public int getTurn()
 	{
 		return this.turn;
@@ -289,6 +285,82 @@ public class MutableBoard implements Board
 		return clonePiece;
 	}
 
+	public boolean validateMove(int currentX, int currentY, int newX, int newY)
+    {
+        //check
+        //Pre conditions
+        //If the new position already has a character.
+        if(currentGrid[newX][newY].getPiece() != null)
+        {
+            //If new position has the character of same team.
+            if(currentGrid[newX][newY].getPiece().getPLAYER() == currentGrid[currentX][currentY].getPiece().getPLAYER())
+            {
+                System.err.println("Cannot place two characters of same team on the same square.");
+            }
+
+            //If new position has the character of different team.
+            else
+            {
+                System.err.println("Cannot place two characters of different team on the same square, attack and defeat enemy.");
+            }
+
+            return false;
+        }
+
+        //Checks if the move is out of range.
+        else if(countMoveLength(currentX, currentY, newX, newY) > currentGrid[currentX][currentY].getPiece().getRange())
+        {
+            System.err.println("Move length is greater than the range of the character.");
+            return false;
+        }
+        //If new position is not placeable.
+        else if(currentGrid[newX][newY].getIsPlacebale() == false)
+        {
+            System.err.println("Can't place character on the square selected");
+            return false;
+        }
+
+        return true; //test return statement
+    }
+	  private int countMoveLength(int currentX, int currentY, int newX, int newY)
+	    {
+	        int maxX, minX, xDiff;
+	        int maxY, minY, yDiff;
 
 
+	        if(currentX>=newX)
+	        {
+	            maxX = currentX;
+	            minX = newX;
+	        }
+	        else
+	        {
+	            maxX = newX;
+	            minX = currentX;
+	        }
+
+	        xDiff = maxX - minX;
+
+	        if(currentY>=newY)
+	        {
+	            maxY = currentY;
+	            minY = newY;
+	        }
+	        else
+	        {
+	            maxY = newY;
+	            minY = currentY;
+	        }
+
+	        yDiff = maxY - minY;
+
+	        int maxDiff;
+
+	        if(xDiff >= yDiff)
+	            maxDiff = xDiff;
+	        else
+	            maxDiff = yDiff;
+
+	        return maxDiff;
+	    }
 }

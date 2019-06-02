@@ -6,7 +6,8 @@ import java.awt.event.ActionListener;
 import Model.MutableBoard;
 import View.MainFrame;
 
-public class RedoListener implements ActionListener{
+public class RedoListener implements ActionListener
+{
 
 	private MutableBoard board;
 	private MainFrame mainFrame;

@@ -31,6 +31,4 @@ public class UndoListener implements ActionListener
 			System.err.println("Undo can't be performed.");
 		}
 	}
-
-
 }

@@ -1,7 +1,8 @@
 package Controller;
 
-public interface Command {
+import Model.MutableBoard;
 
-	public void execute();
-	
+public interface Command
+{
+	public void execute(MutableBoard board);
 }
