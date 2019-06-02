@@ -34,14 +34,11 @@ public class SaveListener implements ActionListener {
 
 			o.close();
 			f.close();
-
-		}
-		catch (FileNotFoundException e)
-		{
+			System.exit(0);
+		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
+			e.printStackTrace();
 			System.out.println("Error initializing stream");
 		}
 		

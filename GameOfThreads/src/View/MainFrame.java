@@ -100,11 +100,12 @@ public class MainFrame extends JFrame {
 		} catch (FileNotFoundException e) {
 			System.out.println("No saved history");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error loading game");
+			
+			//e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error loading game");
+			//e.printStackTrace();
 		}
 		}
 		else if(load == 2)
