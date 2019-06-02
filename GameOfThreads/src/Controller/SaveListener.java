@@ -10,13 +10,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import Model.MutableBoard;
+
 public class SaveListener implements ActionListener {
 	
-	BoardHistory history;
+	MutableBoard board;
 	
-	public SaveListener(BoardHistory History)
+	public SaveListener(MutableBoard board)
 	{
-		this.history = history;
+		this.board = board;
 	}
 
 	@Override
@@ -26,7 +28,7 @@ public class SaveListener implements ActionListener {
 			ObjectOutputStream o = new ObjectOutputStream(f);
 
 			// Write objects to file
-			o.writeObject(history);
+			o.writeObject(board);
 			
 
 			o.close();
