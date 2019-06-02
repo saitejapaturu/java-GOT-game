@@ -4,9 +4,10 @@ public class AttackExpression extends Expression{
 	//terminal expression
 
 	@Override
-	public Command interperet(SquareContext context) {
+	public AttackCommand interperet(SquareContext context) {
 		// TODO Auto-generated method stub
-		return new AttackCommand();
+		return new AttackCommand(context.getCurrentX(), context.getCurrentY(), context.getFirstX(), context.getFirstY());
+		
 	}
 
 

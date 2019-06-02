@@ -4,9 +4,9 @@ public class MoveExpression extends Expression{
 	//terminal expression
 
 	@Override
-	public Command interperet(SquareContext context) {
+	public MoveCommand interperet(SquareContext context) {
 		// TODO Auto-generated method stub
-		return new MoveCommand();
+		return new MoveCommand(context.getCurrentX(), context.getCurrentY(), context.getFirstX(), context.getFirstY());
 	}
 
 	

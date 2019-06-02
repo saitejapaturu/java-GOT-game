@@ -37,10 +37,62 @@ public class SquareActionListener implements ActionListener
 		SquareContext context = new SquareContext(info);
 		SelectExpression select = new SelectExpression(turnController, gameBoard); 
 		Command command = select.interperet(context);
-		command.execute();
-
+		command.execute(gameBoard);
+		if(command.getClass() == AttackCommand.class || command.getClass() == MoveCommand.class)
+		{
+		endOfTurn();
+		}
 		//if it is the first click.
-		if (turnController.getclick() == 0)
+	}
+
+	//This method gets called at the end of the turn.
+	//move to turn controller based on patterns
+	private void endOfTurn()
+	{
+		if(gameBoard.checkWinConditions() != 0)
+		{
+			gameOver();
+		}
+
+		turnController.switchTurn();
+		turnController.reset();
+		mainFrame.revalidate();
+		//debug
+		mainFrame.endOfTurn();
+
+		specials();
+	}
+
+	//If game ends call this method
+	private void gameOver()
+	{
+
+	}
+
+	//Deactivates specials of all pieces and activates specials of appropriate pieces for next turn.
+	private void specials()
+	{
+		gameBoard.deactivateSpecial();
+
+		//If the turn is a multiple of 2, activate specials of the pieces whose special activates on every 3rd turn
+		if(turnController.getTurn()%2 == 0)
+		{
+			gameBoard.activateSpecial(2);
+		}
+
+		//If the turn is a multiple of 3, activate specials of the pieces whose special activates on every 3rd turn
+		else if(turnController.getTurn()%3 == 0)
+		{
+			gameBoard.activateSpecial(3);
+		}
+	}
+
+
+
+}
+
+/*
+ * if (turnController.getclick() == 0)
 		{
 			//checks piece belongs to player whose turn it is
 			
@@ -129,50 +181,4 @@ public class SquareActionListener implements ActionListener
 				}
 			}
 		}
-	}
-
-	//This method gets called at the end of the turn.
-	//move to turn controller based on patterns
-	private void endOfTurn()
-	{
-		if(gameBoard.checkWinConditions() != 0)
-		{
-			gameOver();
-		}
-
-		turnController.switchTurn();
-		turnController.reset();
-		mainFrame.revalidate();
-		//debug
-		mainFrame.endOfTurn();
-
-		specials();
-	}
-
-	//If game ends call this method
-	private void gameOver()
-	{
-
-	}
-
-	//Deactivates specials of all pieces and activates specials of appropriate pieces for next turn.
-	private void specials()
-	{
-		gameBoard.deactivateSpecial();
-
-		//If the turn is a multiple of 2, activate specials of the pieces whose special activates on every 3rd turn
-		if(turnController.getTurn()%2 == 0)
-		{
-			gameBoard.activateSpecial(2);
-		}
-
-		//If the turn is a multiple of 3, activate specials of the pieces whose special activates on every 3rd turn
-		else if(turnController.getTurn()%3 == 0)
-		{
-			gameBoard.activateSpecial(3);
-		}
-	}
-
-
-
-}
+		*/

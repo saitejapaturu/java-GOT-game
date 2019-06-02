@@ -4,33 +4,27 @@ import Model.MutableBoard;
 
 public class AttackCommand implements Command{
 	private MutableBoard gameBoard;
-	private TurnController tc;
 	private int currentX;
 	private int currentY;
-
-	public AttackCommand(MutableBoard board, TurnController tc, int currentX, int currentY)
+	private int firstX;
+	private int firstY;
+	 
+	public AttackCommand(int currentX, int currentY, int firstX, int firstY)
 	{
-		this.gameBoard = board;
-		this.tc = tc;
+		
 		this.currentX = currentX;
 		this.currentY = currentY;
+		this.firstX = firstX;
+		this.firstY = firstY;
+
 	}
 	@Override
-	public void execute() {
-
+	public void execute(MutableBoard board) {
+		this.gameBoard = board;
 		// this functionality will be moved to expressions, only needs to call gameBoard.attackpiece
-		if(gameBoard.attackPiece(tc.getFirstX(), tc.getFirstY(),currentX,currentY))
-		{
+		gameBoard.attackPiece(firstX, firstY,currentX,currentY);
+		
 			//turnController.endTurn();
-		}
-		else
-			//if not a valid move
-		{
-			System.out.println("Not a Valid Attack");
-
-			tc.reset();
-			return;
-		}
 	}
 
 }
