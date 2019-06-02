@@ -6,14 +6,16 @@ import javax.swing.JLabel;
 
 import Controller.TurnController;
 
-public class StatusBar extends JLabel {
+public class StatusBar extends JLabel
+{
     //	statusbar class from java docs
 	// simple class used to display player turn and total turns
 	private String p1Name;
 	private String p2Name;
 
 	private TurnController turnController;
-    public StatusBar(TurnController turnController, String p1Name, String p2Name) {
+    public StatusBar(TurnController turnController, String p1Name, String p2Name)
+    {
         super();
         super.setPreferredSize(new Dimension(100, 16));
         setMessage("Game Of Threads!");
@@ -22,7 +24,8 @@ public class StatusBar extends JLabel {
         this.p2Name = p2Name;
     }
      
-    public void setMessage(String message) {
+    public void setMessage(String message)
+    {
         setText(" "+message);        
     }        
     

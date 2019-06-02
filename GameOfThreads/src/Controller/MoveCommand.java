@@ -2,7 +2,8 @@ package Controller;
 
 import Model.MutableBoard;
 
-public class MoveCommand implements Command {
+public class MoveCommand implements Command
+{
 	private MutableBoard gameBoard;
 	private int currentX;
 	private int currentY;
@@ -19,12 +20,9 @@ public class MoveCommand implements Command {
 
 	}
 	
-	public void execute(MutableBoard board) {
+	public void execute(MutableBoard board)
+	{
 		this.gameBoard = board;
 		gameBoard.movePiece(firstX, firstY,currentX,currentY);
-		
-		
-
 	}
-
 }

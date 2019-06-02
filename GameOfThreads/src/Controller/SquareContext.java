@@ -11,8 +11,8 @@ public class SquareContext {
 	private int firstY;
 	
 	private int click = 0;
-	
-	String[] partsOfContext;
+
+	private String[] partsOfContext;
 	
 	public SquareContext(String info)
 	{
@@ -26,17 +26,17 @@ public class SquareContext {
 
 		click = Integer.valueOf(partsOfContext[4]);
 	}
-	
-	public String getContext()
+
+	private String getContext()
 	{
 		return context;
 	}
-	
+
 	public int getCurrentX()
 	{
 		return currentX;
 	}
-	
+
 	public int getCurrentY()
 	{
 		return currentY;

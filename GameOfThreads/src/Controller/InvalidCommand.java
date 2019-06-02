@@ -2,12 +2,12 @@ package Controller;
 
 import Model.MutableBoard;
 
-public class InvalidCommand implements Command {
-
+public class InvalidCommand implements Command
+{
 	@Override
-	public void execute(MutableBoard board) {
+	public void execute(MutableBoard board)
+	{
 		System.out.println("invalid command");
 
 	}
-
 }
