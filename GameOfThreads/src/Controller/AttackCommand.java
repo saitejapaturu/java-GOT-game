@@ -2,7 +2,8 @@ package Controller;
 
 import Model.MutableBoard;
 
-public class AttackCommand implements Command{
+public class AttackCommand implements Command
+{
 	private MutableBoard gameBoard;
 	private int currentX;
 	private int currentY;
@@ -19,7 +20,8 @@ public class AttackCommand implements Command{
 
 	}
 	@Override
-	public void execute(MutableBoard board) {
+	public void execute(MutableBoard board)
+	{
 		this.gameBoard = board;
 		// this functionality will be moved to expressions, only needs to call gameBoard.attackpiece
 		gameBoard.attackPiece(firstX, firstY,currentX,currentY);
