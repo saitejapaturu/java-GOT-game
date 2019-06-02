@@ -11,7 +11,7 @@ public class Unsullied extends AlivePiece
 
 	public Unsullied()
 	{
-		super(5, 3, 3, ID, SPECIALTURN, SPECIAL_ACTIVE_MESSAGE, SPECIAL_DEACTIVATE_MESSAGE);
+		super(5, 2, 3, ID, SPECIALTURN, SPECIAL_ACTIVE_MESSAGE, SPECIAL_DEACTIVATE_MESSAGE);
 	}
 
 	public void special()
