@@ -56,13 +56,15 @@ public class MainFrame extends JFrame {
 		setLocationRelativeTo(null);
 		setSize(1100, 1100);
 		centreWindow(this);
+
+		// Checks if there is a saved game if player chooses to load.
 		if(checkBoard() != null)
 		{
 			this.gameBoard = checkBoard();
 		}
 		else
 		{
-		setPlayers();
+			setPlayers();
 		}
 		setVisible(true);
 		this.statusBar = new StatusBar(turnController, p1Name, p2Name);
@@ -92,20 +94,22 @@ public class MainFrame extends JFrame {
 			filein = new FileInputStream(new File("saved.txt"));
 			ObjectInputStream objectin = new ObjectInputStream(filein);
 			MutableBoard board = (MutableBoard) objectin.readObject();
-			
-			
+
 			filein.close();
 			objectin.close();
 			return board;
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e)
+		{
 			System.out.println("No saved history");
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			System.out.println("Error loading game");
-			
-			//e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		}
+		catch (ClassNotFoundException e)
+		{
 			System.out.println("Error loading game");
-			//e.printStackTrace();
 		}
 		}
 		else if(load == 2)
@@ -148,7 +152,8 @@ public class MainFrame extends JFrame {
 		   if (imgURL != null) 
 		   {
 			   return new ImageIcon(imgURL, description);
-		   } else 
+		   }
+		   else
 		   {
 			   System.err.println("Couldn't find file: " + path);
 			   return null;
@@ -248,9 +253,9 @@ public class MainFrame extends JFrame {
 		 		Board.add(gridGUI[i][j]);
 		 	}
 		 }
-
 	 }
 
+	 // Helper method to create JButton
 	 private void createJButton(int x, int y, Color color)
 	 {
 		gridGUI[x][y] = new JButton();
@@ -268,11 +273,9 @@ public class MainFrame extends JFrame {
            button.setBorderPainted(true);
 	   }
 
+	   // Updates the componenets at the end of each turn.
 	   public void endOfTurn()
 	   {
-//	   		Board board = gameBoard;
-//
-//	   		history.moveMade(board);
 	   		updateComponents();
 	   }
 	   //updates individual gui components according to board
@@ -345,6 +348,7 @@ public class MainFrame extends JFrame {
 	        }
 	   }
 
+	   // When either undo or redo is used, updates the turn.
 	   public void undoRedo()
 	   {
 	   		turnController.updateTurn(this.gameBoard.getTurn());

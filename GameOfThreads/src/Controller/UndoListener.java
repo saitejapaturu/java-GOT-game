@@ -8,10 +8,8 @@ import View.MainFrame;
 
 public class UndoListener implements ActionListener
 {
-
 	private MutableBoard board;
 	private MainFrame mainFrame;
-
 
 	public UndoListener(MutableBoard board, MainFrame mainFrame)
 	{

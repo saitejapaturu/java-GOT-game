@@ -8,7 +8,6 @@ import View.MainFrame;
 
 public class RedoListener implements ActionListener
 {
-
 	private MutableBoard board;
 	private MainFrame mainFrame;
 
@@ -29,6 +28,5 @@ public class RedoListener implements ActionListener
 		{
 			System.err.println("Redo can't be performed.");
 		}
-		
 	}
 }

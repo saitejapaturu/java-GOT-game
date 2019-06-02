@@ -4,7 +4,7 @@ import Model.MutableBoard;
 
 public class SelectExpression extends Expression
 {
-	//non terminal expression
+	//Non terminal expression
 	private TurnController tc;
 	private MutableBoard gameBoard;
 	

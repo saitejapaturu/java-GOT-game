@@ -1,17 +1,11 @@
 package Model;
 
-import java.io.Serializable;
-
 import Controller.BoardHistory;
 
 import java.io.Serializable;
 
 public class MutableBoard implements Board, Serializable
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private BoardHistory history;
 	private Square[][] currentGrid;
 	private ImmutableBoard currentBoard;
