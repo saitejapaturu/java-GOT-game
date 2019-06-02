@@ -25,7 +25,6 @@ public class MainFrame extends JFrame {
 	private UndoButton undoButton;
 	private RedoButton redoButton;
 	private SaveButton saveButton;
-	private AttackButton attackButton;
 	private DefendButton defendButton;
 
 	public MainFrame(String title, MutableBoard board, TurnController turnController)
@@ -36,7 +35,6 @@ public class MainFrame extends JFrame {
 		this.undoButton = new UndoButton();
 		this.redoButton = new RedoButton();
 		this.saveButton = new SaveButton();
-		this.attackButton = new AttackButton();
 		this.defendButton = new DefendButton();
 		Initialise();
 		createImages();
@@ -108,7 +106,6 @@ public class MainFrame extends JFrame {
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
 		 saveButton.addActionListener(new SaveListener());
 		 defendButton.addActionListener(new DefendListener());
-		 attackButton.addActionListener(new AttackListener());
 		 int width = gameBoard.getSize();
 
 		 int max=10, mid=5, min=0;
@@ -149,7 +146,6 @@ public class MainFrame extends JFrame {
 		        gridGUI[gridGUI.length - 1][gridGUI.length - 2] = redoButton;
 		        gridGUI[0][10] = saveButton;
 		        gridGUI[10][0] = defendButton;
-		        gridGUI[10][1] = attackButton;
 
 
     		/* Initialising normal squares of the diamond block.
