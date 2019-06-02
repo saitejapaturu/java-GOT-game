@@ -82,6 +82,7 @@ public class TurnController
             this.turn = ((this.chanceTracker)/2);
         }
 
+        reset();
     }
 
     // Resets the first selected square coordinates and the click tracker for the next move
@@ -99,6 +100,7 @@ public class TurnController
         this.setFirstY(firstY);
         this.setClick(1);
     }
+
     public void updateTurn(int turn)
     {
         reset();

@@ -287,6 +287,11 @@ public class MutableBoard implements Board
 		return clonePiece;
 	}
 
+	public void defenceStance()
+	{
+
+	}
+
 	public boolean validateMove(int currentX, int currentY, int newX, int newY)
     {
         //check
