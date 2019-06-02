@@ -71,17 +71,7 @@ public class MutableBoard implements Board
 	// Sets up the pre destined pieces
 	private void initialiseGridPieces()
 	{
-		//Placing Player 1 pieces
-		this.currentGrid[0][5].setPiece(new DaenerysTargaryen());
-		this.currentGrid[1][4].setPiece(new AryaStark());
-		this.currentGrid[1][5].setPiece(new JonSnow());
-		this.currentGrid[1][6].setPiece(new Unsullied());
-
-		//Placing player 2 pieces
-		this.currentGrid[10][5].setPiece(new NightKing());
-		this.currentGrid[9][4].setPiece(new Giant());
-		this.currentGrid[9][5].setPiece(new General());
-		this.currentGrid[9][6].setPiece(new Horde());
+		AbstractPieceFactory abstractPieceFactory = new AbstractPieceFactory(this);
 
 		//Player 1 and 2 already occupy 1 corner square
 
@@ -89,6 +79,10 @@ public class MutableBoard implements Board
 		((CornerSquare)this.currentGrid[10][5]).capture(2);
 	}
 
+	public void setPiece(int x, int y, Piece piece)
+	{
+		this.currentGrid[x][y].setPiece(piece);
+	}
 	public int getTurn()
 	{
 		return this.turn;
