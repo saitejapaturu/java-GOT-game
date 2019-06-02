@@ -353,4 +353,32 @@ public class ImmutableBoard implements Board
         }
         System.out.println("\n");
     }
+
+    // Increase health of all characters of the current player who chose to defend.
+    public void defenceStance(int player)
+    {
+        System.out.println("\nHealth of all characters of player: " + player + " have been increased by 1.");
+        //This for loops checks all squares of the grid for pieces and activate appropriate specials.
+        for(int i=0; i<SIZE; i++)
+        {
+            for(int j=0; j<SIZE; j++)
+            {
+                //Check if the square isn't null;
+                if(grid[i][j] != null)
+                {
+                    //Check if the square has a piece
+                    if(grid[i][j].getPiece() != null)
+                    {
+                        //If the special turn is the same activate special.
+                        if(grid[i][j].getPiece().getPLAYER() == player)
+                        {
+                            int health = grid[i][j].getPiece().getHealth();
+                            grid[i][j].getPiece().setHealth(++health);      // Increments health by 1.
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("\n");
+    }
 }

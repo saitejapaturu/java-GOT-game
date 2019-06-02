@@ -9,19 +9,21 @@ public class DefendListener implements ActionListener
 {
 
 	private MutableBoard gameBoard;
+	private TurnController turnController;
 	private EndOfTurnActionListenerDecorator endOfTurnActionListenerDecorator;
 
-	public DefendListener(MutableBoard gameBoard, EndOfTurnActionListenerDecorator endOfTurnActionListenerDecorator)
+	public DefendListener(MutableBoard gameBoard, TurnController turnController,
+						  	EndOfTurnActionListenerDecorator endOfTurnActionListenerDecorator)
 	{
 		this.gameBoard = gameBoard;
+		this.turnController = turnController;
 		this.endOfTurnActionListenerDecorator = endOfTurnActionListenerDecorator;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		this.gameBoard.defenceStance();
+		this.gameBoard.defenceStance(turnController.getPlayerTurn());
 		endOfTurnActionListenerDecorator.endTurn();
 	}
-
 }

@@ -117,6 +117,11 @@ public class MutableBoard implements Board
 		this.currentBoard.deactivateSpecial();
 	}
 
+	public void defenceStance(int player)
+	{
+		this.currentBoard.defenceStance(player);
+	}
+
 	public boolean movePiece (int currentX, int currentY, int newX, int newY)
 	{
 		boolean canMove = this.currentBoard.movePiece(currentX, currentY, newX, newY);
@@ -285,11 +290,6 @@ public class MutableBoard implements Board
 		clonePiece.setRange(originalPiece.getRange());
 
 		return clonePiece;
-	}
-
-	public void defenceStance()
-	{
-
 	}
 
 	public boolean validateMove(int currentX, int currentY, int newX, int newY)
