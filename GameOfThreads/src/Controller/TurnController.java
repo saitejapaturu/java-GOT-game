@@ -86,7 +86,7 @@ public class TurnController
     }
 
     // Resets the first selected square coordinates and the click tracker for the next move
-    private void reset()
+    public void reset()
     {
         this.setFirstX(0);
         this.setFirstY(0);

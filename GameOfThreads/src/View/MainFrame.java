@@ -20,12 +20,13 @@ public class MainFrame extends JFrame {
 	private StatusBar turnTracker;
 	private ImageIcon DaenerysTargaryen, Unsullied, AryaStark, JonSnow, NightKing, Giant, General, Horde;
 	private TurnController turnController;
-	static String p1Name;
-	static String p2Name;
+	private static String p1Name;
+	private static String p2Name;
 	private UndoButton undoButton;
 	private RedoButton redoButton;
 	private SaveButton saveButton;
 	private DefendButton defendButton;
+	private EndOfTurnActionListenerDecorator endOfTurnActionListenerDecorator;
 
 	public MainFrame(String title, MutableBoard board, TurnController turnController)
 	{
@@ -52,6 +53,11 @@ public class MainFrame extends JFrame {
 		getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
 		
 		statusBar.update();
+
+		// Creating endOfturnDecorater for actionlisteners
+		this.endOfTurnActionListenerDecorator = new EndOfTurnActionListenerDecorator(this.gameBoard,
+																				this.turnController, this);
+
 	}
 
 	
@@ -105,7 +111,7 @@ public class MainFrame extends JFrame {
 		 undoButton.addActionListener(new UndoListener(gameBoard, this));
 		 redoButton.addActionListener(new RedoListener(gameBoard, this));
 		 saveButton.addActionListener(new SaveListener());
-		 defendButton.addActionListener(new DefendListener());
+		 defendButton.addActionListener(new DefendListener(gameBoard, endOfTurnActionListenerDecorator));
 		 int width = gameBoard.getSize();
 
 		 int max=10, mid=5, min=0;
@@ -197,7 +203,8 @@ public class MainFrame extends JFrame {
 	 private void createJButton(int x, int y, Color color)
 	 {
 		gridGUI[x][y] = new JButton();
-		gridGUI[x][y].addActionListener(new SquareActionListener(gameBoard, x, y, this, turnController));
+		gridGUI[x][y].addActionListener(new SquareActionListener(gameBoard, x, y, turnController,
+																	endOfTurnActionListenerDecorator));
 		gridGUI[x][y].setBackground(color);
 		setButtonProperties(gridGUI[x][y]);
 	 }
